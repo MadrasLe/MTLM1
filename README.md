@@ -40,7 +40,7 @@ The dataset was meticulously curated to prioritize reasoning:
 * **Optimizer:** AdamW + Cosine Scheduler.
 * **Precision:** Mixed Precision (BF16/AMP).
 
-## 📊 Evaluation Results (Benchmarks)
+##  Evaluation Results (Benchmarks)
 
 Performance on standard zero-shot/few-sho(log prob ppl) benchmarks highlights the effectiveness of the stacking strategy compared to the previous 88M iteration:
 
@@ -59,7 +59,7 @@ Performance on standard zero-shot/few-sho(log prob ppl) benchmarks highlights th
 | **ARC Challenge** | Accuracy | 23.55% |
 | **CommonSense QA** | Accuracy | 20.56% |
 
-## 🆚 Comparative Analysis
+## Comparative Analysis
 
 When compared to other models in the "Micro-LLM" class (<500M params) and even larger baselines, **MTLM-200M** demonstrates good performance in knowledge retrieval and academic reasoning tasks, outperforming the classic **GPT-2** and the **OPT-125M** in key benchmarks.
 
@@ -72,7 +72,7 @@ When compared to other models in the "Micro-LLM" class (<500M params) and even l
 | **HellaSwag** | Common Sense | 27.91% | **31.47%** | 29.4% | 53.81% |
 
 
-## 🚀 Usage
+##  Usage
 
 ```python
 from transformers import AutoModelForCausalLM, AutoTokenizer
