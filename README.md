@@ -4,7 +4,7 @@
 
 **Parameters:** ~200M  
 
-**Tokens Trained:** 3.5 Billion (7B TOTAL/ 2 PHASE) 
+**Tokens Trained:** 3.5 Billion (7B TOTAL) 
 
 **Author:** Madras1 (Gabriel)  
 
@@ -24,7 +24,7 @@ The training process employed a **dynamic parameter efficient method** to maximi
 
 1.  **Phase 1 (Base Learning):** Training started with a smaller base model (~88M-100M parameters), allowing for rapid convergence on core linguistic patterns.
 2.  **Phase 2 (Layer Stacking):** Using a custom expansion technique, the layers were duplicated and stacked to effectively double the model depth.
-3.  **Phase 3 (Refinement):** The expanded 200M model continued training for a total of **2 Epochs** over **3.5 Billion tokens**, stabilizing the new weights and integrating the "M2 Blend" knowledge.
+3.  **Phase 3 (Refinement):** The expanded 200M model continued training for a total of **1 Epochs** over **3.5 Billion tokens**, stabilizing the new weights and integrating the "M2 Blend" knowledge.
 
 ### 📚 Training Data (The "M1 Blend")
 
