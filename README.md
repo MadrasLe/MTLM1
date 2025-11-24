@@ -1,26 +1,4 @@
-# MTLM1
-
----
-language:
-- pt
-- en
-license: mit
-tags:
-- pytorch
-- causal-lm
-- llama-architecture
-- custom-implementation
-- mtlm
-- progressive-growth
-datasets:
-- HuggingFaceTB/cosmopedia
-- HuggingFaceFW/fineweb-edu
-- HuggingFaceFW/fineweb
-metrics:
-- accuracy
----
-
-# MTLM1-200M (M1 Series) 🧠
+# MTLM1-200M (M1 Series) 
 
 **Model Architecture:** Custom Llama-style Transformer (Progressive Growth)  
 
