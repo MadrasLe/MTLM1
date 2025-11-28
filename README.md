@@ -87,3 +87,6 @@ inputs = tokenizer("Machine Learning is ", return_tensors="pt")
 outputs = model.generate(**inputs, max_new_tokens=50)
 
 print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
+
+https://huggingface.co/Madras1/MTLM1-200M
