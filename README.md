@@ -8,6 +8,10 @@
 
 > **Research Goal:** Investigating the limits of language coherence and reasoning in sub-1B parameter architectures through architectural optimizations (CUDA kernels), extreme data saturation, and progressive growth strategies (Stacking).
 
+# MODEL CARD
+https://huggingface.co/Madras1/MTLM1-200M
+https://huggingface.co/Madras1/MTLM2-40M
+
 ## Overview
 
 The **MTLM (Mini-Transformer Language Models)** series is a collection of custom-built SLMs (Small Language Models) designed to challenge standard scaling laws. Instead of simply scaling up, this project explores how much performance can be squeezed out of minimal parameter counts using specialized training techniques and low-level optimizations.
