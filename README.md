@@ -94,6 +94,44 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 
+# JAX vs. PyTorch: The TPU Efficiency Study
+
+One of the core experiments of the MTLM Series was migrating the training pipeline from a traditional PyTorch flow on GPUs to a JAX/Flax (JIT Compiled) flow on Google Cloud TPUs (v5e-8).
+
+# The Efficiency Leap: 600k TPS
+
+The raw throughput performance difference was staggering. Training the MTLM2-40M on a TPU v5e-8 slice achieved between 550,000 and 600,000 Tokens Per Second (TPS) during the peak training phase.
+
+Why so fast?
+
+XLA (Accelerated Linear Algebra): Unlike PyTorch's eager execution, which dispatches kernels one by one (creating CPU overhead), JAX traces the entire computation graph and compiles it via XLA. This allows for massive kernel fusion (combining multiple operations into a single GPU/TPU kernel), drastically reducing memory bandwidth bottlenecks.
+
+TPU Architecture: The Matrix Multiply Units (MXU) on TPUs are purpose-built for the exact systolic array operations required by Transformers, without the general-purpose overhead of GPUs.
+
+Low-Level Sharding: By manually defining the PartitionSpec and Mesh, we avoided the communication overhead often introduced by automatic data-parallel wrappers.
+
+ The "Control" Trade-off
+
+However, achieving this speed required a complete paradigm shift that introduced significant engineering friction:
+
+1. The "Black Box" Compilation
+
+In PyTorch, you can insert a print(tensor.shape) anywhere to debug. In JAX, once jax.jit takes over, your code isn't running Python anymore—it's building an abstract syntax tree. Debugging shape mismatches or numerical instability inside a compiled TPU kernel is exponentially harder and requires a different mental model.
+
+2. Functional Purity & RNG
+
+JAX requires pure functions. You cannot rely on a global random state (like torch.manual_seed). Every stochastic operation (dropout, sampling) requires explicitly passing and splitting PRNG keys (jax.random.split). Managing this state across distributed devices (sharding) adds a layer of complexity that doesn't exist in the PyTorch ecosystem.
+
+3. The "Uncontrolled" Training Run
+
+Because the graph is compiled for maximum throughput, interrupting, inspecting, or dynamically altering the training loop (e.g., conditional skipping of batches based on loss spikes) incurs a massive recompilation penalty. You lose the granular, step-by-step control that makes PyTorch so flexible for research.
+
+# Conclusion
+
+For Prototyping: PyTorch remains king. The ability to inspect tensors dynamically is invaluable.
+
+For Scale: JAX/TPU is unmatched. The 10x-50x speedup observed in small-scale matrix operations justifies the engineering complexity, but only once the architecture is frozen and stable.
+
 ##  Author
 
 **Gabriel (MadrasLe)**
