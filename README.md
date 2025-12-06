@@ -94,12 +94,12 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 
-### JAX vs. PyTorch: The TPU Efficiency Study
+# JAX vs. PyTorch: The TPU Efficiency Study
 
 One of the core experiments of the MTLM Series was migrating the training pipeline from a traditional PyTorch flow on GPUs to a JAX/Flax (JIT Compiled) flow on Google Cloud TPUs (v5e-8).
 
 
-# The Efficiency Leap: 600k TPS
+### The Efficiency Leap: 600k TPS
 
 The raw throughput performance difference was staggering. Training the MTLM2-40M on a TPU v5e-8 slice achieved between 550,000 and 600,000 Tokens Per Second (TPS) during the peak training phase.
 
@@ -111,7 +111,7 @@ Why so fast?
 
 -Low-Level Sharding: By manually defining the PartitionSpec and Mesh, we avoided the communication overhead often introduced by automatic data-parallel wrappers.
 
-# The "Control" Trade-off
+### The "Control" Trade-off
 
 However, achieving this speed required a complete paradigm shift that introduced significant engineering friction:
 
@@ -127,7 +127,7 @@ JAX requires pure functions. You cannot rely on a global random state (like torc
 
 Because the graph is compiled for maximum throughput, interrupting, inspecting, or dynamically altering the training loop (e.g., conditional skipping of batches based on loss spikes) incurs a massive recompilation penalty. You lose the granular, step-by-step control that makes PyTorch so flexible for research.
 
-# Conclusion
+### Conclusion
 
 For Prototyping: PyTorch remains the best. The ability to inspect tensors dynamically is invaluable.
 
