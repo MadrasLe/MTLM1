@@ -1,0 +1,288 @@
+# -*- coding: utf-8 -*-
+# LLM training v5.2 — CAUSAL FIX + JIT SHARDING FIX (SEM PMEAN)
+# Autor: Ada & Berta (Agora vai, Gabrielzinho!)
+
+import os, sys, subprocess, textwrap, math, time, json, functools, random, glob, gc
+from pathlib import Path
+import numpy as np
+
+# --- 1. INSTALAÇÃO DE DEPENDÊNCIAS ---
+def sh(*args):
+    print(">", " ".join(args))
+    subprocess.check_call(list(args))
+
+def pip_install(pkgs):
+    sh(sys.executable, "-m", "pip", "install", "--no-cache-dir", *pkgs)
+
+# Limpeza e Instalação
+subprocess.call([sys.executable, "-m", "pip", "uninstall", "-y", "hf-xet"])
+pip_install(("-f","https://storage.googleapis.com/jax-releases/libtpu_releases.html","jax[tpu]==0.7.1"))
+pip_install(("flax==0.12.0","optax==0.2.2","orbax-checkpoint==0.5.10","transformers==4.44.2","tokenizers==0.19.1","datasets>=2.20.0","accelerate>=0.33.0"))
+
+import tensorflow as tf
+tf.config.set_visible_devices([], 'GPU')
+
+import jax, jax.numpy as jnp
+from jax import random as jr, config
+from jax.experimental import mesh_utils
+from jax.sharding import Mesh, NamedSharding, PartitionSpec as P
+import flax.linen as nn
+from flax.training import train_state as ts
+import optax, orbax.checkpoint as ocp
+from transformers import AutoTokenizer
+
+# --- 2. CONFIGURAÇÃO ---
+CFG = dict(
+    workdir="/kaggle/working/llm_jax_v5_2_final",
+    dataset_path="/kaggle/input/fineweb/fineweb_edu_1B_tokens_sem_eos.txt", 
+    max_seq_len=1024,
+    model_dim=768, num_layers=18, num_heads=8, mlp_ratio=4,
+    dropout=0.1, lr=4e-4, warmup_steps=200, weight_decay=0.01, grad_clip=1.0,
+    global_batch_size=256, total_train_steps=None,
+    eval_every=1000, save_every=500, ckpt_keep=3,
+    seed=42, param_dtype=jnp.float32, compute_dtype=jnp.bfloat16,
+    prefetch_buffer=tf.data.AUTOTUNE,
+)
+CFG["mlp_dim"] = int(CFG["model_dim"] * CFG["mlp_ratio"] * 2 / 3)
+
+Path(CFG["workdir"]).mkdir(parents=True, exist_ok=True)
+Path(os.path.join(CFG["workdir"], "ckpts")).mkdir(parents=True, exist_ok=True)
+
+config.update("jax_default_matmul_precision", "bfloat16")
+os.environ["JAX_PLATFORMS"] = "tpu,cpu"
+num_devices = jax.device_count()
+local_batch_size = CFG["global_batch_size"] // num_devices
+mesh = Mesh(mesh_utils.create_device_mesh((num_devices,)), axis_names=("data",))
+data_sharding = NamedSharding(mesh, P("data", None))
+
+print(f"\n🔧 JAX v{jax.__version__} | {num_devices} TPUs | Local batch: {local_batch_size}")
+
+# --- 3. TOKENIZER ---
+print("⏳ Carregando tokenizer...")
+tokenizer_path = "/kaggle/input/mistraal/mistral-tokenizer-local"
+try:
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_path, use_fast=True)
+    print("✅ Tokenizer local carregado.")
+except:
+    print("⚠️ Baixando Mistral padrão...")
+    tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1", use_fast=True)
+
+if not tokenizer.pad_token: tokenizer.pad_token = tokenizer.eos_token
+pad_token_id = tokenizer.pad_token_id
+vocab_size = tokenizer.vocab_size
+
+if pad_needed := (-vocab_size) % num_devices:
+    tokenizer.add_tokens([f"<pad_{i}>" for i in range(pad_needed)])
+    vocab_size = tokenizer.vocab_size
+print(f"🔤 Vocab size final: {vocab_size}")
+
+# --- 4. PIPELINE (Split Real) ---
+def get_txt_files(data_path):
+    path_obj = Path(data_path)
+    if path_obj.is_file(): return [str(path_obj)]
+    files = glob.glob(f"{data_path}/**/*.txt", recursive=True)
+    if not files: files = glob.glob(f"{data_path}/*.txt")
+    return sorted(files)
+
+def create_split_pipeline(files, seq_len, batch_size, split_mode=None, shuffle=True):
+    def gen():
+        if shuffle and split_mode == 'train': random.shuffle(files)
+        token_buffer = []
+        for file_path in files:
+            file_size = os.path.getsize(file_path)
+            split_byte = int(file_size * 0.9)
+            
+            with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
+                if split_mode == 'val':
+                    f.seek(split_byte)
+                    f.readline()
+                current_byte = f.tell()
+                
+                for line in f:
+                    if split_mode == 'train':
+                        current_byte += len(line.encode('utf-8'))
+                        if current_byte > split_byte: break 
+                    if not line.strip(): continue
+                    
+                    tokens = tokenizer.encode(line, add_special_tokens=False) + [tokenizer.eos_token_id]
+                    token_buffer.extend(tokens)
+                    while len(token_buffer) >= seq_len:
+                        yield np.array(token_buffer[:seq_len], dtype=np.int32)
+                        token_buffer = token_buffer[seq_len:]
+        if split_mode == 'val': print("✅ Validação: Leitura concluída.")
+
+    tf_ds = tf.data.Dataset.from_generator(
+        gen, output_signature=tf.TensorSpec(shape=(seq_len,), dtype=np.int32)
+    )
+    if shuffle and split_mode == 'train': tf_ds = tf_ds.shuffle(2000)
+    return tf_ds.batch(batch_size, drop_remainder=True).prefetch(CFG["prefetch_buffer"])
+
+print(f"\n📚 Preparando Pipelines...")
+all_files = get_txt_files(CFG["dataset_path"])
+if len(all_files) == 1:
+    print("🔪 Arquivo único: Split 90/10.")
+    train_pipeline = create_split_pipeline(all_files, CFG["max_seq_len"], CFG["global_batch_size"], split_mode='train', shuffle=True)
+    val_pipeline = create_split_pipeline(all_files, CFG["max_seq_len"], CFG["global_batch_size"], split_mode='val', shuffle=False)
+else:
+    split_idx = int(len(all_files) * 0.9)
+    train_pipeline = create_split_pipeline(all_files[:split_idx], CFG["max_seq_len"], CFG["global_batch_size"], split_mode=None, shuffle=True)
+    val_pipeline = create_split_pipeline(all_files[split_idx:], CFG["max_seq_len"], CFG["global_batch_size"], split_mode=None, shuffle=False)
+
+# Estimativa de Steps
+total_size = sum(os.path.getsize(f) for f in all_files) * 0.9
+est_tokens = total_size // 3.5 
+steps_per_epoch = (est_tokens // CFG["max_seq_len"]) // CFG["global_batch_size"]
+if CFG["total_train_steps"] is None:
+    CFG["total_train_steps"] = max(100, int(steps_per_epoch * 2))
+    print(f"📊 Estimativa: ~{int(est_tokens):,} tokens | Steps: {CFG['total_train_steps']:,}")
+
+# --- 5. MODELO TINYGPT (CAUSAL MASK + REMAT FIX) ---
+def make_causal_mask(x):
+    idx = jnp.arange(x.shape[1])
+    mask = idx[:, None] >= idx[None, :]
+    return jnp.expand_dims(mask, axis=(0, 1))
+
+class RMSNorm(nn.Module):
+    dtype: jnp.dtype = jnp.bfloat16
+    eps: float = 1e-6
+    @nn.compact
+    def __call__(self, x):
+        scale = self.param("scale", nn.initializers.ones, (x.shape[-1],), jnp.float32)
+        var = jnp.mean(jnp.square(x.astype(jnp.float32)), axis=-1, keepdims=True)
+        return (x * jax.lax.rsqrt(var + self.eps) * scale).astype(self.dtype)
+
+class Block(nn.Module):
+    d_model: int; n_heads: int; dropout: float; mlp_dim: int; n_layers: int; dtype: jnp.dtype = jnp.bfloat16
+    
+    @nn.compact
+    def __call__(self, x, mask, deterministic):
+        norm_x = RMSNorm(dtype=self.dtype)(x)
+        h = nn.MultiHeadDotProductAttention(
+            num_heads=self.n_heads, dtype=jnp.float32, deterministic=deterministic
+        )(norm_x, mask=mask) 
+        x = x + nn.Dropout(self.dropout)(h, deterministic=deterministic)
+        h = nn.Dense(self.mlp_dim, dtype=self.dtype)(RMSNorm(dtype=self.dtype)(x))
+        h = nn.gelu(h)
+        h = nn.Dense(self.d_model, dtype=self.dtype, kernel_init=nn.initializers.normal(stddev=0.02/math.sqrt(2*self.n_layers)))(h)
+        return x + nn.Dropout(self.dropout)(h, deterministic=deterministic)
+
+RemattedBlock = nn.remat(Block, static_argnums=(3,))
+
+class TinyGPT(nn.Module):
+    vocab_size: int; d_model: int; n_layers: int; n_heads: int; max_len: int; dropout: float; mlp_dim: int; dtype: jnp.dtype = jnp.bfloat16
+    
+    def setup(self):
+        self.tok_emb = nn.Embed(self.vocab_size, self.d_model, dtype=self.dtype, embedding_init=nn.initializers.normal(stddev=0.02))
+        self.pos_emb = self.param("pos_emb", nn.initializers.normal(stddev=0.02), (self.max_len, self.d_model))
+        self.drop = nn.Dropout(self.dropout)
+        self.norm_f = RMSNorm(dtype=self.dtype)
+        self.head = nn.Dense(self.vocab_size, use_bias=False, dtype=jnp.float32, param_dtype=jnp.float32, kernel_init=nn.initializers.normal(stddev=0.02))
+        self.blocks = [RemattedBlock(self.d_model, self.n_heads, self.dropout, self.mlp_dim, self.n_layers, dtype=self.dtype, name=f'block_{i}') for i in range(self.n_layers)]
+    
+    def __call__(self, x, deterministic=True):
+        mask = make_causal_mask(x)
+        h = self.tok_emb(x) + self.pos_emb[:x.shape[1]].astype(self.dtype)
+        h = self.drop(h, deterministic=deterministic)
+        for blk in self.blocks: 
+            h = blk(h, mask, deterministic)
+        return self.head(self.norm_f(h))
+
+# --- 6. TREINO (CORREÇÃO: SEM PMEAN) ---
+def create_train_state(rng, model):
+    print("\n🏗️ Inicializando modelo...")
+    dummy = jnp.zeros((local_batch_size, CFG["max_seq_len"]), dtype=jnp.int32)
+    variables = model.init({"params": rng, "dropout": rng}, dummy, deterministic=False)
+    def shard(p): return NamedSharding(mesh, P("data")) if p.ndim == 1 else NamedSharding(mesh, P("data", None))
+    params = jax.tree_util.tree_map(lambda p, s=shard: jax.device_put(p, s(p)), variables["params"])
+    sched = optax.warmup_cosine_decay_schedule(0.0, CFG["lr"], CFG["warmup_steps"], CFG["total_train_steps"], CFG["lr"]*0.1)
+    tx = optax.chain(optax.clip_by_global_norm(CFG["grad_clip"]), optax.adamw(learning_rate=sched, weight_decay=CFG["weight_decay"]))
+    return ts.TrainState.create(apply_fn=model.apply, params=params, tx=tx)
+
+model = TinyGPT(vocab_size, CFG["model_dim"], CFG["num_layers"], CFG["num_heads"], CFG["max_seq_len"], CFG["dropout"], CFG["mlp_dim"], CFG["compute_dtype"])
+state = create_train_state(jr.PRNGKey(CFG["seed"]), model)
+mngr = ocp.CheckpointManager(os.path.join(CFG["workdir"], "ckpts"), options=ocp.CheckpointManagerOptions(max_to_keep=CFG["ckpt_keep"], create=True))
+
+if latest := mngr.latest_step():
+    state = mngr.restore(latest, args=ocp.args.StandardRestore(state))
+    start_step = latest
+    print(f"✅ Checkpoint {latest} restaurado")
+else:
+    start_step = 0
+
+print(f"\n🚀 TREINO V5.2 (FINAL) | Steps: {start_step} -> {CFG['total_train_steps']}")
+train_iter = iter(train_pipeline.as_numpy_iterator())
+val_iter = iter(val_pipeline.as_numpy_iterator())
+
+@functools.partial(jax.jit)
+def train_step(state, batch, rng):
+    def loss_fn(p):
+        logits = state.apply_fn({"params": p}, batch, deterministic=False, rngs={"dropout": rng})
+        
+        logits_shift = logits[:, :-1]
+        labels_shift = batch[:, 1:]
+        
+        loss_per_token = optax.softmax_cross_entropy_with_integer_labels(logits_shift, labels_shift)
+        
+        mask = (labels_shift != pad_token_id).astype(jnp.float32)
+        
+        # Berta: Com NamedSharding e JIT, a soma já é global para o array sharded!
+        # Não precisamos de pmean aqui. Simples e direto.
+        loss = (loss_per_token * mask).sum() / (mask.sum() + 1e-6)
+        
+        return loss
+    
+    loss, grads = jax.value_and_grad(loss_fn)(state.params)
+    return state.apply_gradients(grads=grads), loss, optax.global_norm(grads)
+
+@functools.partial(jax.jit)
+def eval_step(state, batch):
+    logits = state.apply_fn({"params": state.params}, batch, deterministic=True)
+    labels_shift = batch[:, 1:]
+    mask = (labels_shift != pad_token_id).astype(jnp.float32)
+    loss_per_token = optax.softmax_cross_entropy_with_integer_labels(logits[:, :-1], labels_shift)
+    
+    # Simples e direto (Global Average)
+    loss = (loss_per_token * mask).sum() / (mask.sum() + 1e-6)
+    return loss
+
+t0 = time.perf_counter()
+print("⏳ Compilando JAX...")
+
+for step in range(start_step, CFG["total_train_steps"]):
+    try:
+        batch_np = next(train_iter)
+    except StopIteration:
+        print("🔄 Época concluída! Reiniciando dados...")
+        train_iter = iter(train_pipeline.as_numpy_iterator())
+        batch_np = next(train_iter)
+    
+    batch = jax.device_put(jnp.asarray(batch_np), data_sharding)
+    rng = jr.fold_in(jr.PRNGKey(CFG["seed"]), step)
+    state, loss, grad_norm = train_step(state, batch, rng)
+    
+    if (step + 1) % 20 == 0:
+        t1 = time.perf_counter()
+        tps = (20 * CFG["global_batch_size"] * CFG["max_seq_len"]) / (t1 - t0)
+        print(f"step {step+1}/{CFG['total_train_steps']} | loss {loss:.4f} | norm {grad_norm:.2f} | TPS: {tps:,.0f}")
+        t0 = t1
+
+    if (step + 1) % CFG["eval_every"] == 0:
+        print("\n📊 Validando...")
+        val_losses = []
+        for _ in range(20):
+            try:
+                val_batch = jax.device_put(jnp.asarray(next(val_iter)), data_sharding)
+                val_losses.append(eval_step(state, val_batch))
+            except StopIteration:
+                val_iter = iter(val_pipeline.as_numpy_iterator())
+                break
+        
+        if val_losses:
+            avg_val = np.mean(val_losses)
+            print(f"--- Val Loss: {avg_val:.4f} | Divergência: {avg_val - loss:.4f} ---\n")
+
+    if (step + 1) % CFG["save_every"] == 0 or (step + 1) == CFG["total_train_steps"]:
+        mngr.save(step + 1, args=ocp.args.StandardSave(jax.device_get(state)))
+        print(f"💾 Checkpoint {step+1}")
+
+print("\n✅ Fim! Agora você tem um modelo HONESTO e FUNCIONAL.")

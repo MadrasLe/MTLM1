@@ -1,0 +1,127 @@
+# -*- coding: utf-8 -*-
+# SCRIPT DE INFERÊNCIA V5.8 (CORREÇÃO DE ESPAÇOS + CONFIG FINAL)
+# Autor: Berta (Deixando o texto legível)
+
+import jax
+import jax.numpy as jnp
+from transformers import AutoTokenizer
+import flax.linen as nn
+import orbax.checkpoint as ocp
+import os
+import numpy as np
+
+# --- 1. MODELO ---
+def make_causal_mask(x):
+    idx = jnp.arange(x.shape[1])
+    mask = idx[:, None] >= idx[None, :]
+    return jnp.expand_dims(mask, axis=(0, 1))
+
+class RMSNorm(nn.Module):
+    dtype: jnp.dtype = jnp.bfloat16
+    eps: float = 1e-6
+    @nn.compact
+    def __call__(self, x):
+        scale = self.param("scale", nn.initializers.ones, (x.shape[-1],), jnp.float32)
+        var = jnp.mean(jnp.square(x.astype(jnp.float32)), axis=-1, keepdims=True)
+        return (x * jax.lax.rsqrt(var + self.eps) * scale).astype(self.dtype)
+
+class Block(nn.Module):
+    d_model: int; n_heads: int; dropout: float; mlp_dim: int; n_layers: int; dtype: jnp.dtype = jnp.bfloat16
+    @nn.compact
+    def __call__(self, x, mask, deterministic):
+        norm_x = RMSNorm(dtype=self.dtype)(x)
+        h = nn.MultiHeadDotProductAttention(num_heads=self.n_heads, dtype=jnp.float32, deterministic=deterministic)(norm_x, mask=mask) 
+        x = x + nn.Dropout(self.dropout)(h, deterministic=deterministic)
+        h = nn.Dense(self.mlp_dim, dtype=self.dtype)(RMSNorm(dtype=self.dtype)(x))
+        h = nn.gelu(h)
+        h = nn.Dense(self.d_model, dtype=self.dtype)(h)
+        return x + nn.Dropout(self.dropout)(h, deterministic=deterministic)
+
+RemattedBlock = nn.remat(Block, static_argnums=(3,))
+
+class TinyGPT(nn.Module):
+    vocab_size: int; d_model: int; n_layers: int; n_heads: int; max_len: int; dropout: float; mlp_dim: int; dtype: jnp.dtype = jnp.bfloat16
+    def setup(self):
+        self.tok_emb = nn.Embed(self.vocab_size, self.d_model, dtype=self.dtype)
+        self.pos_emb = self.param("pos_emb", nn.initializers.normal(stddev=0.02), (self.max_len, self.d_model))
+        self.drop = nn.Dropout(self.dropout)
+        self.norm_f = RMSNorm(dtype=self.dtype)
+        self.head = nn.Dense(self.vocab_size, use_bias=False, dtype=jnp.float32)
+        self.blocks = [RemattedBlock(self.d_model, self.n_heads, self.dropout, self.mlp_dim, self.n_layers, dtype=self.dtype, name=f'block_{i}') for i in range(self.n_layers)]
+    
+    def __call__(self, x, deterministic=True):
+        mask = make_causal_mask(x)
+        h = self.tok_emb(x) + self.pos_emb[:x.shape[1]].astype(self.dtype)
+        h = self.drop(h, deterministic=deterministic)
+        for blk in self.blocks: h = blk(h, mask, deterministic)
+        return self.head(self.norm_f(h))
+
+# --- 2. CARREGAMENTO ---
+CFG = dict(
+    workdir="/kaggle/working/llm_jax_v5_2_final",
+    max_seq_len=1024, model_dim=768, num_layers=18, num_heads=8, mlp_ratio=4,
+    dtype=jnp.bfloat16
+)
+CFG["mlp_dim"] = int(CFG["model_dim"] * CFG["mlp_ratio"] * 2 / 3)
+
+print("⏳ Configurando ambiente...")
+try:
+    tokenizer = AutoTokenizer.from_pretrained("/kaggle/input/mistraal/mistral-tokenizer-local", use_fast=True)
+except:
+    tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1", use_fast=True)
+
+model = TinyGPT(32000, CFG["model_dim"], CFG["num_layers"], CFG["num_heads"], CFG["max_seq_len"], 0.0, CFG["mlp_dim"], CFG["dtype"])
+mngr = ocp.CheckpointManager(os.path.join(CFG["workdir"], "ckpts"), options=ocp.CheckpointManagerOptions())
+latest_step = mngr.latest_step()
+
+print(f"🔓 Restaurando step {latest_step}...")
+raw_restored = mngr.restore(latest_step, args=ocp.args.StandardRestore(item=None))
+
+if 'params' in raw_restored: params = raw_restored['params']
+elif 'item' in raw_restored and 'params' in raw_restored['item']: params = raw_restored['item']['params']
+else: params = raw_restored.get('params', raw_restored)
+
+print("✅ Cérebro carregado com sucesso!")
+
+# --- 3. GERADOR INTELIGENTE (FIX DE ESPAÇOS) ---
+def generate(prompt, max_new=100, temp=0.7):
+    print(f"\n🤖 Prompt: {prompt}")
+    print("🤖 Resposta:", end=" ", flush=True)
+    
+    tokens = tokenizer.encode(prompt, add_special_tokens=False)
+    input_ids = jnp.array([tokens], dtype=jnp.int32)
+    
+    # Guardamos o texto completo decodificado até agora
+    text_so_far = tokenizer.decode(tokens, skip_special_tokens=True)
+    print(text_so_far, end="", flush=True) # Printa o prompt inicial
+    
+    for _ in range(max_new):
+        logits = model.apply({"params": params}, input_ids, deterministic=True)
+        next_token_logits = logits[0, -1, :] / temp
+        rng = jax.random.PRNGKey(np.random.randint(0, 1e9))
+        next_token = jax.random.categorical(rng, next_token_logits)
+        
+        # Atualiza IDs
+        input_ids = jnp.concatenate([input_ids, next_token[None, None]], axis=1)
+        if input_ids.shape[1] > CFG["max_seq_len"]:
+            input_ids = input_ids[:, -CFG["max_seq_len"]:]
+            
+        # --- TRUQUE DOS ESPAÇOS ---
+        # Decodifica a sequência inteira nova
+        all_tokens = np.array(input_ids[0])
+        new_text = tokenizer.decode(all_tokens, skip_special_tokens=True)
+        
+        # Imprime só o pedacinho que foi adicionado (a diferença)
+        # Isso preserva os espaços porque o decode vê o contexto
+        diff = new_text[len(text_so_far):]
+        print(diff, end="", flush=True)
+        text_so_far = new_text
+        
+        if next_token == tokenizer.eos_token_id: 
+            break
+    print("\n\n" + "-"*50)
+
+# --- 4. TESTES FINAIS ---
+generate("Science is important because")
+generate("The history of Brazil is")
+generate("Artificial Intelligence is")
