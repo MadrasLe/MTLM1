@@ -1,0 +1,3096 @@
+
+Found existing installation: hf-xet 1.2.0
+Uninstalling hf-xet-1.2.0:
+  Successfully uninstalled hf-xet-1.2.0
+> /usr/local/bin/python -m pip install --no-cache-dir -f https://storage.googleapis.com/jax-releases/libtpu_releases.html jax[tpu]==0.7.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in links: https://storage.googleapis.com/jax-releases/libtpu_releases.html
+Collecting jax==0.7.1 (from jax[tpu]==0.7.1)
+  Downloading jax-0.7.1-py3-none-any.whl.metadata (13 kB)
+Collecting jaxlib<=0.7.1,>=0.7.1 (from jax==0.7.1->jax[tpu]==0.7.1)
+  Downloading jaxlib-0.7.1-cp312-cp312-manylinux_2_27_x86_64.whl.metadata (1.3 kB)
+Requirement already satisfied: ml_dtypes>=0.5.0 in /usr/local/lib/python3.12/site-packages (from jax==0.7.1->jax[tpu]==0.7.1) (0.5.3)
+Requirement already satisfied: numpy>=1.26 in /usr/local/lib/python3.12/site-packages (from jax==0.7.1->jax[tpu]==0.7.1) (2.3.4)
+Requirement already satisfied: opt_einsum in /usr/local/lib/python3.12/site-packages (from jax==0.7.1->jax[tpu]==0.7.1) (3.4.0)
+Requirement already satisfied: scipy>=1.12 in /usr/local/lib/python3.12/site-packages (from jax==0.7.1->jax[tpu]==0.7.1) (1.16.3)
+Collecting libtpu==0.0.20.* (from jax[tpu]==0.7.1)
+  Downloading libtpu-0.0.20-py3-none-manylinux_2_31_x86_64.whl.metadata (500 bytes)
+Requirement already satisfied: requests in /usr/local/lib/python3.12/site-packages (from jax[tpu]==0.7.1) (2.32.5)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.12/site-packages (from requests->jax[tpu]==0.7.1) (3.4.4)
+Requirement already satisfied: idna<4,>=2.5 in /usr/local/lib/python3.12/site-packages (from requests->jax[tpu]==0.7.1) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.12/site-packages (from requests->jax[tpu]==0.7.1) (2.5.0)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/local/lib/python3.12/site-packages (from requests->jax[tpu]==0.7.1) (2025.10.5)
+Downloading jax-0.7.1-py3-none-any.whl (2.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 65.3 MB/s eta 0:00:00
+Downloading libtpu-0.0.20-py3-none-manylinux_2_31_x86_64.whl (137.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 137.2/137.2 MB 147.8 MB/s eta 0:00:00a 0:00:01
+Downloading jaxlib-0.7.1-cp312-cp312-manylinux_2_27_x86_64.whl (81.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 81.2/81.2 MB 244.4 MB/s eta 0:00:00a 0:00:01
+Installing collected packages: libtpu, jaxlib, jax
+  Attempting uninstall: libtpu
+    Found existing installation: libtpu 0.0.17
+    Uninstalling libtpu-0.0.17:
+      Successfully uninstalled libtpu-0.0.17
+  Attempting uninstall: jaxlib
+    Found existing installation: jaxlib 0.8.0
+    Uninstalling jaxlib-0.8.0:
+      Successfully uninstalled jaxlib-0.8.0
+  Attempting uninstall: jax
+    Found existing installation: jax 0.8.0
+    Uninstalling jax-0.8.0:
+      Successfully uninstalled jax-0.8.0
+Successfully installed jax-0.7.1 jaxlib-0.7.1 libtpu-0.0.20
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 25.0.1 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+> /usr/local/bin/python -m pip install --no-cache-dir flax==0.12.0 optax==0.2.2 orbax-checkpoint==0.5.10 transformers==4.44.2 tokenizers==0.19.1 datasets>=2.20.0 accelerate>=0.33.0
+Requirement already satisfied: flax==0.12.0 in /usr/local/lib/python3.12/site-packages (0.12.0)
+Collecting optax==0.2.2
+  Downloading optax-0.2.2-py3-none-any.whl.metadata (8.1 kB)
+Collecting orbax-checkpoint==0.5.10
+  Downloading orbax_checkpoint-0.5.10-py3-none-any.whl.metadata (1.8 kB)
+Collecting transformers==4.44.2
+  Downloading transformers-4.44.2-py3-none-any.whl.metadata (43 kB)
+Collecting tokenizers==0.19.1
+  Downloading tokenizers-0.19.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Requirement already satisfied: datasets>=2.20.0 in /usr/local/lib/python3.12/site-packages (4.4.1)
+Requirement already satisfied: accelerate>=0.33.0 in /usr/local/lib/python3.12/site-packages (1.11.0)
+Requirement already satisfied: numpy>=1.23.2 in /usr/local/lib/python3.12/site-packages (from flax==0.12.0) (2.3.4)
+Requirement already satisfied: jax>=0.7.1 in /usr/local/lib/python3.12/site-packages (from flax==0.12.0) (0.7.1)
+Requirement already satisfied: msgpack in /usr/local/lib/python3.12/site-packages (from flax==0.12.0) (1.1.2)
+Requirement already satisfied: tensorstore in /usr/local/lib/python3.12/site-packages (from flax==0.12.0) (0.1.78)
+Requirement already satisfied: rich>=11.1 in /usr/local/lib/python3.12/site-packages (from flax==0.12.0) (14.2.0)
+Requirement already satisfied: typing_extensions>=4.2 in /usr/local/lib/python3.12/site-packages (from flax==0.12.0) (4.15.0)
+Requirement already satisfied: PyYAML>=5.4.1 in /usr/local/lib/python3.12/site-packages (from flax==0.12.0) (6.0.3)
+Requirement already satisfied: treescope>=0.1.7 in /usr/local/lib/python3.12/site-packages (from flax==0.12.0) (0.1.10)
+Requirement already satisfied: absl-py>=0.7.1 in /usr/local/lib/python3.12/site-packages (from optax==0.2.2) (2.3.1)
+Requirement already satisfied: chex>=0.1.86 in /usr/local/lib/python3.12/site-packages (from optax==0.2.2) (0.1.91)
+Requirement already satisfied: jaxlib>=0.1.37 in /usr/local/lib/python3.12/site-packages (from optax==0.2.2) (0.7.1)
+Requirement already satisfied: etils[epath,epy] in /usr/local/lib/python3.12/site-packages (from orbax-checkpoint==0.5.10) (1.13.0)
+Requirement already satisfied: nest_asyncio in /usr/local/lib/python3.12/site-packages (from orbax-checkpoint==0.5.10) (1.6.0)
+Requirement already satisfied: protobuf in /usr/local/lib/python3.12/site-packages (from orbax-checkpoint==0.5.10) (6.33.0)
+Requirement already satisfied: filelock in /usr/local/lib/python3.12/site-packages (from transformers==4.44.2) (3.20.0)
+Requirement already satisfied: huggingface-hub<1.0,>=0.23.2 in /usr/local/lib/python3.12/site-packages (from transformers==4.44.2) (0.36.0)
+Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.12/site-packages (from transformers==4.44.2) (25.0)
+Requirement already satisfied: regex!=2019.12.17 in /usr/local/lib/python3.12/site-packages (from transformers==4.44.2) (2025.11.3)
+Requirement already satisfied: requests in /usr/local/lib/python3.12/site-packages (from transformers==4.44.2) (2.32.5)
+Requirement already satisfied: safetensors>=0.4.1 in /usr/local/lib/python3.12/site-packages (from transformers==4.44.2) (0.7.0rc0)
+Requirement already satisfied: tqdm>=4.27 in /usr/local/lib/python3.12/site-packages (from transformers==4.44.2) (4.67.1)
+Requirement already satisfied: pyarrow>=21.0.0 in /usr/local/lib/python3.12/site-packages (from datasets>=2.20.0) (22.0.0)
+Requirement already satisfied: dill<0.4.1,>=0.3.0 in /usr/local/lib/python3.12/site-packages (from datasets>=2.20.0) (0.4.0)
+Requirement already satisfied: pandas in /usr/local/lib/python3.12/site-packages (from datasets>=2.20.0) (2.3.3)
+Requirement already satisfied: httpx<1.0.0 in /usr/local/lib/python3.12/site-packages (from datasets>=2.20.0) (0.28.1)
+Requirement already satisfied: xxhash in /usr/local/lib/python3.12/site-packages (from datasets>=2.20.0) (3.6.0)
+Requirement already satisfied: multiprocess<0.70.19 in /usr/local/lib/python3.12/site-packages (from datasets>=2.20.0) (0.70.18)
+Requirement already satisfied: fsspec<=2025.10.0,>=2023.1.0 in /usr/local/lib/python3.12/site-packages (from fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (2025.10.0)
+Requirement already satisfied: psutil in /usr/local/lib/python3.12/site-packages (from accelerate>=0.33.0) (7.1.3)
+Requirement already satisfied: torch>=2.0.0 in /usr/local/lib/python3.12/site-packages (from accelerate>=0.33.0) (2.8.0+cpu)
+Requirement already satisfied: toolz>=1.0.0 in /usr/local/lib/python3.12/site-packages (from chex>=0.1.86->optax==0.2.2) (1.1.0)
+Requirement already satisfied: aiohttp!=4.0.0a0,!=4.0.0a1 in /usr/local/lib/python3.12/site-packages (from fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (3.13.2)
+Requirement already satisfied: anyio in /usr/local/lib/python3.12/site-packages (from httpx<1.0.0->datasets>=2.20.0) (4.11.0)
+Requirement already satisfied: certifi in /usr/local/lib/python3.12/site-packages (from httpx<1.0.0->datasets>=2.20.0) (2025.10.5)
+Requirement already satisfied: httpcore==1.* in /usr/local/lib/python3.12/site-packages (from httpx<1.0.0->datasets>=2.20.0) (1.0.9)
+Requirement already satisfied: idna in /usr/local/lib/python3.12/site-packages (from httpx<1.0.0->datasets>=2.20.0) (3.11)
+Requirement already satisfied: h11>=0.16 in /usr/local/lib/python3.12/site-packages (from httpcore==1.*->httpx<1.0.0->datasets>=2.20.0) (0.16.0)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub<1.0,>=0.23.2->transformers==4.44.2)
+  Downloading hf_xet-1.2.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Requirement already satisfied: ml_dtypes>=0.5.0 in /usr/local/lib/python3.12/site-packages (from jax>=0.7.1->flax==0.12.0) (0.5.3)
+Requirement already satisfied: opt_einsum in /usr/local/lib/python3.12/site-packages (from jax>=0.7.1->flax==0.12.0) (3.4.0)
+Requirement already satisfied: scipy>=1.12 in /usr/local/lib/python3.12/site-packages (from jax>=0.7.1->flax==0.12.0) (1.16.3)
+Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.12/site-packages (from requests->transformers==4.44.2) (3.4.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /usr/local/lib/python3.12/site-packages (from requests->transformers==4.44.2) (2.5.0)
+Requirement already satisfied: markdown-it-py>=2.2.0 in /usr/local/lib/python3.12/site-packages (from rich>=11.1->flax==0.12.0) (4.0.0)
+Requirement already satisfied: pygments<3.0.0,>=2.13.0 in /usr/local/lib/python3.12/site-packages (from rich>=11.1->flax==0.12.0) (2.19.2)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.12/site-packages (from torch>=2.0.0->accelerate>=0.33.0) (80.9.0)
+Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/site-packages (from torch>=2.0.0->accelerate>=0.33.0) (1.14.0)
+Requirement already satisfied: networkx in /usr/local/lib/python3.12/site-packages (from torch>=2.0.0->accelerate>=0.33.0) (3.6rc0)
+Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/site-packages (from torch>=2.0.0->accelerate>=0.33.0) (3.1.6)
+Requirement already satisfied: importlib_resources in /usr/local/lib/python3.12/site-packages (from etils[epath,epy]->orbax-checkpoint==0.5.10) (6.5.2)
+Requirement already satisfied: zipp in /usr/local/lib/python3.12/site-packages (from etils[epath,epy]->orbax-checkpoint==0.5.10) (3.23.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in /usr/local/lib/python3.12/site-packages (from pandas->datasets>=2.20.0) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in /usr/local/lib/python3.12/site-packages (from pandas->datasets>=2.20.0) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in /usr/local/lib/python3.12/site-packages (from pandas->datasets>=2.20.0) (2025.2)
+Requirement already satisfied: aiohappyeyeballs>=2.5.0 in /usr/local/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (2.6.1)
+Requirement already satisfied: aiosignal>=1.4.0 in /usr/local/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (1.4.0)
+Requirement already satisfied: attrs>=17.3.0 in /usr/local/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (25.4.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /usr/local/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (1.8.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in /usr/local/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (6.7.0)
+Requirement already satisfied: propcache>=0.2.0 in /usr/local/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (0.4.1)
+Requirement already satisfied: yarl<2.0,>=1.17.0 in /usr/local/lib/python3.12/site-packages (from aiohttp!=4.0.0a0,!=4.0.0a1->fsspec[http]<=2025.10.0,>=2023.1.0->datasets>=2.20.0) (1.22.0)
+Requirement already satisfied: mdurl~=0.1 in /usr/local/lib/python3.12/site-packages (from markdown-it-py>=2.2.0->rich>=11.1->flax==0.12.0) (0.1.2)
+Requirement already satisfied: six>=1.5 in /usr/local/lib/python3.12/site-packages (from python-dateutil>=2.8.2->pandas->datasets>=2.20.0) (1.17.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/site-packages (from sympy>=1.13.3->torch>=2.0.0->accelerate>=0.33.0) (1.3.0)
+Requirement already satisfied: sniffio>=1.1 in /usr/local/lib/python3.12/site-packages (from anyio->httpx<1.0.0->datasets>=2.20.0) (1.3.1)
+Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/site-packages (from jinja2->torch>=2.0.0->accelerate>=0.33.0) (3.0.3)
+Downloading optax-0.2.2-py3-none-any.whl (223 kB)
+Downloading orbax_checkpoint-0.5.10-py3-none-any.whl (180 kB)
+Downloading transformers-4.44.2-py3-none-any.whl (9.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.5/9.5 MB 160.8 MB/s eta 0:00:00
+Downloading tokenizers-0.19.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.6/3.6 MB 141.3 MB/s eta 0:00:00
+Downloading hf_xet-1.2.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 259.1 MB/s eta 0:00:00
+Installing collected packages: hf-xet, tokenizers, transformers, orbax-checkpoint, optax
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.22.1
+    Uninstalling tokenizers-0.22.1:
+      Successfully uninstalled tokenizers-0.22.1
+  Attempting uninstall: transformers
+    Found existing installation: transformers 4.57.1
+    Uninstalling transformers-4.57.1:
+      Successfully uninstalled transformers-4.57.1
+  Attempting uninstall: orbax-checkpoint
+    Found existing installation: orbax-checkpoint 0.11.27
+    Uninstalling orbax-checkpoint-0.11.27:
+      Successfully uninstalled orbax-checkpoint-0.11.27
+  Attempting uninstall: optax
+    Found existing installation: optax 0.2.6
+    Uninstalling optax-0.2.6:
+      Successfully uninstalled optax-0.2.6
+Successfully installed hf-xet-1.2.0 optax-0.2.2 orbax-checkpoint-0.5.10 tokenizers-0.19.1 transformers-4.44.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+
+[notice] A new release of pip is available: 25.0.1 -> 25.3
+[notice] To update, run: pip install --upgrade pip
+/usr/local/lib/python3.12/site-packages/jax/_src/cloud_tpu_init.py:86: UserWarning: Transparent hugepages are not enabled. TPU runtime startup and shutdown time should be significantly improved on TPU v5e and newer. If not already set, you may need to enable transparent hugepages in your VM image (sudo sh -c "echo always > /sys/kernel/mm/transparent_hugepage/enabled")
+  warnings.warn(
+2025-12-01 19:27:41.898692: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+WARNING:absl:Type handler registry overriding type "<class 'float'>" collision on scalar
+WARNING:absl:Type handler registry overriding type "<class 'bytes'>" collision on scalar
+WARNING:absl:Type handler registry overriding type "<class 'numpy.number'>" collision on scalar
+WARNING: Logging before InitGoogle() is written to STDERR
+E0000 00:00:1764617271.665825      12 common_lib.cc:648] Could not set metric server port: INVALID_ARGUMENT: Could not find SliceBuilder port 8471 in any of the 0 ports provided in `tpu_process_addresses`="local"
+=== Source Location Trace: === 
+learning/45eac/tfrc/runtime/common_lib.cc:238
+
+🔧 JAX v0.7.1 | 8 TPUs | Local batch: 32
+⏳ Carregando tokenizer...
+⚠️ Baixando Mistral padrão...
+tokenizer_config.json: 100%
+ 996/996 [00:00<00:00, 119kB/s]
+tokenizer.model: 100%
+ 493k/493k [00:00<00:00, 817kB/s]
+tokenizer.json: 
+ 1.80M/? [00:00<00:00, 32.7MB/s]
+special_tokens_map.json: 100%
+ 414/414 [00:00<00:00, 86.1kB/s]
+🔤 Vocab size final: 32000
+
+📚 Preparando Pipelines...
+🔪 Arquivo único: Split 90/10.
+📊 Estimativa: ~7,281,754,819 tokens | Steps: 55,554
+
+🏗️ Inicializando modelo...
+
+🚀 TREINO V5.2 (FINAL) | Steps: 0 -> 55554
+⏳ Compilando JAX...
+step 20/55554 | loss 9.8381 | norm 1.64 | TPS: 42,454
+step 40/55554 | loss 9.2402 | norm 1.60 | TPS: 493,039
+step 60/55554 | loss 8.4536 | norm 1.53 | TPS: 478,841
+step 80/55554 | loss 7.6765 | norm 1.17 | TPS: 486,653
+step 100/55554 | loss 7.3174 | norm 0.33 | TPS: 494,741
+step 120/55554 | loss 7.1437 | norm 0.35 | TPS: 483,017
+step 140/55554 | loss 6.8142 | norm 0.31 | TPS: 498,321
+step 160/55554 | loss 6.4293 | norm 0.38 | TPS: 499,216
+step 180/55554 | loss 6.3346 | norm 0.43 | TPS: 496,663
+step 200/55554 | loss 6.2874 | norm 0.44 | TPS: 502,953
+step 220/55554 | loss 6.2746 | norm 0.36 | TPS: 494,557
+step 240/55554 | loss 6.1697 | norm 0.49 | TPS: 497,009
+step 260/55554 | loss 6.0648 | norm 0.26 | TPS: 492,100
+step 280/55554 | loss 5.7690 | norm 0.38 | TPS: 487,136
+step 300/55554 | loss 5.6690 | norm 0.30 | TPS: 490,366
+step 320/55554 | loss 5.5472 | norm 0.34 | TPS: 485,111
+step 340/55554 | loss 5.6171 | norm 0.36 | TPS: 497,279
+step 360/55554 | loss 5.4911 | norm 0.43 | TPS: 493,604
+step 380/55554 | loss 5.6194 | norm 0.48 | TPS: 503,398
+step 400/55554 | loss 5.5000 | norm 0.41 | TPS: 505,709
+step 420/55554 | loss 5.5377 | norm 0.39 | TPS: 488,464
+step 440/55554 | loss 5.5412 | norm 0.32 | TPS: 483,974
+step 460/55554 | loss 5.3025 | norm 0.35 | TPS: 492,189
+step 480/55554 | loss 5.2285 | norm 0.33 | TPS: 485,846
+step 500/55554 | loss 5.0419 | norm 0.41 | TPS: 493,091
+WARNING:absl:SaveArgs.aggregate is deprecated, please use custom TypeHandler (https://orbax.readthedocs.io/en/latest/custom_handlers.html#typehandler) or contact Orbax team to migrate before May 1st, 2024. If your Pytree has empty ([], {}, None) values then use PyTreeCheckpointHandler(..., write_tree_metadata=True, ...) or use StandardCheckpointHandler to avoid TypeHandler Registry error. Please note that PyTreeCheckpointHandler.write_tree_metadata default value is already set to True.
+ERROR:asyncio:Exception in callback Task.__step()
+handle: <Handle Task.__step()>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: cannot enter context: <_contextvars.Context object at 0x792e600c5f80> is already entered
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<_async_in_context.<locals>.run_in_context() done, defined at /usr/local/lib/python3.12/site-packages/ipykernel/utils.py:57> wait_for=<Task pending name='Task-4' coro=<Kernel.shell_main() running at /usr/local/lib/python3.12/site-packages/ipykernel/kernelbase.py:590> cb=[Task.__wakeup()]> cb=[ZMQStream._run_callback.<locals>._log_error() at /usr/local/lib/python3.12/site-packages/zmq/eventloop/zmqstream.py:563]>
+/usr/local/lib/python3.12/asyncio/base_events.py:842: RuntimeWarning: coroutine 'Kernel.shell_main' was never awaited
+  def call_soon_threadsafe(self, callback, *args, context=None):
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<Kernel.shell_main() running at /usr/local/lib/python3.12/site-packages/ipykernel/kernelbase.py:590> cb=[Task.__wakeup()]>
+💾 Checkpoint 500
+step 520/55554 | loss 5.2752 | norm 0.30 | TPS: 494,023
+step 540/55554 | loss 5.2959 | norm 0.51 | TPS: 494,193
+step 560/55554 | loss 5.3177 | norm 0.32 | TPS: 506,166
+step 580/55554 | loss 5.2828 | norm 0.33 | TPS: 511,051
+step 600/55554 | loss 5.2165 | norm 0.37 | TPS: 501,761
+step 620/55554 | loss 5.1365 | norm 0.47 | TPS: 488,680
+step 640/55554 | loss 4.9880 | norm 0.34 | TPS: 503,941
+step 660/55554 | loss 4.9552 | norm 0.34 | TPS: 491,647
+step 680/55554 | loss 4.9507 | norm 0.32 | TPS: 500,209
+step 700/55554 | loss 4.8712 | norm 0.44 | TPS: 532,337
+step 720/55554 | loss 5.0454 | norm 0.33 | TPS: 496,506
+step 740/55554 | loss 5.0246 | norm 0.35 | TPS: 505,947
+step 760/55554 | loss 5.0028 | norm 0.46 | TPS: 499,726
+step 780/55554 | loss 4.9549 | norm 0.28 | TPS: 485,483
+step 800/55554 | loss 4.8750 | norm 0.42 | TPS: 494,983
+step 820/55554 | loss 4.7904 | norm 0.40 | TPS: 500,073
+step 840/55554 | loss 4.7401 | norm 0.44 | TPS: 493,231
+step 860/55554 | loss 4.8519 | norm 0.44 | TPS: 497,034
+step 880/55554 | loss 4.9217 | norm 0.56 | TPS: 504,881
+step 900/55554 | loss 4.8033 | norm 0.36 | TPS: 500,483
+step 920/55554 | loss 4.6877 | norm 0.33 | TPS: 489,585
+step 940/55554 | loss 4.6879 | norm 0.38 | TPS: 495,472
+step 960/55554 | loss 4.6587 | norm 0.39 | TPS: 507,704
+step 980/55554 | loss 4.4912 | norm 0.53 | TPS: 514,059
+step 1000/55554 | loss 4.7884 | norm 0.39 | TPS: 499,664
+
+📊 Validando...
+--- Val Loss: 5.1240 | Divergência: 0.3357 ---
+
+💾 Checkpoint 1000
+step 1020/55554 | loss 4.7411 | norm 0.34 | TPS: 177,731
+step 1040/55554 | loss 4.6154 | norm 0.41 | TPS: 507,279
+step 1060/55554 | loss 4.6158 | norm 0.52 | TPS: 499,698
+step 1080/55554 | loss 4.5849 | norm 0.36 | TPS: 493,900
+step 1100/55554 | loss 4.4173 | norm 0.38 | TPS: 493,206
+step 1120/55554 | loss 4.3685 | norm 0.67 | TPS: 495,417
+step 1140/55554 | loss 4.3306 | norm 0.43 | TPS: 499,717
+step 1160/55554 | loss 4.4396 | norm 0.37 | TPS: 497,211
+step 1180/55554 | loss 4.5263 | norm 0.40 | TPS: 495,232
+step 1200/55554 | loss 4.5160 | norm 0.41 | TPS: 496,487
+step 1220/55554 | loss 4.5005 | norm 0.46 | TPS: 490,794
+step 1240/55554 | loss 4.4605 | norm 0.41 | TPS: 502,308
+step 1260/55554 | loss 4.4737 | norm 0.48 | TPS: 493,637
+step 1280/55554 | loss 4.1737 | norm 0.43 | TPS: 504,397
+step 1300/55554 | loss 4.2615 | norm 0.44 | TPS: 507,648
+step 1320/55554 | loss 4.3654 | norm 0.58 | TPS: 499,827
+step 1340/55554 | loss 4.3915 | norm 0.46 | TPS: 503,216
+step 1360/55554 | loss 4.3049 | norm 0.46 | TPS: 494,585
+step 1380/55554 | loss 4.1812 | norm 0.48 | TPS: 495,901
+step 1400/55554 | loss 4.0804 | norm 0.43 | TPS: 492,546
+step 1420/55554 | loss 4.1144 | norm 0.40 | TPS: 494,842
+step 1440/55554 | loss 4.2296 | norm 0.43 | TPS: 514,166
+step 1460/55554 | loss 4.0821 | norm 0.44 | TPS: 505,590
+step 1480/55554 | loss 4.1108 | norm 0.51 | TPS: 505,063
+step 1500/55554 | loss 4.2274 | norm 0.48 | TPS: 510,857
+💾 Checkpoint 1500
+step 1520/55554 | loss 4.1160 | norm 0.39 | TPS: 481,117
+step 1540/55554 | loss 4.0571 | norm 0.41 | TPS: 494,091
+step 1560/55554 | loss 4.0219 | norm 0.35 | TPS: 500,740
+step 1580/55554 | loss 4.0756 | norm 0.46 | TPS: 491,142
+step 1600/55554 | loss 4.0635 | norm 0.41 | TPS: 512,689
+step 1620/55554 | loss 4.1333 | norm 0.51 | TPS: 504,485
+step 1640/55554 | loss 4.0903 | norm 0.67 | TPS: 505,824
+step 1660/55554 | loss 4.1351 | norm 0.33 | TPS: 502,528
+step 1680/55554 | loss 3.9128 | norm 0.40 | TPS: 495,664
+step 1700/55554 | loss 3.9281 | norm 0.35 | TPS: 502,126
+step 1720/55554 | loss 3.9213 | norm 0.41 | TPS: 513,398
+step 1740/55554 | loss 4.0898 | norm 0.41 | TPS: 501,240
+step 1760/55554 | loss 4.0618 | norm 0.49 | TPS: 502,672
+step 1780/55554 | loss 3.8871 | norm 0.44 | TPS: 495,322
+step 1800/55554 | loss 3.9131 | norm 0.45 | TPS: 497,541
+step 1820/55554 | loss 3.7874 | norm 0.49 | TPS: 504,305
+step 1840/55554 | loss 3.9501 | norm 0.35 | TPS: 524,132
+step 1860/55554 | loss 4.0648 | norm 0.46 | TPS: 506,119
+step 1880/55554 | loss 3.8985 | norm 0.37 | TPS: 510,816
+step 1900/55554 | loss 3.9449 | norm 0.51 | TPS: 506,904
+step 1920/55554 | loss 4.5570 | norm 0.71 | TPS: 531,280
+step 1940/55554 | loss 4.5690 | norm 0.36 | TPS: 539,211
+step 1960/55554 | loss 4.5488 | norm 0.38 | TPS: 536,531
+step 1980/55554 | loss 4.5334 | norm 0.31 | TPS: 534,046
+step 2000/55554 | loss 4.5126 | norm 0.35 | TPS: 520,684
+
+📊 Validando...
+--- Val Loss: 4.3094 | Divergência: -0.2032 ---
+
+💾 Checkpoint 2000
+step 2020/55554 | loss 4.5050 | norm 0.36 | TPS: 278,333
+step 2040/55554 | loss 4.5093 | norm 0.41 | TPS: 531,473
+step 2060/55554 | loss 4.4495 | norm 0.37 | TPS: 523,439
+step 2080/55554 | loss 4.4383 | norm 0.38 | TPS: 524,160
+step 2100/55554 | loss 4.4128 | norm 0.39 | TPS: 524,924
+step 2120/55554 | loss 4.4340 | norm 0.43 | TPS: 526,656
+step 2140/55554 | loss 4.4320 | norm 0.41 | TPS: 528,883
+step 2160/55554 | loss 4.3761 | norm 0.35 | TPS: 531,952
+step 2180/55554 | loss 4.4141 | norm 0.35 | TPS: 530,447
+step 2200/55554 | loss 4.3813 | norm 0.36 | TPS: 532,300
+step 2220/55554 | loss 4.3988 | norm 0.35 | TPS: 531,983
+step 2240/55554 | loss 4.3806 | norm 0.32 | TPS: 512,305
+step 2260/55554 | loss 4.3555 | norm 0.38 | TPS: 532,204
+step 2280/55554 | loss 4.3571 | norm 0.34 | TPS: 531,676
+step 2300/55554 | loss 4.3397 | norm 0.35 | TPS: 536,984
+step 2320/55554 | loss 4.3582 | norm 0.36 | TPS: 534,494
+step 2340/55554 | loss 4.3401 | norm 0.39 | TPS: 532,296
+step 2360/55554 | loss 4.3544 | norm 0.37 | TPS: 534,465
+step 2380/55554 | loss 4.2961 | norm 0.37 | TPS: 539,592
+step 2400/55554 | loss 4.3421 | norm 0.39 | TPS: 535,719
+step 2420/55554 | loss 4.3082 | norm 0.33 | TPS: 538,211
+step 2440/55554 | loss 4.2942 | norm 0.38 | TPS: 538,278
+step 2460/55554 | loss 4.3332 | norm 0.38 | TPS: 538,059
+step 2480/55554 | loss 4.3053 | norm 0.40 | TPS: 540,686
+step 2500/55554 | loss 4.3093 | norm 0.34 | TPS: 538,839
+💾 Checkpoint 2500
+step 2520/55554 | loss 4.2471 | norm 0.34 | TPS: 514,374
+step 2540/55554 | loss 4.2763 | norm 0.33 | TPS: 535,239
+step 2560/55554 | loss 4.2790 | norm 0.34 | TPS: 535,319
+step 2580/55554 | loss 4.2964 | norm 0.40 | TPS: 535,627
+step 2600/55554 | loss 4.2813 | norm 0.40 | TPS: 532,928
+step 2620/55554 | loss 4.2401 | norm 0.38 | TPS: 521,290
+step 2640/55554 | loss 4.2318 | norm 0.43 | TPS: 526,698
+step 2660/55554 | loss 4.2202 | norm 0.35 | TPS: 530,356
+step 2680/55554 | loss 4.2326 | norm 0.35 | TPS: 530,950
+step 2700/55554 | loss 4.2848 | norm 0.34 | TPS: 529,741
+step 2720/55554 | loss 4.2066 | norm 0.34 | TPS: 531,724
+step 2740/55554 | loss 4.2348 | norm 0.37 | TPS: 530,603
+step 2760/55554 | loss 4.2259 | norm 0.42 | TPS: 530,247
+step 2780/55554 | loss 4.2130 | norm 0.36 | TPS: 530,558
+step 2800/55554 | loss 4.2205 | norm 0.39 | TPS: 531,333
+step 2820/55554 | loss 4.2313 | norm 0.38 | TPS: 531,179
+step 2840/55554 | loss 4.1688 | norm 0.36 | TPS: 537,268
+step 2860/55554 | loss 4.1841 | norm 0.38 | TPS: 530,048
+step 2880/55554 | loss 4.2307 | norm 0.37 | TPS: 531,832
+step 2900/55554 | loss 4.1989 | norm 0.41 | TPS: 532,244
+step 2920/55554 | loss 4.1784 | norm 0.42 | TPS: 530,698
+step 2940/55554 | loss 4.1642 | norm 0.38 | TPS: 536,777
+step 2960/55554 | loss 4.1898 | norm 0.36 | TPS: 532,986
+step 2980/55554 | loss 4.1904 | norm 0.34 | TPS: 534,687
+step 3000/55554 | loss 4.2055 | norm 0.34 | TPS: 534,770
+
+📊 Validando...
+--- Val Loss: 4.0535 | Divergência: -0.1520 ---
+
+💾 Checkpoint 3000
+step 3020/55554 | loss 4.1461 | norm 0.36 | TPS: 329,642
+step 3040/55554 | loss 4.1583 | norm 0.40 | TPS: 534,860
+step 3060/55554 | loss 4.1840 | norm 0.32 | TPS: 535,562
+step 3080/55554 | loss 4.1176 | norm 0.34 | TPS: 538,317
+step 3100/55554 | loss 4.1243 | norm 0.38 | TPS: 530,706
+step 3120/55554 | loss 4.1329 | norm 0.36 | TPS: 530,965
+step 3140/55554 | loss 4.1345 | norm 0.33 | TPS: 528,570
+step 3160/55554 | loss 4.1430 | norm 0.36 | TPS: 531,616
+step 3180/55554 | loss 4.1242 | norm 0.30 | TPS: 527,976
+step 3200/55554 | loss 4.1167 | norm 0.32 | TPS: 529,665
+step 3220/55554 | loss 4.1400 | norm 0.34 | TPS: 527,021
+step 3240/55554 | loss 4.1533 | norm 0.31 | TPS: 524,255
+step 3260/55554 | loss 4.0580 | norm 0.36 | TPS: 530,448
+step 3280/55554 | loss 4.1012 | norm 0.33 | TPS: 531,219
+step 3300/55554 | loss 4.1167 | norm 0.33 | TPS: 534,534
+step 3320/55554 | loss 4.1608 | norm 0.39 | TPS: 537,944
+step 3340/55554 | loss 4.1082 | norm 0.34 | TPS: 540,722
+step 3360/55554 | loss 4.1308 | norm 0.36 | TPS: 535,338
+step 3380/55554 | loss 4.1005 | norm 0.33 | TPS: 537,793
+step 3400/55554 | loss 4.1165 | norm 0.31 | TPS: 538,494
+step 3420/55554 | loss 4.1234 | norm 0.33 | TPS: 538,246
+step 3440/55554 | loss 4.1195 | norm 0.34 | TPS: 533,658
+step 3460/55554 | loss 4.1238 | norm 0.31 | TPS: 538,330
+step 3480/55554 | loss 4.0680 | norm 0.36 | TPS: 522,436
+step 3500/55554 | loss 4.1084 | norm 0.32 | TPS: 538,380
+💾 Checkpoint 3500
+step 3520/55554 | loss 4.1435 | norm 0.30 | TPS: 520,333
+step 3540/55554 | loss 4.1115 | norm 0.32 | TPS: 529,743
+step 3560/55554 | loss 4.1002 | norm 0.32 | TPS: 537,825
+step 3580/55554 | loss 4.0806 | norm 0.36 | TPS: 536,093
+step 3600/55554 | loss 4.1251 | norm 0.31 | TPS: 536,825
+step 3620/55554 | loss 4.1077 | norm 0.36 | TPS: 536,175
+step 3640/55554 | loss 4.1056 | norm 0.33 | TPS: 536,753
+step 3660/55554 | loss 4.0792 | norm 0.31 | TPS: 533,726
+step 3680/55554 | loss 4.0915 | norm 0.33 | TPS: 534,660
+step 3700/55554 | loss 4.1223 | norm 0.29 | TPS: 535,858
+step 3720/55554 | loss 4.0476 | norm 0.29 | TPS: 534,584
+step 3740/55554 | loss 4.0843 | norm 0.37 | TPS: 532,351
+step 3760/55554 | loss 4.0535 | norm 0.31 | TPS: 533,730
+step 3780/55554 | loss 4.0459 | norm 0.33 | TPS: 530,814
+step 3800/55554 | loss 4.0559 | norm 0.34 | TPS: 537,509
+step 3820/55554 | loss 4.0417 | norm 0.33 | TPS: 532,932
+step 3840/55554 | loss 4.0680 | norm 0.32 | TPS: 530,310
+step 3860/55554 | loss 4.0357 | norm 0.35 | TPS: 524,902
+step 3880/55554 | loss 4.0305 | norm 0.31 | TPS: 529,955
+step 3900/55554 | loss 4.0085 | norm 0.36 | TPS: 535,149
+step 3920/55554 | loss 4.0260 | norm 0.40 | TPS: 533,133
+step 3940/55554 | loss 4.0608 | norm 0.33 | TPS: 535,979
+step 3960/55554 | loss 4.0355 | norm 0.35 | TPS: 528,278
+step 3980/55554 | loss 3.9785 | norm 0.34 | TPS: 527,788
+step 4000/55554 | loss 4.0631 | norm 0.35 | TPS: 528,553
+
+📊 Validando...
+--- Val Loss: 3.9301 | Divergência: -0.1330 ---
+
+💾 Checkpoint 4000
+step 4020/55554 | loss 3.9957 | norm 0.34 | TPS: 384,255
+step 4040/55554 | loss 4.0505 | norm 0.35 | TPS: 632,145
+step 4060/55554 | loss 4.0216 | norm 0.30 | TPS: 559,333
+step 4080/55554 | loss 4.0233 | norm 0.34 | TPS: 535,784
+step 4100/55554 | loss 4.0341 | norm 0.34 | TPS: 534,495
+step 4120/55554 | loss 4.0620 | norm 0.34 | TPS: 538,563
+step 4140/55554 | loss 3.9882 | norm 0.38 | TPS: 532,348
+step 4160/55554 | loss 4.0069 | norm 0.36 | TPS: 538,419
+step 4180/55554 | loss 3.9857 | norm 0.30 | TPS: 535,769
+step 4200/55554 | loss 4.0568 | norm 0.39 | TPS: 535,940
+step 4220/55554 | loss 3.9904 | norm 0.33 | TPS: 536,068
+step 4240/55554 | loss 3.9980 | norm 0.33 | TPS: 540,879
+step 4260/55554 | loss 4.0570 | norm 0.33 | TPS: 541,220
+step 4280/55554 | loss 3.9950 | norm 0.36 | TPS: 537,772
+step 4300/55554 | loss 4.0492 | norm 0.37 | TPS: 538,043
+step 4320/55554 | loss 4.0078 | norm 0.34 | TPS: 530,219
+step 4340/55554 | loss 4.0219 | norm 0.35 | TPS: 535,033
+step 4360/55554 | loss 3.9939 | norm 0.30 | TPS: 536,575
+step 4380/55554 | loss 4.0192 | norm 0.31 | TPS: 530,646
+step 4400/55554 | loss 4.0215 | norm 0.32 | TPS: 529,337
+step 4420/55554 | loss 4.0216 | norm 0.31 | TPS: 530,989
+step 4440/55554 | loss 4.0007 | norm 0.29 | TPS: 531,084
+step 4460/55554 | loss 4.0293 | norm 0.31 | TPS: 535,024
+step 4480/55554 | loss 4.0214 | norm 0.30 | TPS: 528,438
+step 4500/55554 | loss 4.0618 | norm 0.39 | TPS: 522,893
+💾 Checkpoint 4500
+step 4520/55554 | loss 3.9934 | norm 0.31 | TPS: 488,790
+step 4540/55554 | loss 4.0174 | norm 0.35 | TPS: 533,230
+step 4560/55554 | loss 3.9760 | norm 0.30 | TPS: 531,255
+step 4580/55554 | loss 3.9494 | norm 0.33 | TPS: 528,266
+step 4600/55554 | loss 3.9774 | norm 0.31 | TPS: 533,485
+step 4620/55554 | loss 4.0240 | norm 0.38 | TPS: 530,605
+step 4640/55554 | loss 4.0092 | norm 0.35 | TPS: 532,373
+step 4660/55554 | loss 3.9557 | norm 0.34 | TPS: 535,381
+step 4680/55554 | loss 3.9570 | norm 0.42 | TPS: 535,988
+step 4700/55554 | loss 4.0146 | norm 0.34 | TPS: 531,553
+step 4720/55554 | loss 3.9407 | norm 0.33 | TPS: 532,270
+step 4740/55554 | loss 3.9638 | norm 0.31 | TPS: 534,356
+step 4760/55554 | loss 3.9544 | norm 0.34 | TPS: 530,804
+step 4780/55554 | loss 3.9361 | norm 0.33 | TPS: 534,686
+step 4800/55554 | loss 3.9565 | norm 0.36 | TPS: 535,238
+step 4820/55554 | loss 3.9719 | norm 0.35 | TPS: 534,433
+step 4840/55554 | loss 3.9582 | norm 0.30 | TPS: 534,724
+step 4860/55554 | loss 3.9008 | norm 0.31 | TPS: 536,150
+step 4880/55554 | loss 3.9598 | norm 0.36 | TPS: 536,673
+step 4900/55554 | loss 3.9399 | norm 0.33 | TPS: 530,392
+step 4920/55554 | loss 3.9269 | norm 0.31 | TPS: 529,843
+step 4940/55554 | loss 3.9478 | norm 0.33 | TPS: 535,813
+step 4960/55554 | loss 3.9934 | norm 0.37 | TPS: 534,955
+step 4980/55554 | loss 4.0092 | norm 0.30 | TPS: 535,036
+step 5000/55554 | loss 3.9602 | norm 0.38 | TPS: 534,867
+
+📊 Validando...
+--- Val Loss: 3.8377 | Divergência: -0.1225 ---
+
+💾 Checkpoint 5000
+step 5020/55554 | loss 3.9537 | norm 0.32 | TPS: 472,716
+step 5040/55554 | loss 3.9534 | norm 0.34 | TPS: 494,161
+step 5060/55554 | loss 3.9539 | norm 0.33 | TPS: 531,631
+step 5080/55554 | loss 3.9296 | norm 0.34 | TPS: 530,725
+step 5100/55554 | loss 3.9362 | norm 0.32 | TPS: 534,654
+step 5120/55554 | loss 3.9641 | norm 0.30 | TPS: 527,332
+step 5140/55554 | loss 3.9569 | norm 0.39 | TPS: 533,226
+step 5160/55554 | loss 3.9812 | norm 0.33 | TPS: 537,347
+step 5180/55554 | loss 3.9547 | norm 0.32 | TPS: 530,443
+step 5200/55554 | loss 3.8743 | norm 0.37 | TPS: 529,885
+step 5220/55554 | loss 3.9409 | norm 0.31 | TPS: 529,470
+step 5240/55554 | loss 4.0154 | norm 0.30 | TPS: 532,475
+step 5260/55554 | loss 3.9515 | norm 0.32 | TPS: 530,953
+step 5280/55554 | loss 3.9139 | norm 0.32 | TPS: 524,623
+step 5300/55554 | loss 3.9323 | norm 0.33 | TPS: 531,498
+step 5320/55554 | loss 3.8964 | norm 0.31 | TPS: 514,588
+step 5340/55554 | loss 3.9272 | norm 0.30 | TPS: 534,241
+step 5360/55554 | loss 3.9121 | norm 0.29 | TPS: 535,286
+step 5380/55554 | loss 3.9333 | norm 0.29 | TPS: 531,974
+step 5400/55554 | loss 3.9428 | norm 0.36 | TPS: 535,228
+step 5420/55554 | loss 3.9323 | norm 0.36 | TPS: 536,874
+step 5440/55554 | loss 3.9529 | norm 0.30 | TPS: 536,212
+step 5460/55554 | loss 3.9865 | norm 0.31 | TPS: 532,339
+step 5480/55554 | loss 3.9564 | norm 0.31 | TPS: 531,457
+step 5500/55554 | loss 3.9590 | norm 0.33 | TPS: 530,075
+💾 Checkpoint 5500
+step 5520/55554 | loss 3.9572 | norm 0.32 | TPS: 509,231
+step 5540/55554 | loss 3.9388 | norm 0.35 | TPS: 532,223
+step 5560/55554 | loss 3.9375 | norm 0.32 | TPS: 529,411
+step 5580/55554 | loss 3.9119 | norm 0.35 | TPS: 535,460
+step 5600/55554 | loss 3.9966 | norm 0.30 | TPS: 534,316
+step 5620/55554 | loss 3.9330 | norm 0.33 | TPS: 533,856
+step 5640/55554 | loss 3.9042 | norm 0.37 | TPS: 532,601
+step 5660/55554 | loss 3.9064 | norm 0.34 | TPS: 538,821
+step 5680/55554 | loss 3.9458 | norm 0.34 | TPS: 532,834
+step 5700/55554 | loss 3.8921 | norm 0.32 | TPS: 528,092
+step 5720/55554 | loss 3.9117 | norm 0.33 | TPS: 503,774
+step 5740/55554 | loss 3.8708 | norm 0.38 | TPS: 510,404
+step 5760/55554 | loss 3.8330 | norm 0.38 | TPS: 502,015
+step 5780/55554 | loss 3.8294 | norm 0.28 | TPS: 514,387
+step 5800/55554 | loss 3.7677 | norm 0.30 | TPS: 508,762
+step 5820/55554 | loss 3.7955 | norm 0.32 | TPS: 512,282
+step 5840/55554 | loss 3.7780 | norm 0.32 | TPS: 512,124
+step 5860/55554 | loss 3.7856 | norm 0.38 | TPS: 513,307
+step 5880/55554 | loss 3.7705 | norm 0.35 | TPS: 513,452
+step 5900/55554 | loss 3.7672 | norm 0.32 | TPS: 514,392
+step 5920/55554 | loss 3.7801 | norm 0.30 | TPS: 511,440
+step 5940/55554 | loss 3.7950 | norm 0.34 | TPS: 517,245
+step 5960/55554 | loss 3.7588 | norm 0.30 | TPS: 513,793
+step 5980/55554 | loss 3.6995 | norm 0.32 | TPS: 517,423
+step 6000/55554 | loss 3.7632 | norm 0.33 | TPS: 512,958
+
+📊 Validando...
+--- Val Loss: 3.7189 | Divergência: -0.0443 ---
+
+💾 Checkpoint 6000
+step 6020/55554 | loss 3.7588 | norm 0.31 | TPS: 463,421
+step 6040/55554 | loss 3.7488 | norm 0.32 | TPS: 513,496
+step 6060/55554 | loss 3.7642 | norm 0.32 | TPS: 517,631
+step 6080/55554 | loss 3.7490 | norm 0.33 | TPS: 518,457
+step 6100/55554 | loss 3.7418 | norm 0.32 | TPS: 510,690
+step 6120/55554 | loss 3.7917 | norm 0.33 | TPS: 509,743
+step 6140/55554 | loss 3.7761 | norm 0.33 | TPS: 512,031
+step 6160/55554 | loss 3.7412 | norm 0.33 | TPS: 516,491
+step 6180/55554 | loss 3.7426 | norm 0.40 | TPS: 518,421
+step 6200/55554 | loss 3.6743 | norm 0.38 | TPS: 514,758
+step 6220/55554 | loss 3.7406 | norm 0.33 | TPS: 516,250
+step 6240/55554 | loss 3.6977 | norm 0.33 | TPS: 512,582
+step 6260/55554 | loss 3.7213 | norm 0.30 | TPS: 519,646
+step 6280/55554 | loss 3.7200 | norm 0.32 | TPS: 518,165
+step 6300/55554 | loss 3.7260 | norm 0.29 | TPS: 517,809
+step 6320/55554 | loss 3.7342 | norm 0.33 | TPS: 516,647
+step 6340/55554 | loss 3.7115 | norm 0.33 | TPS: 513,074
+step 6360/55554 | loss 3.6778 | norm 0.33 | TPS: 502,686
+step 6380/55554 | loss 3.7489 | norm 0.30 | TPS: 510,473
+step 6400/55554 | loss 3.7077 | norm 0.30 | TPS: 510,077
+step 6420/55554 | loss 3.7333 | norm 0.30 | TPS: 515,385
+step 6440/55554 | loss 3.7338 | norm 0.31 | TPS: 516,513
+step 6460/55554 | loss 3.6877 | norm 0.35 | TPS: 513,923
+step 6480/55554 | loss 3.6962 | norm 0.32 | TPS: 517,607
+step 6500/55554 | loss 3.7155 | norm 0.34 | TPS: 519,927
+💾 Checkpoint 6500
+step 6520/55554 | loss 3.7180 | norm 0.32 | TPS: 495,020
+step 6540/55554 | loss 3.7090 | norm 0.29 | TPS: 517,464
+step 6560/55554 | loss 3.7289 | norm 0.30 | TPS: 511,907
+step 6580/55554 | loss 3.6804 | norm 0.29 | TPS: 511,877
+step 6600/55554 | loss 3.6679 | norm 0.30 | TPS: 514,109
+step 6620/55554 | loss 3.7404 | norm 0.32 | TPS: 518,187
+step 6640/55554 | loss 3.6716 | norm 0.33 | TPS: 516,470
+step 6660/55554 | loss 3.7103 | norm 0.31 | TPS: 515,226
+step 6680/55554 | loss 3.6850 | norm 0.32 | TPS: 516,927
+step 6700/55554 | loss 3.6302 | norm 0.30 | TPS: 516,349
+step 6720/55554 | loss 3.7225 | norm 0.33 | TPS: 517,914
+step 6740/55554 | loss 3.6785 | norm 0.34 | TPS: 510,817
+step 6760/55554 | loss 3.7303 | norm 0.33 | TPS: 514,344
+step 6780/55554 | loss 3.6878 | norm 0.32 | TPS: 513,718
+step 6800/55554 | loss 3.6924 | norm 0.29 | TPS: 519,074
+step 6820/55554 | loss 3.6927 | norm 0.31 | TPS: 517,006
+step 6840/55554 | loss 3.6649 | norm 0.29 | TPS: 516,571
+step 6860/55554 | loss 3.7022 | norm 0.39 | TPS: 516,515
+step 6880/55554 | loss 3.7146 | norm 0.34 | TPS: 519,013
+step 6900/55554 | loss 3.7077 | norm 0.33 | TPS: 516,565
+step 6920/55554 | loss 3.6799 | norm 0.34 | TPS: 516,177
+step 6940/55554 | loss 3.6845 | norm 0.30 | TPS: 497,916
+step 6960/55554 | loss 3.6449 | norm 0.30 | TPS: 506,982
+step 6980/55554 | loss 3.6586 | norm 0.39 | TPS: 508,455
+step 7000/55554 | loss 3.6798 | norm 0.36 | TPS: 514,804
+
+📊 Validando...
+--- Val Loss: 3.5950 | Divergência: -0.0848 ---
+
+💾 Checkpoint 7000
+step 7020/55554 | loss 3.6575 | norm 0.31 | TPS: 459,042
+step 7040/55554 | loss 3.6650 | norm 0.37 | TPS: 515,217
+step 7060/55554 | loss 3.6989 | norm 0.32 | TPS: 516,673
+step 7080/55554 | loss 3.6280 | norm 0.32 | TPS: 515,021
+step 7100/55554 | loss 3.6599 | norm 0.34 | TPS: 513,368
+step 7120/55554 | loss 3.6209 | norm 0.33 | TPS: 515,553
+step 7140/55554 | loss 3.6598 | norm 0.32 | TPS: 513,738
+step 7160/55554 | loss 3.6713 | norm 0.30 | TPS: 518,025
+step 7180/55554 | loss 3.6751 | norm 0.33 | TPS: 515,681
+step 7200/55554 | loss 3.6570 | norm 0.32 | TPS: 515,383
+step 7220/55554 | loss 3.6595 | norm 0.37 | TPS: 515,462
+step 7240/55554 | loss 3.6605 | norm 0.31 | TPS: 517,226
+step 7260/55554 | loss 3.6480 | norm 0.32 | TPS: 517,740
+step 7280/55554 | loss 3.6511 | norm 0.35 | TPS: 519,553
+step 7300/55554 | loss 3.6754 | norm 0.31 | TPS: 515,713
+step 7320/55554 | loss 3.6930 | norm 0.29 | TPS: 516,227
+step 7340/55554 | loss 3.6801 | norm 0.33 | TPS: 521,100
+step 7360/55554 | loss 3.6283 | norm 0.31 | TPS: 514,830
+step 7380/55554 | loss 3.6814 | norm 0.37 | TPS: 516,074
+step 7400/55554 | loss 3.6473 | norm 0.35 | TPS: 515,262
+step 7420/55554 | loss 3.6646 | norm 0.35 | TPS: 513,133
+step 7440/55554 | loss 3.6952 | norm 0.32 | TPS: 513,878
+step 7460/55554 | loss 3.6432 | norm 0.33 | TPS: 515,981
+step 7480/55554 | loss 3.6485 | norm 0.31 | TPS: 518,115
+step 7500/55554 | loss 3.6476 | norm 0.30 | TPS: 513,935
+💾 Checkpoint 7500
+step 7520/55554 | loss 3.6711 | norm 0.29 | TPS: 501,099
+step 7540/55554 | loss 3.6015 | norm 0.32 | TPS: 515,578
+step 7560/55554 | loss 3.6408 | norm 0.33 | TPS: 507,942
+step 7580/55554 | loss 3.6338 | norm 0.30 | TPS: 508,300
+step 7600/55554 | loss 3.6541 | norm 0.36 | TPS: 519,025
+step 7620/55554 | loss 3.6225 | norm 0.33 | TPS: 514,484
+step 7640/55554 | loss 3.6197 | norm 0.29 | TPS: 514,953
+step 7660/55554 | loss 3.6371 | norm 0.34 | TPS: 511,912
+step 7680/55554 | loss 3.6244 | norm 0.33 | TPS: 505,853
+step 7700/55554 | loss 3.6110 | norm 0.35 | TPS: 517,157
+step 7720/55554 | loss 3.6130 | norm 0.33 | TPS: 512,491
+step 7740/55554 | loss 3.6303 | norm 0.30 | TPS: 515,863
+step 7760/55554 | loss 3.6192 | norm 0.32 | TPS: 512,864
+step 7780/55554 | loss 3.6350 | norm 0.33 | TPS: 512,265
+step 7800/55554 | loss 3.6305 | norm 0.33 | TPS: 516,659
+step 7820/55554 | loss 3.6337 | norm 0.33 | TPS: 516,418
+step 7840/55554 | loss 3.6046 | norm 0.30 | TPS: 513,792
+step 7860/55554 | loss 3.6426 | norm 0.32 | TPS: 515,485
+step 7880/55554 | loss 3.6331 | norm 0.29 | TPS: 517,472
+step 7900/55554 | loss 3.6505 | norm 0.34 | TPS: 516,507
+step 7920/55554 | loss 3.6524 | norm 0.34 | TPS: 510,788
+step 7940/55554 | loss 3.6410 | norm 0.31 | TPS: 504,357
+step 7960/55554 | loss 3.6123 | norm 0.32 | TPS: 505,859
+step 7980/55554 | loss 3.6205 | norm 0.33 | TPS: 511,871
+step 8000/55554 | loss 3.6213 | norm 0.27 | TPS: 510,009
+
+📊 Validando...
+--- Val Loss: 3.5458 | Divergência: -0.0755 ---
+
+💾 Checkpoint 8000
+step 8020/55554 | loss 3.5817 | norm 0.30 | TPS: 442,401
+step 8040/55554 | loss 3.6179 | norm 0.31 | TPS: 504,568
+step 8060/55554 | loss 3.6343 | norm 0.30 | TPS: 509,060
+step 8080/55554 | loss 3.6021 | norm 0.34 | TPS: 511,190
+step 8100/55554 | loss 3.6199 | norm 0.35 | TPS: 512,025
+step 8120/55554 | loss 3.6342 | norm 0.33 | TPS: 508,258
+step 8140/55554 | loss 3.6322 | norm 0.31 | TPS: 513,074
+step 8160/55554 | loss 3.5941 | norm 0.31 | TPS: 507,283
+step 8180/55554 | loss 3.6189 | norm 0.30 | TPS: 496,274
+step 8200/55554 | loss 3.5841 | norm 0.32 | TPS: 503,851
+step 8220/55554 | loss 3.6145 | norm 0.29 | TPS: 517,842
+step 8240/55554 | loss 3.6174 | norm 0.33 | TPS: 517,546
+step 8260/55554 | loss 3.6105 | norm 0.32 | TPS: 511,967
+step 8280/55554 | loss 3.6233 | norm 0.33 | TPS: 517,455
+step 8300/55554 | loss 3.5951 | norm 0.27 | TPS: 510,845
+step 8320/55554 | loss 3.5987 | norm 0.31 | TPS: 510,926
+step 8340/55554 | loss 3.6117 | norm 0.34 | TPS: 514,722
+step 8360/55554 | loss 3.5474 | norm 0.29 | TPS: 517,383
+step 8380/55554 | loss 3.5955 | norm 0.28 | TPS: 514,022
+step 8400/55554 | loss 3.6061 | norm 0.27 | TPS: 517,482
+step 8420/55554 | loss 3.6001 | norm 0.35 | TPS: 513,879
+step 8440/55554 | loss 3.6402 | norm 0.31 | TPS: 513,687
+step 8460/55554 | loss 3.6401 | norm 0.29 | TPS: 514,657
+step 8480/55554 | loss 3.6026 | norm 0.33 | TPS: 511,943
+step 8500/55554 | loss 3.6018 | norm 0.31 | TPS: 514,983
+💾 Checkpoint 8500
+step 8520/55554 | loss 3.6135 | norm 0.36 | TPS: 493,950
+step 8540/55554 | loss 3.6060 | norm 0.31 | TPS: 510,427
+step 8560/55554 | loss 3.6439 | norm 0.38 | TPS: 503,920
+step 8580/55554 | loss 3.6061 | norm 0.34 | TPS: 508,913
+step 8600/55554 | loss 3.6189 | norm 0.31 | TPS: 505,328
+step 8620/55554 | loss 3.5925 | norm 0.31 | TPS: 507,504
+step 8640/55554 | loss 3.5593 | norm 0.35 | TPS: 511,642
+step 8660/55554 | loss 3.5907 | norm 0.31 | TPS: 506,699
+step 8680/55554 | loss 3.5400 | norm 0.37 | TPS: 507,173
+step 8700/55554 | loss 3.5738 | norm 0.32 | TPS: 499,575
+step 8720/55554 | loss 3.5708 | norm 0.32 | TPS: 505,457
+step 8740/55554 | loss 3.5605 | norm 0.34 | TPS: 512,002
+step 8760/55554 | loss 3.6279 | norm 0.28 | TPS: 501,114
+step 8780/55554 | loss 3.6053 | norm 0.30 | TPS: 495,647
+step 8800/55554 | loss 3.6183 | norm 0.30 | TPS: 502,520
+step 8820/55554 | loss 3.5545 | norm 0.34 | TPS: 505,563
+step 8840/55554 | loss 3.5979 | norm 0.35 | TPS: 508,172
+step 8860/55554 | loss 3.5525 | norm 0.29 | TPS: 509,452
+step 8880/55554 | loss 3.5757 | norm 0.31 | TPS: 511,401
+step 8900/55554 | loss 3.5837 | norm 0.35 | TPS: 510,245
+step 8920/55554 | loss 3.5495 | norm 0.32 | TPS: 508,247
+step 8940/55554 | loss 3.6000 | norm 0.27 | TPS: 509,143
+step 8960/55554 | loss 3.5874 | norm 0.32 | TPS: 511,039
+step 8980/55554 | loss 3.6203 | norm 0.30 | TPS: 506,994
+step 9000/55554 | loss 3.6098 | norm 0.29 | TPS: 506,299
+
+📊 Validando...
+--- Val Loss: 3.4797 | Divergência: -0.1300 ---
+
+💾 Checkpoint 9000
+step 9020/55554 | loss 3.6013 | norm 0.31 | TPS: 448,748
+step 9040/55554 | loss 3.5508 | norm 0.35 | TPS: 502,194
+step 9060/55554 | loss 3.5892 | norm 0.30 | TPS: 502,271
+step 9080/55554 | loss 3.5543 | norm 0.34 | TPS: 511,595
+step 9100/55554 | loss 3.5945 | norm 0.30 | TPS: 503,360
+step 9120/55554 | loss 3.5679 | norm 0.36 | TPS: 487,099
+step 9140/55554 | loss 3.5799 | norm 0.36 | TPS: 508,638
+step 9160/55554 | loss 3.5830 | norm 0.36 | TPS: 506,552
+step 9180/55554 | loss 3.5520 | norm 0.28 | TPS: 502,820
+step 9200/55554 | loss 3.5706 | norm 0.32 | TPS: 510,124
+step 9220/55554 | loss 3.5908 | norm 0.38 | TPS: 508,622
+step 9240/55554 | loss 3.5570 | norm 0.35 | TPS: 510,342
+step 9260/55554 | loss 3.6036 | norm 0.38 | TPS: 512,383
+step 9280/55554 | loss 3.5905 | norm 0.32 | TPS: 513,056
+step 9300/55554 | loss 3.5960 | norm 0.30 | TPS: 506,511
+step 9320/55554 | loss 3.5847 | norm 0.30 | TPS: 509,688
+step 9340/55554 | loss 3.6443 | norm 0.37 | TPS: 503,462
+step 9360/55554 | loss 3.6267 | norm 0.33 | TPS: 508,224
+step 9380/55554 | loss 3.5692 | norm 0.28 | TPS: 501,056
+step 9400/55554 | loss 3.5645 | norm 0.30 | TPS: 507,388
+step 9420/55554 | loss 3.5610 | norm 0.36 | TPS: 513,843
+step 9440/55554 | loss 3.5624 | norm 0.32 | TPS: 508,286
+step 9460/55554 | loss 3.5694 | norm 0.35 | TPS: 504,928
+step 9480/55554 | loss 3.5673 | norm 0.33 | TPS: 503,997
+step 9500/55554 | loss 3.5671 | norm 0.35 | TPS: 507,709
+💾 Checkpoint 9500
+step 9520/55554 | loss 3.5401 | norm 0.31 | TPS: 488,188
+step 9540/55554 | loss 3.6262 | norm 0.34 | TPS: 507,797
+step 9560/55554 | loss 3.6137 | norm 0.32 | TPS: 505,808
+step 9580/55554 | loss 3.5817 | norm 0.32 | TPS: 509,538
+step 9600/55554 | loss 3.5593 | norm 0.28 | TPS: 511,117
+step 9620/55554 | loss 3.5894 | norm 0.31 | TPS: 508,308
+step 9640/55554 | loss 3.5902 | norm 0.28 | TPS: 512,472
+step 9660/55554 | loss 3.5689 | norm 0.32 | TPS: 511,356
+step 9680/55554 | loss 3.5709 | norm 0.35 | TPS: 511,653
+step 9700/55554 | loss 3.5516 | norm 0.30 | TPS: 516,034
+step 9720/55554 | loss 3.5544 | norm 0.28 | TPS: 512,978
+step 9740/55554 | loss 3.5542 | norm 0.30 | TPS: 512,094
+step 9760/55554 | loss 3.5710 | norm 0.30 | TPS: 513,122
+step 9780/55554 | loss 3.5754 | norm 0.37 | TPS: 513,123
+step 9800/55554 | loss 3.5745 | norm 0.33 | TPS: 515,421
+step 9820/55554 | loss 3.5650 | norm 0.30 | TPS: 517,237
+step 9840/55554 | loss 3.5391 | norm 0.32 | TPS: 514,906
+step 9860/55554 | loss 3.5762 | norm 0.32 | TPS: 514,605
+step 9880/55554 | loss 3.6071 | norm 0.29 | TPS: 515,154
+step 9900/55554 | loss 3.5274 | norm 0.32 | TPS: 518,650
+step 9920/55554 | loss 3.5797 | norm 0.28 | TPS: 513,187
+step 9940/55554 | loss 3.5946 | norm 0.30 | TPS: 510,603
+step 9960/55554 | loss 3.5412 | norm 0.28 | TPS: 514,253
+step 9980/55554 | loss 3.5074 | norm 0.31 | TPS: 500,427
+step 10000/55554 | loss 3.5846 | norm 0.35 | TPS: 511,552
+
+📊 Validando...
+--- Val Loss: 3.4698 | Divergência: -0.1148 ---
+
+💾 Checkpoint 10000
+step 10020/55554 | loss 3.5810 | norm 0.31 | TPS: 462,535
+step 10040/55554 | loss 3.5645 | norm 0.35 | TPS: 510,520
+step 10060/55554 | loss 3.5533 | norm 0.30 | TPS: 513,810
+step 10080/55554 | loss 3.5696 | norm 0.29 | TPS: 513,053
+step 10100/55554 | loss 3.5030 | norm 0.32 | TPS: 510,536
+step 10120/55554 | loss 3.5677 | norm 0.32 | TPS: 516,495
+step 10140/55554 | loss 3.5906 | norm 0.32 | TPS: 517,243
+step 10160/55554 | loss 3.5069 | norm 0.30 | TPS: 515,601
+step 10180/55554 | loss 3.5587 | norm 0.34 | TPS: 513,989
+step 10200/55554 | loss 3.5521 | norm 0.33 | TPS: 514,705
+step 10220/55554 | loss 3.5515 | norm 0.33 | TPS: 517,527
+step 10240/55554 | loss 3.5608 | norm 0.32 | TPS: 518,724
+step 10260/55554 | loss 3.5332 | norm 0.29 | TPS: 519,438
+step 10280/55554 | loss 3.6054 | norm 0.31 | TPS: 516,960
+step 10300/55554 | loss 3.5326 | norm 0.26 | TPS: 516,170
+step 10320/55554 | loss 3.5432 | norm 0.33 | TPS: 518,070
+step 10340/55554 | loss 3.5197 | norm 0.39 | TPS: 493,873
+step 10360/55554 | loss 3.5782 | norm 0.33 | TPS: 513,582
+step 10380/55554 | loss 3.5430 | norm 0.31 | TPS: 510,485
+step 10400/55554 | loss 3.5620 | norm 0.33 | TPS: 510,159
+step 10420/55554 | loss 3.5606 | norm 0.32 | TPS: 518,111
+step 10440/55554 | loss 3.4876 | norm 0.27 | TPS: 519,310
+step 10460/55554 | loss 3.5730 | norm 0.30 | TPS: 513,081
+step 10480/55554 | loss 3.5155 | norm 0.27 | TPS: 513,893
+step 10500/55554 | loss 3.5438 | norm 0.30 | TPS: 517,178
+💾 Checkpoint 10500
+step 10520/55554 | loss 3.5411 | norm 0.31 | TPS: 491,395
+step 10540/55554 | loss 3.5216 | norm 0.31 | TPS: 513,052
+step 10560/55554 | loss 3.5469 | norm 0.36 | TPS: 512,327
+step 10580/55554 | loss 3.5355 | norm 0.32 | TPS: 507,126
+step 10600/55554 | loss 3.5238 | norm 0.33 | TPS: 507,385
+step 10620/55554 | loss 3.5647 | norm 0.31 | TPS: 513,350
+step 10640/55554 | loss 3.5606 | norm 0.33 | TPS: 516,866
+step 10660/55554 | loss 3.5743 | norm 0.30 | TPS: 514,620
+step 10680/55554 | loss 3.4985 | norm 0.30 | TPS: 516,028
+step 10700/55554 | loss 3.5485 | norm 0.27 | TPS: 516,334
+step 10720/55554 | loss 3.5539 | norm 0.30 | TPS: 515,338
+step 10740/55554 | loss 3.5451 | norm 0.33 | TPS: 509,714
+step 10760/55554 | loss 3.6017 | norm 0.34 | TPS: 511,952
+step 10780/55554 | loss 3.4803 | norm 0.30 | TPS: 512,535
+step 10800/55554 | loss 3.5082 | norm 0.32 | TPS: 516,855
+step 10820/55554 | loss 3.5461 | norm 0.32 | TPS: 514,131
+step 10840/55554 | loss 3.5781 | norm 0.33 | TPS: 508,696
+step 10860/55554 | loss 3.5291 | norm 0.27 | TPS: 511,971
+step 10880/55554 | loss 3.5486 | norm 0.34 | TPS: 511,980
+step 10900/55554 | loss 3.5554 | norm 0.32 | TPS: 514,470
+step 10920/55554 | loss 3.5755 | norm 0.30 | TPS: 516,480
+step 10940/55554 | loss 3.5532 | norm 0.36 | TPS: 515,891
+step 10960/55554 | loss 3.5224 | norm 0.32 | TPS: 517,002
+step 10980/55554 | loss 3.5655 | norm 0.32 | TPS: 515,998
+step 11000/55554 | loss 3.5606 | norm 0.33 | TPS: 517,098
+
+📊 Validando...
+--- Val Loss: 3.4563 | Divergência: -0.1043 ---
+
+💾 Checkpoint 11000
+step 11020/55554 | loss 3.5159 | norm 0.33 | TPS: 463,490
+step 11040/55554 | loss 3.5548 | norm 0.30 | TPS: 516,523
+step 11060/55554 | loss 3.5281 | norm 0.29 | TPS: 519,039
+step 11080/55554 | loss 3.4817 | norm 0.32 | TPS: 520,236
+step 11100/55554 | loss 3.4984 | norm 0.29 | TPS: 517,863
+step 11120/55554 | loss 3.5356 | norm 0.32 | TPS: 518,065
+step 11140/55554 | loss 3.5074 | norm 0.35 | TPS: 515,122
+step 11160/55554 | loss 3.5495 | norm 0.31 | TPS: 515,634
+step 11180/55554 | loss 3.5892 | norm 0.33 | TPS: 503,318
+step 11200/55554 | loss 3.5649 | norm 0.27 | TPS: 503,383
+step 11220/55554 | loss 3.5123 | norm 0.29 | TPS: 510,562
+step 11240/55554 | loss 3.4892 | norm 0.28 | TPS: 511,236
+step 11260/55554 | loss 3.4853 | norm 0.30 | TPS: 512,250
+step 11280/55554 | loss 3.4849 | norm 0.34 | TPS: 512,699
+step 11300/55554 | loss 3.5476 | norm 0.31 | TPS: 512,783
+step 11320/55554 | loss 3.5074 | norm 0.33 | TPS: 513,835
+step 11340/55554 | loss 3.5493 | norm 0.30 | TPS: 516,116
+step 11360/55554 | loss 3.5458 | norm 0.32 | TPS: 513,654
+step 11380/55554 | loss 3.5174 | norm 0.34 | TPS: 513,449
+step 11400/55554 | loss 3.5145 | norm 0.33 | TPS: 514,194
+step 11420/55554 | loss 3.5348 | norm 0.31 | TPS: 514,611
+step 11440/55554 | loss 3.5478 | norm 0.35 | TPS: 515,151
+step 11460/55554 | loss 3.5650 | norm 0.34 | TPS: 510,127
+step 11480/55554 | loss 3.5272 | norm 0.33 | TPS: 513,168
+step 11500/55554 | loss 3.5385 | norm 0.31 | TPS: 515,771
+💾 Checkpoint 11500
+step 11520/55554 | loss 3.5262 | norm 0.30 | TPS: 476,533
+step 11540/55554 | loss 3.5145 | norm 0.28 | TPS: 517,462
+step 11560/55554 | loss 3.5067 | norm 0.30 | TPS: 513,891
+step 11580/55554 | loss 3.5065 | norm 0.27 | TPS: 512,309
+step 11600/55554 | loss 3.4874 | norm 0.28 | TPS: 512,403
+step 11620/55554 | loss 3.5776 | norm 0.29 | TPS: 513,181
+step 11640/55554 | loss 3.4860 | norm 0.29 | TPS: 515,106
+step 11660/55554 | loss 3.5044 | norm 0.29 | TPS: 510,676
+step 11680/55554 | loss 3.5312 | norm 0.31 | TPS: 513,215
+step 11700/55554 | loss 3.5240 | norm 0.36 | TPS: 511,025
+step 11720/55554 | loss 3.5415 | norm 0.31 | TPS: 516,425
+step 11740/55554 | loss 3.5110 | norm 0.33 | TPS: 512,324
+step 11760/55554 | loss 3.5471 | norm 0.34 | TPS: 514,674
+step 11780/55554 | loss 3.5132 | norm 0.37 | TPS: 510,284
+step 11800/55554 | loss 3.5152 | norm 0.31 | TPS: 502,706
+step 11820/55554 | loss 3.5106 | norm 0.28 | TPS: 506,547
+step 11840/55554 | loss 3.5295 | norm 0.38 | TPS: 510,866
+step 11860/55554 | loss 3.5032 | norm 0.29 | TPS: 509,488
+step 11880/55554 | loss 3.5162 | norm 0.28 | TPS: 507,256
+step 11900/55554 | loss 3.5307 | norm 0.29 | TPS: 508,778
+step 11920/55554 | loss 3.5443 | norm 0.34 | TPS: 508,660
+step 11940/55554 | loss 3.5295 | norm 0.33 | TPS: 509,700
+step 11960/55554 | loss 3.5348 | norm 0.34 | TPS: 508,914
+step 11980/55554 | loss 3.4703 | norm 0.30 | TPS: 506,938
+step 12000/55554 | loss 3.5727 | norm 0.32 | TPS: 509,639
+
+📊 Validando...
+--- Val Loss: 3.4278 | Divergência: -0.1449 ---
+
+💾 Checkpoint 12000
+step 12020/55554 | loss 3.5149 | norm 0.29 | TPS: 456,028
+step 12040/55554 | loss 3.5080 | norm 0.32 | TPS: 510,617
+step 12060/55554 | loss 3.5058 | norm 0.29 | TPS: 515,442
+step 12080/55554 | loss 3.5310 | norm 0.31 | TPS: 507,619
+step 12100/55554 | loss 3.5167 | norm 0.30 | TPS: 510,968
+step 12120/55554 | loss 3.5094 | norm 0.28 | TPS: 508,433
+step 12140/55554 | loss 3.5406 | norm 0.34 | TPS: 515,823
+step 12160/55554 | loss 3.5065 | norm 0.31 | TPS: 519,387
+step 12180/55554 | loss 3.5037 | norm 0.31 | TPS: 519,897
+step 12200/55554 | loss 3.5255 | norm 0.30 | TPS: 518,418
+step 12220/55554 | loss 3.5297 | norm 0.31 | TPS: 513,242
+step 12240/55554 | loss 3.4989 | norm 0.36 | TPS: 507,810
+step 12260/55554 | loss 3.5210 | norm 0.32 | TPS: 516,079
+step 12280/55554 | loss 3.5359 | norm 0.35 | TPS: 514,773
+step 12300/55554 | loss 3.5346 | norm 0.31 | TPS: 515,580
+step 12320/55554 | loss 3.5574 | norm 0.30 | TPS: 513,883
+step 12340/55554 | loss 3.5354 | norm 0.29 | TPS: 514,016
+step 12360/55554 | loss 3.5231 | norm 0.33 | TPS: 514,487
+step 12380/55554 | loss 3.5719 | norm 0.32 | TPS: 512,178
+step 12400/55554 | loss 3.5473 | norm 0.29 | TPS: 507,970
+step 12420/55554 | loss 3.5435 | norm 0.30 | TPS: 509,935
+step 12440/55554 | loss 3.5433 | norm 0.29 | TPS: 517,748
+step 12460/55554 | loss 3.5457 | norm 0.33 | TPS: 515,899
+step 12480/55554 | loss 3.4973 | norm 0.29 | TPS: 516,171
+step 12500/55554 | loss 3.4938 | norm 0.31 | TPS: 515,063
+💾 Checkpoint 12500
+step 12520/55554 | loss 3.5014 | norm 0.28 | TPS: 476,075
+step 12540/55554 | loss 3.5158 | norm 0.30 | TPS: 519,660
+step 12560/55554 | loss 3.5332 | norm 0.34 | TPS: 514,876
+step 12580/55554 | loss 3.4847 | norm 0.33 | TPS: 517,205
+step 12600/55554 | loss 3.5007 | norm 0.32 | TPS: 516,486
+step 12620/55554 | loss 3.4828 | norm 0.27 | TPS: 516,195
+step 12640/55554 | loss 3.4849 | norm 0.30 | TPS: 517,758
+step 12660/55554 | loss 3.5055 | norm 0.32 | TPS: 514,141
+step 12680/55554 | loss 3.5381 | norm 0.31 | TPS: 512,742
+step 12700/55554 | loss 3.5313 | norm 0.32 | TPS: 514,838
+step 12720/55554 | loss 3.4817 | norm 0.29 | TPS: 517,564
+step 12740/55554 | loss 3.4990 | norm 0.30 | TPS: 515,683
+step 12760/55554 | loss 3.4770 | norm 0.29 | TPS: 513,876
+step 12780/55554 | loss 3.5042 | norm 0.31 | TPS: 512,811
+step 12800/55554 | loss 3.5330 | norm 0.31 | TPS: 514,154
+step 12820/55554 | loss 3.5263 | norm 0.32 | TPS: 510,610
+step 12840/55554 | loss 3.4650 | norm 0.40 | TPS: 512,514
+step 12860/55554 | loss 3.4733 | norm 0.32 | TPS: 515,070
+step 12880/55554 | loss 3.5438 | norm 0.29 | TPS: 510,649
+step 12900/55554 | loss 3.5152 | norm 0.31 | TPS: 512,400
+step 12920/55554 | loss 3.4993 | norm 0.31 | TPS: 505,036
+step 12940/55554 | loss 3.5112 | norm 0.36 | TPS: 498,471
+step 12960/55554 | loss 3.4965 | norm 0.30 | TPS: 499,067
+step 12980/55554 | loss 3.5209 | norm 0.37 | TPS: 496,856
+step 13000/55554 | loss 3.4802 | norm 0.31 | TPS: 504,300
+
+📊 Validando...
+--- Val Loss: 3.4022 | Divergência: -0.0780 ---
+
+💾 Checkpoint 13000
+step 13020/55554 | loss 3.5084 | norm 0.31 | TPS: 449,027
+step 13040/55554 | loss 3.4923 | norm 0.30 | TPS: 499,306
+step 13060/55554 | loss 3.4857 | norm 0.32 | TPS: 506,159
+step 13080/55554 | loss 3.4767 | norm 0.31 | TPS: 503,413
+step 13100/55554 | loss 3.4896 | norm 0.30 | TPS: 500,048
+step 13120/55554 | loss 3.4869 | norm 0.31 | TPS: 499,456
+step 13140/55554 | loss 3.5227 | norm 0.32 | TPS: 497,838
+step 13160/55554 | loss 3.5200 | norm 0.27 | TPS: 496,435
+step 13180/55554 | loss 3.5530 | norm 0.28 | TPS: 495,083
+step 13200/55554 | loss 3.4888 | norm 0.28 | TPS: 503,450
+step 13220/55554 | loss 3.4918 | norm 0.27 | TPS: 501,301
+step 13240/55554 | loss 3.4665 | norm 0.30 | TPS: 499,854
+step 13260/55554 | loss 3.5434 | norm 0.29 | TPS: 503,992
+step 13280/55554 | loss 3.5003 | norm 0.33 | TPS: 501,480
+step 13300/55554 | loss 3.5496 | norm 0.36 | TPS: 503,298
+step 13320/55554 | loss 3.5256 | norm 0.28 | TPS: 500,829
+step 13340/55554 | loss 3.5386 | norm 0.29 | TPS: 506,937
+step 13360/55554 | loss 3.4959 | norm 0.29 | TPS: 509,155
+step 13380/55554 | loss 3.4889 | norm 0.29 | TPS: 498,319
+step 13400/55554 | loss 3.5038 | norm 0.32 | TPS: 495,862
+step 13420/55554 | loss 3.5447 | norm 0.28 | TPS: 500,556
+step 13440/55554 | loss 3.4942 | norm 0.32 | TPS: 500,884
+step 13460/55554 | loss 3.5097 | norm 0.30 | TPS: 503,585
+step 13480/55554 | loss 3.5034 | norm 0.33 | TPS: 499,817
+step 13500/55554 | loss 3.4829 | norm 0.29 | TPS: 499,059
+💾 Checkpoint 13500
+step 13520/55554 | loss 3.5108 | norm 0.29 | TPS: 477,898
+step 13540/55554 | loss 3.5036 | norm 0.32 | TPS: 500,804
+step 13560/55554 | loss 3.4749 | norm 0.30 | TPS: 500,287
+step 13580/55554 | loss 3.4484 | norm 0.33 | TPS: 496,987
+step 13600/55554 | loss 3.5092 | norm 0.29 | TPS: 497,175
+step 13620/55554 | loss 3.5235 | norm 0.31 | TPS: 500,267
+step 13640/55554 | loss 3.5376 | norm 0.32 | TPS: 494,383
+step 13660/55554 | loss 3.4954 | norm 0.30 | TPS: 499,707
+step 13680/55554 | loss 3.4635 | norm 0.29 | TPS: 499,132
+step 13700/55554 | loss 3.5316 | norm 0.33 | TPS: 503,693
+step 13720/55554 | loss 3.4781 | norm 0.27 | TPS: 499,364
+step 13740/55554 | loss 3.4926 | norm 0.27 | TPS: 497,425
+step 13760/55554 | loss 3.4916 | norm 0.31 | TPS: 473,690
+step 13780/55554 | loss 3.4905 | norm 0.37 | TPS: 494,440
+step 13800/55554 | loss 3.5401 | norm 0.33 | TPS: 493,352
+step 13820/55554 | loss 3.5072 | norm 0.30 | TPS: 493,482
+step 13840/55554 | loss 3.5119 | norm 0.32 | TPS: 498,379
+step 13860/55554 | loss 3.4940 | norm 0.29 | TPS: 500,131
+step 13880/55554 | loss 3.5071 | norm 0.25 | TPS: 494,803
+step 13900/55554 | loss 3.4774 | norm 0.32 | TPS: 493,894
+step 13920/55554 | loss 3.4755 | norm 0.32 | TPS: 498,076
+step 13940/55554 | loss 3.5151 | norm 0.30 | TPS: 491,008
+step 13960/55554 | loss 3.4965 | norm 0.32 | TPS: 493,802
+step 13980/55554 | loss 3.5069 | norm 0.33 | TPS: 494,397
+step 14000/55554 | loss 3.5102 | norm 0.31 | TPS: 492,518
+
+📊 Validando...
+--- Val Loss: 3.3950 | Divergência: -0.1152 ---
+
+💾 Checkpoint 14000
+step 14020/55554 | loss 3.4816 | norm 0.30 | TPS: 447,374
+step 14040/55554 | loss 3.4614 | norm 0.30 | TPS: 502,002
+step 14060/55554 | loss 3.5239 | norm 0.33 | TPS: 500,277
+step 14080/55554 | loss 3.5298 | norm 0.29 | TPS: 497,747
+step 14100/55554 | loss 3.4398 | norm 0.28 | TPS: 496,202
+step 14120/55554 | loss 3.4787 | norm 0.34 | TPS: 500,830
+step 14140/55554 | loss 3.4914 | norm 0.31 | TPS: 506,156
+step 14160/55554 | loss 3.5128 | norm 0.36 | TPS: 503,380
+step 14180/55554 | loss 3.4644 | norm 0.44 | TPS: 493,755
+step 14200/55554 | loss 3.5063 | norm 0.28 | TPS: 501,419
+step 14220/55554 | loss 3.4466 | norm 0.27 | TPS: 491,514
+step 14240/55554 | loss 3.4614 | norm 0.28 | TPS: 493,773
+step 14260/55554 | loss 3.5155 | norm 0.31 | TPS: 503,500
+step 14280/55554 | loss 3.5102 | norm 0.31 | TPS: 500,497
+step 14300/55554 | loss 3.4694 | norm 0.29 | TPS: 496,972
+step 14320/55554 | loss 3.4767 | norm 0.29 | TPS: 501,063
+step 14340/55554 | loss 3.4848 | norm 0.31 | TPS: 503,738
+step 14360/55554 | loss 3.4728 | norm 0.30 | TPS: 496,884
+step 14380/55554 | loss 3.4923 | norm 0.26 | TPS: 494,349
+step 14400/55554 | loss 3.4362 | norm 0.31 | TPS: 493,807
+step 14420/55554 | loss 3.4950 | norm 0.28 | TPS: 494,425
+step 14440/55554 | loss 3.4843 | norm 0.28 | TPS: 493,802
+step 14460/55554 | loss 3.4983 | norm 0.29 | TPS: 493,170
+step 14480/55554 | loss 3.4791 | norm 0.31 | TPS: 496,729
+step 14500/55554 | loss 3.5093 | norm 0.33 | TPS: 497,243
+💾 Checkpoint 14500
+step 14520/55554 | loss 3.4980 | norm 0.32 | TPS: 475,278
+step 14540/55554 | loss 3.4724 | norm 0.32 | TPS: 496,440
+step 14560/55554 | loss 3.4854 | norm 0.28 | TPS: 496,825
+step 14580/55554 | loss 3.4570 | norm 0.29 | TPS: 495,223
+step 14600/55554 | loss 3.5057 | norm 0.25 | TPS: 495,513
+step 14620/55554 | loss 3.4806 | norm 0.30 | TPS: 500,517
+step 14640/55554 | loss 3.4225 | norm 0.34 | TPS: 490,812
+step 14660/55554 | loss 3.4603 | norm 0.29 | TPS: 497,199
+step 14680/55554 | loss 3.4859 | norm 0.33 | TPS: 493,672
+step 14700/55554 | loss 3.4732 | norm 0.29 | TPS: 497,003
+step 14720/55554 | loss 3.5273 | norm 0.31 | TPS: 499,936
+step 14740/55554 | loss 3.5109 | norm 0.31 | TPS: 501,526
+step 14760/55554 | loss 3.4829 | norm 0.30 | TPS: 495,511
+step 14780/55554 | loss 3.4971 | norm 0.31 | TPS: 490,761
+step 14800/55554 | loss 3.4979 | norm 0.31 | TPS: 494,714
+step 14820/55554 | loss 3.4887 | norm 0.30 | TPS: 500,471
+step 14840/55554 | loss 3.4716 | norm 0.32 | TPS: 495,779
+step 14860/55554 | loss 3.4585 | norm 0.34 | TPS: 499,269
+step 14880/55554 | loss 3.4556 | norm 0.31 | TPS: 495,956
+step 14900/55554 | loss 3.4791 | norm 0.36 | TPS: 495,979
+step 14920/55554 | loss 3.4887 | norm 0.29 | TPS: 480,204
+step 14940/55554 | loss 3.4812 | norm 0.32 | TPS: 498,544
+step 14960/55554 | loss 3.4756 | norm 0.29 | TPS: 493,109
+step 14980/55554 | loss 3.4758 | norm 0.33 | TPS: 496,869
+step 15000/55554 | loss 3.4752 | norm 0.31 | TPS: 495,626
+
+📊 Validando...
+--- Val Loss: 3.3737 | Divergência: -0.1015 ---
+
+💾 Checkpoint 15000
+step 15020/55554 | loss 3.4694 | norm 0.34 | TPS: 445,268
+step 15040/55554 | loss 3.5166 | norm 0.28 | TPS: 491,652
+step 15060/55554 | loss 3.4932 | norm 0.32 | TPS: 487,445
+step 15080/55554 | loss 3.4314 | norm 0.27 | TPS: 498,296
+step 15100/55554 | loss 3.4642 | norm 0.29 | TPS: 494,152
+step 15120/55554 | loss 3.5165 | norm 0.30 | TPS: 499,188
+step 15140/55554 | loss 3.4557 | norm 0.31 | TPS: 493,583
+step 15160/55554 | loss 3.4638 | norm 0.30 | TPS: 497,644
+step 15180/55554 | loss 3.4870 | norm 0.33 | TPS: 494,803
+step 15200/55554 | loss 3.4685 | norm 0.28 | TPS: 498,358
+step 15220/55554 | loss 3.4825 | norm 0.31 | TPS: 499,786
+step 15240/55554 | loss 3.4725 | norm 0.27 | TPS: 494,455
+step 15260/55554 | loss 3.4583 | norm 0.29 | TPS: 499,987
+step 15280/55554 | loss 3.5148 | norm 0.32 | TPS: 502,082
+step 15300/55554 | loss 3.4997 | norm 0.29 | TPS: 493,823
+step 15320/55554 | loss 3.5048 | norm 0.29 | TPS: 491,845
+step 15340/55554 | loss 3.4976 | norm 0.31 | TPS: 492,456
+step 15360/55554 | loss 3.5185 | norm 0.29 | TPS: 492,860
+step 15380/55554 | loss 3.4926 | norm 0.37 | TPS: 496,944
+step 15400/55554 | loss 3.4542 | norm 0.31 | TPS: 502,115
+step 15420/55554 | loss 3.4824 | norm 0.27 | TPS: 496,122
+step 15440/55554 | loss 3.4468 | norm 0.29 | TPS: 501,287
+step 15460/55554 | loss 3.4830 | norm 0.32 | TPS: 495,856
+step 15480/55554 | loss 3.4631 | norm 0.33 | TPS: 496,890
+step 15500/55554 | loss 3.5373 | norm 0.30 | TPS: 503,354
+💾 Checkpoint 15500
+step 15520/55554 | loss 3.4663 | norm 0.29 | TPS: 473,347
+step 15540/55554 | loss 3.4542 | norm 0.32 | TPS: 493,223
+step 15560/55554 | loss 3.4683 | norm 0.32 | TPS: 491,074
+step 15580/55554 | loss 3.4567 | norm 0.32 | TPS: 495,325
+step 15600/55554 | loss 3.4573 | norm 0.37 | TPS: 486,982
+step 15620/55554 | loss 3.4783 | norm 0.30 | TPS: 495,733
+step 15640/55554 | loss 3.5138 | norm 0.31 | TPS: 498,432
+step 15660/55554 | loss 3.4335 | norm 0.30 | TPS: 500,718
+step 15680/55554 | loss 3.4606 | norm 0.31 | TPS: 500,823
+step 15700/55554 | loss 3.5282 | norm 0.30 | TPS: 496,570
+step 15720/55554 | loss 3.4888 | norm 0.30 | TPS: 497,975
+step 15740/55554 | loss 3.4980 | norm 0.31 | TPS: 492,719
+step 15760/55554 | loss 3.4740 | norm 0.30 | TPS: 499,282
+step 15780/55554 | loss 3.4854 | norm 0.30 | TPS: 496,060
+step 15800/55554 | loss 3.4389 | norm 0.32 | TPS: 496,698
+step 15820/55554 | loss 3.4616 | norm 0.32 | TPS: 494,109
+step 15840/55554 | loss 3.4740 | norm 0.28 | TPS: 497,195
+step 15860/55554 | loss 3.4796 | norm 0.28 | TPS: 495,706
+step 15880/55554 | loss 3.4676 | norm 0.30 | TPS: 497,568
+step 15900/55554 | loss 3.4967 | norm 0.31 | TPS: 500,069
+step 15920/55554 | loss 3.4691 | norm 0.32 | TPS: 491,530
+step 15940/55554 | loss 3.4573 | norm 0.29 | TPS: 486,268
+step 15960/55554 | loss 3.5025 | norm 0.28 | TPS: 499,116
+step 15980/55554 | loss 3.4784 | norm 0.31 | TPS: 500,296
+step 16000/55554 | loss 3.4547 | norm 0.27 | TPS: 498,060
+
+📊 Validando...
+--- Val Loss: 3.3793 | Divergência: -0.0754 ---
+
+💾 Checkpoint 16000
+step 16020/55554 | loss 3.4406 | norm 0.26 | TPS: 432,226
+step 16040/55554 | loss 3.4596 | norm 0.29 | TPS: 491,638
+step 16060/55554 | loss 3.4648 | norm 0.32 | TPS: 496,006
+step 16080/55554 | loss 3.4709 | norm 0.29 | TPS: 499,764
+step 16100/55554 | loss 3.4898 | norm 0.27 | TPS: 505,124
+step 16120/55554 | loss 3.5053 | norm 0.29 | TPS: 506,454
+step 16140/55554 | loss 3.4599 | norm 0.33 | TPS: 500,490
+step 16160/55554 | loss 3.4839 | norm 0.36 | TPS: 501,194
+step 16180/55554 | loss 3.4486 | norm 0.36 | TPS: 504,160
+step 16200/55554 | loss 3.4440 | norm 0.31 | TPS: 503,144
+step 16220/55554 | loss 3.4410 | norm 0.29 | TPS: 505,655
+step 16240/55554 | loss 3.4450 | norm 0.29 | TPS: 506,586
+step 16260/55554 | loss 3.4340 | norm 0.29 | TPS: 501,233
+step 16280/55554 | loss 3.4743 | norm 0.32 | TPS: 497,913
+step 16300/55554 | loss 3.5098 | norm 0.26 | TPS: 497,568
+step 16320/55554 | loss 3.4912 | norm 0.29 | TPS: 498,323
+step 16340/55554 | loss 3.4577 | norm 0.31 | TPS: 500,426
+step 16360/55554 | loss 3.4664 | norm 0.30 | TPS: 502,382
+step 16380/55554 | loss 3.4662 | norm 0.39 | TPS: 502,289
+step 16400/55554 | loss 3.4483 | norm 0.31 | TPS: 501,857
+step 16420/55554 | loss 3.4731 | norm 0.30 | TPS: 505,342
+step 16440/55554 | loss 3.4667 | norm 0.29 | TPS: 504,105
+step 16460/55554 | loss 3.4729 | norm 0.31 | TPS: 499,603
+step 16480/55554 | loss 3.4381 | norm 0.28 | TPS: 500,622
+step 16500/55554 | loss 3.4883 | norm 0.30 | TPS: 503,854
+💾 Checkpoint 16500
+step 16520/55554 | loss 3.5336 | norm 0.36 | TPS: 476,281
+step 16540/55554 | loss 3.5077 | norm 0.33 | TPS: 485,767
+step 16560/55554 | loss 3.4622 | norm 0.29 | TPS: 499,163
+step 16580/55554 | loss 3.4684 | norm 0.30 | TPS: 501,208
+step 16600/55554 | loss 3.4562 | norm 0.32 | TPS: 499,278
+step 16620/55554 | loss 3.4805 | norm 0.31 | TPS: 501,269
+step 16640/55554 | loss 3.4710 | norm 0.30 | TPS: 499,717
+step 16660/55554 | loss 3.4777 | norm 0.28 | TPS: 493,602
+step 16680/55554 | loss 3.4522 | norm 0.31 | TPS: 493,644
+step 16700/55554 | loss 3.4076 | norm 0.30 | TPS: 487,625
+step 16720/55554 | loss 3.4857 | norm 0.33 | TPS: 490,592
+step 16740/55554 | loss 3.4904 | norm 0.32 | TPS: 482,819
+step 16760/55554 | loss 3.4331 | norm 0.30 | TPS: 491,537
+step 16780/55554 | loss 3.4657 | norm 0.28 | TPS: 491,837
+step 16800/55554 | loss 3.4564 | norm 0.34 | TPS: 491,576
+step 16820/55554 | loss 3.4419 | norm 0.35 | TPS: 499,871
+step 16840/55554 | loss 3.4319 | norm 0.29 | TPS: 489,671
+step 16860/55554 | loss 3.4434 | norm 0.31 | TPS: 492,912
+step 16880/55554 | loss 3.4840 | norm 0.32 | TPS: 490,764
+step 16900/55554 | loss 3.4766 | norm 0.28 | TPS: 492,874
+step 16920/55554 | loss 3.5182 | norm 0.27 | TPS: 490,991
+step 16940/55554 | loss 3.4763 | norm 0.29 | TPS: 496,508
+step 16960/55554 | loss 3.4535 | norm 0.29 | TPS: 491,474
+step 16980/55554 | loss 3.4373 | norm 0.28 | TPS: 497,907
+step 17000/55554 | loss 3.4444 | norm 0.31 | TPS: 493,544
+
+📊 Validando...
+--- Val Loss: 3.3614 | Divergência: -0.0830 ---
+
+💾 Checkpoint 17000
+step 17020/55554 | loss 3.4402 | norm 0.26 | TPS: 442,261
+step 17040/55554 | loss 3.4317 | norm 0.33 | TPS: 487,337
+step 17060/55554 | loss 3.4673 | norm 0.29 | TPS: 496,469
+step 17080/55554 | loss 3.4760 | norm 0.32 | TPS: 501,772
+step 17100/55554 | loss 3.4305 | norm 0.28 | TPS: 492,533
+step 17120/55554 | loss 3.4306 | norm 0.27 | TPS: 483,911
+step 17140/55554 | loss 3.4468 | norm 0.27 | TPS: 504,156
+step 17160/55554 | loss 3.4581 | norm 0.33 | TPS: 489,147
+step 17180/55554 | loss 3.4986 | norm 0.28 | TPS: 498,413
+step 17200/55554 | loss 3.4620 | norm 0.28 | TPS: 497,189
+step 17220/55554 | loss 3.4574 | norm 0.29 | TPS: 502,997
+step 17240/55554 | loss 3.4260 | norm 0.29 | TPS: 501,193
+step 17260/55554 | loss 3.4415 | norm 0.30 | TPS: 507,694
+step 17280/55554 | loss 3.4590 | norm 0.30 | TPS: 504,520
+step 17300/55554 | loss 3.3952 | norm 0.30 | TPS: 498,443
+step 17320/55554 | loss 3.4845 | norm 0.28 | TPS: 491,043
+step 17340/55554 | loss 3.4356 | norm 0.31 | TPS: 496,972
+step 17360/55554 | loss 3.4703 | norm 0.32 | TPS: 494,191
+step 17380/55554 | loss 3.4652 | norm 0.33 | TPS: 499,389
+step 17400/55554 | loss 3.4410 | norm 0.33 | TPS: 492,584
+step 17420/55554 | loss 3.4282 | norm 0.27 | TPS: 498,305
+step 17440/55554 | loss 3.4401 | norm 0.36 | TPS: 496,483
+step 17460/55554 | loss 3.4783 | norm 0.30 | TPS: 502,070
+step 17480/55554 | loss 3.4651 | norm 0.30 | TPS: 497,797
+step 17500/55554 | loss 3.4869 | norm 0.33 | TPS: 498,078
+💾 Checkpoint 17500
+step 17520/55554 | loss 3.4528 | norm 0.31 | TPS: 477,936
+step 17540/55554 | loss 3.4543 | norm 0.27 | TPS: 492,215
+step 17560/55554 | loss 3.4620 | norm 0.28 | TPS: 492,825
+step 17580/55554 | loss 3.4364 | norm 0.29 | TPS: 487,084
+step 17600/55554 | loss 3.4520 | norm 0.32 | TPS: 489,585
+step 17620/55554 | loss 3.4299 | norm 0.29 | TPS: 493,400
+step 17640/55554 | loss 3.4505 | norm 0.29 | TPS: 488,892
+step 17660/55554 | loss 3.4718 | norm 0.30 | TPS: 492,724
+step 17680/55554 | loss 3.4393 | norm 0.34 | TPS: 499,043
+step 17700/55554 | loss 3.4647 | norm 0.31 | TPS: 486,924
+step 17720/55554 | loss 3.4858 | norm 0.27 | TPS: 494,503
+step 17740/55554 | loss 3.4555 | norm 0.30 | TPS: 494,898
+step 17760/55554 | loss 3.4196 | norm 0.35 | TPS: 491,356
+step 17780/55554 | loss 3.4841 | norm 0.35 | TPS: 495,012
+step 17800/55554 | loss 3.5037 | norm 0.29 | TPS: 493,504
+step 17820/55554 | loss 3.4755 | norm 0.33 | TPS: 497,064
+step 17840/55554 | loss 3.4742 | norm 0.31 | TPS: 499,363
+step 17860/55554 | loss 3.4528 | norm 0.30 | TPS: 498,920
+step 17880/55554 | loss 3.4734 | norm 0.29 | TPS: 499,994
+step 17900/55554 | loss 3.4769 | norm 0.27 | TPS: 497,655
+step 17920/55554 | loss 3.4651 | norm 0.34 | TPS: 493,547
+step 17940/55554 | loss 3.4441 | norm 0.30 | TPS: 500,980
+step 17960/55554 | loss 3.4239 | norm 0.30 | TPS: 503,827
+step 17980/55554 | loss 3.4776 | norm 0.29 | TPS: 499,079
+step 18000/55554 | loss 3.4436 | norm 0.26 | TPS: 495,809
+
+📊 Validando...
+--- Val Loss: 3.3552 | Divergência: -0.0884 ---
+
+💾 Checkpoint 18000
+step 18020/55554 | loss 3.4462 | norm 0.29 | TPS: 452,335
+step 18040/55554 | loss 3.4705 | norm 0.29 | TPS: 498,457
+step 18060/55554 | loss 3.4351 | norm 0.33 | TPS: 501,031
+step 18080/55554 | loss 3.4716 | norm 0.27 | TPS: 500,853
+step 18100/55554 | loss 3.4277 | norm 0.32 | TPS: 493,568
+step 18120/55554 | loss 3.4397 | norm 0.30 | TPS: 494,310
+step 18140/55554 | loss 3.4342 | norm 0.30 | TPS: 496,706
+step 18160/55554 | loss 3.4339 | norm 0.31 | TPS: 490,568
+step 18180/55554 | loss 3.4077 | norm 0.31 | TPS: 498,237
+step 18200/55554 | loss 3.4820 | norm 0.28 | TPS: 492,187
+step 18220/55554 | loss 3.4451 | norm 0.28 | TPS: 489,624
+step 18240/55554 | loss 3.4823 | norm 0.29 | TPS: 491,073
+step 18260/55554 | loss 3.4408 | norm 0.31 | TPS: 482,975
+step 18280/55554 | loss 3.4290 | norm 0.31 | TPS: 477,446
+step 18300/55554 | loss 3.4449 | norm 0.31 | TPS: 475,968
+step 18320/55554 | loss 3.4585 | norm 0.34 | TPS: 493,173
+step 18340/55554 | loss 3.4342 | norm 0.38 | TPS: 470,206
+step 18360/55554 | loss 3.4423 | norm 0.36 | TPS: 495,235
+step 18380/55554 | loss 3.4698 | norm 0.28 | TPS: 495,445
+step 18400/55554 | loss 3.4362 | norm 0.32 | TPS: 497,954
+step 18420/55554 | loss 3.4701 | norm 0.27 | TPS: 490,483
+step 18440/55554 | loss 3.4523 | norm 0.31 | TPS: 489,104
+step 18460/55554 | loss 3.4404 | norm 0.33 | TPS: 486,759
+step 18480/55554 | loss 3.4563 | norm 0.29 | TPS: 485,886
+step 18500/55554 | loss 3.4249 | norm 0.30 | TPS: 487,198
+💾 Checkpoint 18500
+step 18520/55554 | loss 3.4509 | norm 0.30 | TPS: 472,305
+step 18540/55554 | loss 3.4529 | norm 0.32 | TPS: 496,864
+step 18560/55554 | loss 3.4807 | norm 0.30 | TPS: 488,713
+step 18580/55554 | loss 3.4365 | norm 0.27 | TPS: 494,870
+step 18600/55554 | loss 3.4183 | norm 0.30 | TPS: 491,297
+step 18620/55554 | loss 3.4646 | norm 0.29 | TPS: 489,533
+step 18640/55554 | loss 3.4415 | norm 0.40 | TPS: 498,910
+step 18660/55554 | loss 3.4974 | norm 0.26 | TPS: 490,252
+step 18680/55554 | loss 3.4227 | norm 0.32 | TPS: 492,916
+step 18700/55554 | loss 3.4435 | norm 0.29 | TPS: 481,751
+step 18720/55554 | loss 3.4764 | norm 0.28 | TPS: 492,253
+step 18740/55554 | loss 3.4144 | norm 0.29 | TPS: 498,945
+step 18760/55554 | loss 3.4428 | norm 0.32 | TPS: 489,948
+step 18780/55554 | loss 3.4665 | norm 0.32 | TPS: 488,576
+step 18800/55554 | loss 3.4316 | norm 0.29 | TPS: 497,050
+step 18820/55554 | loss 3.4390 | norm 0.30 | TPS: 487,122
+step 18840/55554 | loss 3.4254 | norm 0.28 | TPS: 484,057
+step 18860/55554 | loss 3.4449 | norm 0.30 | TPS: 481,182
+step 18880/55554 | loss 3.4856 | norm 0.29 | TPS: 477,212
+step 18900/55554 | loss 3.4389 | norm 0.26 | TPS: 486,293
+step 18920/55554 | loss 3.4197 | norm 0.34 | TPS: 491,277
+step 18940/55554 | loss 3.4505 | norm 0.28 | TPS: 492,317
+step 18960/55554 | loss 3.4479 | norm 0.29 | TPS: 495,543
+step 18980/55554 | loss 3.4528 | norm 0.30 | TPS: 491,116
+step 19000/55554 | loss 3.4650 | norm 0.30 | TPS: 487,563
+
+📊 Validando...
+--- Val Loss: 3.3446 | Divergência: -0.1204 ---
+
+💾 Checkpoint 19000
+step 19020/55554 | loss 3.4608 | norm 0.29 | TPS: 428,560
+step 19040/55554 | loss 3.4284 | norm 0.32 | TPS: 502,272
+step 19060/55554 | loss 3.4470 | norm 0.29 | TPS: 506,773
+step 19080/55554 | loss 3.4488 | norm 0.29 | TPS: 496,598
+step 19100/55554 | loss 3.4548 | norm 0.31 | TPS: 491,464
+step 19120/55554 | loss 3.4873 | norm 0.30 | TPS: 486,043
+step 19140/55554 | loss 3.4464 | norm 0.28 | TPS: 496,597
+step 19160/55554 | loss 3.4251 | norm 0.36 | TPS: 491,099
+step 19180/55554 | loss 3.4191 | norm 0.33 | TPS: 489,064
+step 19200/55554 | loss 3.4415 | norm 0.35 | TPS: 497,135
+step 19220/55554 | loss 3.4052 | norm 0.26 | TPS: 494,297
+step 19240/55554 | loss 3.4503 | norm 0.29 | TPS: 496,447
+step 19260/55554 | loss 3.4747 | norm 0.33 | TPS: 492,323
+step 19280/55554 | loss 3.4174 | norm 0.28 | TPS: 494,774
+step 19300/55554 | loss 3.4248 | norm 0.32 | TPS: 494,792
+step 19320/55554 | loss 3.4477 | norm 0.32 | TPS: 499,382
+step 19340/55554 | loss 3.4515 | norm 0.27 | TPS: 501,073
+step 19360/55554 | loss 3.4320 | norm 0.27 | TPS: 499,491
+step 19380/55554 | loss 3.3997 | norm 0.37 | TPS: 497,969
+step 19400/55554 | loss 3.4509 | norm 0.33 | TPS: 497,776
+step 19420/55554 | loss 3.4584 | norm 0.29 | TPS: 495,525
+step 19440/55554 | loss 3.5052 | norm 0.31 | TPS: 485,757
+step 19460/55554 | loss 3.4128 | norm 0.29 | TPS: 486,912
+step 19480/55554 | loss 3.4230 | norm 0.27 | TPS: 498,520
+step 19500/55554 | loss 3.4461 | norm 0.29 | TPS: 492,832
+💾 Checkpoint 19500
+step 19520/55554 | loss 3.4796 | norm 0.29 | TPS: 451,079
+step 19540/55554 | loss 3.4586 | norm 0.29 | TPS: 493,617
+step 19560/55554 | loss 3.4643 | norm 0.29 | TPS: 496,917
+step 19580/55554 | loss 3.4756 | norm 0.27 | TPS: 494,550
+step 19600/55554 | loss 3.4609 | norm 0.30 | TPS: 494,088
+step 19620/55554 | loss 3.4349 | norm 0.32 | TPS: 494,292
+step 19640/55554 | loss 3.4690 | norm 0.31 | TPS: 495,401
+step 19660/55554 | loss 3.4605 | norm 0.32 | TPS: 499,491
+step 19680/55554 | loss 3.4163 | norm 0.32 | TPS: 504,690
+step 19700/55554 | loss 3.4503 | norm 0.34 | TPS: 499,797
+step 19720/55554 | loss 3.4266 | norm 0.42 | TPS: 503,767
+step 19740/55554 | loss 3.4206 | norm 0.32 | TPS: 500,989
+step 19760/55554 | loss 3.4582 | norm 0.28 | TPS: 501,622
+step 19780/55554 | loss 3.4355 | norm 0.31 | TPS: 495,459
+step 19800/55554 | loss 3.4807 | norm 0.29 | TPS: 497,080
+step 19820/55554 | loss 3.4588 | norm 0.31 | TPS: 496,814
+step 19840/55554 | loss 3.4733 | norm 0.33 | TPS: 493,597
+step 19860/55554 | loss 3.4854 | norm 0.32 | TPS: 500,376
+step 19880/55554 | loss 3.4596 | norm 0.29 | TPS: 495,870
+step 19900/55554 | loss 3.4303 | norm 0.28 | TPS: 491,054
+step 19920/55554 | loss 3.4489 | norm 0.29 | TPS: 500,529
+step 19940/55554 | loss 3.4455 | norm 0.25 | TPS: 499,191
+step 19960/55554 | loss 3.4207 | norm 0.30 | TPS: 496,018
+step 19980/55554 | loss 3.4223 | norm 0.33 | TPS: 493,885
+step 20000/55554 | loss 3.4544 | norm 0.30 | TPS: 492,850
+
+📊 Validando...
+--- Val Loss: 3.3284 | Divergência: -0.1260 ---
+
+💾 Checkpoint 20000
+step 20020/55554 | loss 3.4885 | norm 0.29 | TPS: 439,522
+step 20040/55554 | loss 3.4535 | norm 0.28 | TPS: 476,351
+step 20060/55554 | loss 3.4607 | norm 0.32 | TPS: 491,067
+step 20080/55554 | loss 3.4387 | norm 0.28 | TPS: 498,453
+step 20100/55554 | loss 3.4675 | norm 0.32 | TPS: 499,237
+step 20120/55554 | loss 3.4425 | norm 0.30 | TPS: 498,590
+step 20140/55554 | loss 3.4560 | norm 0.30 | TPS: 500,045
+step 20160/55554 | loss 3.4240 | norm 0.32 | TPS: 495,738
+step 20180/55554 | loss 3.4222 | norm 0.29 | TPS: 496,570
+step 20200/55554 | loss 3.4250 | norm 0.30 | TPS: 501,055
+step 20220/55554 | loss 3.4592 | norm 0.33 | TPS: 501,664
+step 20240/55554 | loss 3.4133 | norm 0.28 | TPS: 499,807
+step 20260/55554 | loss 3.4441 | norm 0.26 | TPS: 494,885
+step 20280/55554 | loss 3.4370 | norm 0.29 | TPS: 493,984
+step 20300/55554 | loss 3.4743 | norm 0.26 | TPS: 498,198
+step 20320/55554 | loss 3.4462 | norm 0.27 | TPS: 495,227
+step 20340/55554 | loss 3.4466 | norm 0.29 | TPS: 493,039
+step 20360/55554 | loss 3.4167 | norm 0.30 | TPS: 498,596
+step 20380/55554 | loss 3.3824 | norm 0.28 | TPS: 497,728
+step 20400/55554 | loss 3.3479 | norm 0.31 | TPS: 497,565
+step 20420/55554 | loss 3.3558 | norm 0.31 | TPS: 497,211
+step 20440/55554 | loss 3.3577 | norm 0.29 | TPS: 493,771
+step 20460/55554 | loss 3.3459 | norm 0.35 | TPS: 506,142
+step 20480/55554 | loss 3.3802 | norm 0.29 | TPS: 500,172
+step 20500/55554 | loss 3.3805 | norm 0.30 | TPS: 494,428
+💾 Checkpoint 20500
+step 20520/55554 | loss 3.3866 | norm 0.30 | TPS: 477,912
+step 20540/55554 | loss 3.3798 | norm 0.30 | TPS: 504,200
+step 20560/55554 | loss 3.3708 | norm 0.32 | TPS: 507,351
+step 20580/55554 | loss 3.3843 | norm 0.27 | TPS: 489,474
+step 20600/55554 | loss 3.4191 | norm 0.30 | TPS: 504,447
+step 20620/55554 | loss 3.3897 | norm 0.33 | TPS: 487,598
+step 20640/55554 | loss 3.3888 | norm 0.30 | TPS: 504,297
+step 20660/55554 | loss 3.3570 | norm 0.30 | TPS: 504,853
+step 20680/55554 | loss 3.3133 | norm 0.28 | TPS: 509,586
+step 20700/55554 | loss 3.3227 | norm 0.32 | TPS: 504,361
+step 20720/55554 | loss 3.3167 | norm 0.30 | TPS: 510,732
+step 20740/55554 | loss 3.3618 | norm 0.37 | TPS: 500,479
+step 20760/55554 | loss 3.3612 | norm 0.28 | TPS: 502,148
+step 20780/55554 | loss 3.3842 | norm 0.32 | TPS: 505,448
+step 20800/55554 | loss 3.3790 | norm 0.33 | TPS: 498,604
+step 20820/55554 | loss 3.3411 | norm 0.31 | TPS: 492,549
+step 20840/55554 | loss 3.3990 | norm 0.31 | TPS: 499,487
+step 20860/55554 | loss 3.3576 | norm 0.28 | TPS: 504,528
+step 20880/55554 | loss 3.3543 | norm 0.29 | TPS: 497,094
+step 20900/55554 | loss 3.4086 | norm 0.27 | TPS: 492,774
+step 20920/55554 | loss 3.3574 | norm 0.30 | TPS: 493,356
+step 20940/55554 | loss 3.3829 | norm 0.26 | TPS: 501,035
+step 20960/55554 | loss 3.3647 | norm 0.31 | TPS: 501,887
+step 20980/55554 | loss 3.3484 | norm 0.25 | TPS: 496,611
+step 21000/55554 | loss 3.3860 | norm 0.30 | TPS: 499,007
+
+📊 Validando...
+--- Val Loss: 3.2986 | Divergência: -0.0874 ---
+
+💾 Checkpoint 21000
+step 21020/55554 | loss 3.4040 | norm 0.30 | TPS: 443,058
+step 21040/55554 | loss 3.3718 | norm 0.32 | TPS: 496,074
+step 21060/55554 | loss 3.4008 | norm 0.30 | TPS: 494,418
+step 21080/55554 | loss 3.3326 | norm 0.32 | TPS: 494,448
+step 21100/55554 | loss 3.3862 | norm 0.29 | TPS: 493,357
+step 21120/55554 | loss 3.3628 | norm 0.27 | TPS: 495,466
+step 21140/55554 | loss 3.3507 | norm 0.32 | TPS: 500,766
+step 21160/55554 | loss 3.3550 | norm 0.40 | TPS: 494,833
+step 21180/55554 | loss 3.3432 | norm 0.31 | TPS: 487,549
+step 21200/55554 | loss 3.4024 | norm 0.31 | TPS: 484,648
+step 21220/55554 | loss 3.4176 | norm 0.29 | TPS: 496,192
+step 21240/55554 | loss 3.3865 | norm 0.30 | TPS: 498,912
+step 21260/55554 | loss 3.4088 | norm 0.28 | TPS: 503,245
+step 21280/55554 | loss 3.4156 | norm 0.30 | TPS: 495,099
+step 21300/55554 | loss 3.3817 | norm 0.30 | TPS: 494,949
+step 21320/55554 | loss 3.3276 | norm 0.29 | TPS: 499,255
+step 21340/55554 | loss 3.3757 | norm 0.32 | TPS: 499,463
+step 21360/55554 | loss 3.3596 | norm 0.30 | TPS: 504,187
+step 21380/55554 | loss 3.4124 | norm 0.29 | TPS: 497,916
+step 21400/55554 | loss 3.3687 | norm 0.27 | TPS: 503,273
+step 21420/55554 | loss 3.3665 | norm 0.41 | TPS: 505,598
+step 21440/55554 | loss 3.3588 | norm 0.34 | TPS: 504,870
+step 21460/55554 | loss 3.3826 | norm 0.29 | TPS: 504,014
+step 21480/55554 | loss 3.4293 | norm 0.29 | TPS: 499,661
+step 21500/55554 | loss 3.4061 | norm 0.29 | TPS: 503,552
+💾 Checkpoint 21500
+step 21520/55554 | loss 3.3554 | norm 0.27 | TPS: 478,633
+step 21540/55554 | loss 3.3968 | norm 0.30 | TPS: 497,342
+step 21560/55554 | loss 3.4006 | norm 0.33 | TPS: 494,340
+step 21580/55554 | loss 3.3524 | norm 0.29 | TPS: 498,834
+step 21600/55554 | loss 3.3544 | norm 0.28 | TPS: 499,939
+step 21620/55554 | loss 3.3817 | norm 0.30 | TPS: 487,611
+step 21640/55554 | loss 3.3941 | norm 0.28 | TPS: 500,112
+step 21660/55554 | loss 3.3878 | norm 0.27 | TPS: 500,225
+step 21680/55554 | loss 3.3877 | norm 0.30 | TPS: 492,176
+step 21700/55554 | loss 3.3868 | norm 0.29 | TPS: 503,570
+step 21720/55554 | loss 3.4079 | norm 0.31 | TPS: 499,582
+step 21740/55554 | loss 3.3478 | norm 0.33 | TPS: 493,986
+step 21760/55554 | loss 3.3908 | norm 0.32 | TPS: 497,220
+step 21780/55554 | loss 3.3588 | norm 0.27 | TPS: 495,356
+step 21800/55554 | loss 3.3637 | norm 0.28 | TPS: 465,496
+step 21820/55554 | loss 3.4208 | norm 0.28 | TPS: 500,227
+step 21840/55554 | loss 3.3843 | norm 0.30 | TPS: 498,384
+step 21860/55554 | loss 3.3945 | norm 0.28 | TPS: 499,855
+step 21880/55554 | loss 3.3369 | norm 0.35 | TPS: 490,619
+step 21900/55554 | loss 3.3567 | norm 0.34 | TPS: 502,423
+step 21920/55554 | loss 3.3757 | norm 0.31 | TPS: 504,298
+step 21940/55554 | loss 3.3825 | norm 0.27 | TPS: 502,606
+step 21960/55554 | loss 3.3392 | norm 0.33 | TPS: 505,142
+step 21980/55554 | loss 3.3760 | norm 0.30 | TPS: 499,116
+step 22000/55554 | loss 3.3817 | norm 0.26 | TPS: 497,939
+
+📊 Validando...
+--- Val Loss: 3.3062 | Divergência: -0.0756 ---
+
+💾 Checkpoint 22000
+step 22020/55554 | loss 3.3591 | norm 0.31 | TPS: 444,737
+step 22040/55554 | loss 3.3886 | norm 0.27 | TPS: 503,002
+step 22060/55554 | loss 3.3787 | norm 0.28 | TPS: 498,910
+step 22080/55554 | loss 3.3903 | norm 0.29 | TPS: 501,623
+step 22100/55554 | loss 3.4041 | norm 0.27 | TPS: 500,009
+step 22120/55554 | loss 3.4060 | norm 0.30 | TPS: 499,493
+step 22140/55554 | loss 3.3486 | norm 0.30 | TPS: 496,086
+step 22160/55554 | loss 3.3538 | norm 0.32 | TPS: 503,179
+step 22180/55554 | loss 3.3780 | norm 0.27 | TPS: 502,221
+step 22200/55554 | loss 3.3806 | norm 0.28 | TPS: 509,501
+step 22220/55554 | loss 3.4031 | norm 0.27 | TPS: 503,811
+step 22240/55554 | loss 3.3690 | norm 0.30 | TPS: 502,769
+step 22260/55554 | loss 3.3920 | norm 0.33 | TPS: 505,587
+step 22280/55554 | loss 3.3572 | norm 0.29 | TPS: 491,402
+step 22300/55554 | loss 3.3590 | norm 0.27 | TPS: 501,001
+step 22320/55554 | loss 3.3391 | norm 0.34 | TPS: 500,428
+step 22340/55554 | loss 3.3052 | norm 0.29 | TPS: 501,135
+step 22360/55554 | loss 3.3871 | norm 0.27 | TPS: 497,611
+step 22380/55554 | loss 3.4203 | norm 0.29 | TPS: 491,743
+step 22400/55554 | loss 3.3905 | norm 0.29 | TPS: 489,403
+step 22420/55554 | loss 3.3730 | norm 0.31 | TPS: 498,196
+step 22440/55554 | loss 3.3456 | norm 0.27 | TPS: 499,138
+step 22460/55554 | loss 3.3817 | norm 0.33 | TPS: 496,737
+step 22480/55554 | loss 3.4026 | norm 0.29 | TPS: 498,218
+step 22500/55554 | loss 3.3543 | norm 0.29 | TPS: 490,044
+💾 Checkpoint 22500
+step 22520/55554 | loss 3.3631 | norm 0.31 | TPS: 481,352
+step 22540/55554 | loss 3.3559 | norm 0.30 | TPS: 500,744
+step 22560/55554 | loss 3.3614 | norm 0.28 | TPS: 494,150
+step 22580/55554 | loss 3.3595 | norm 0.31 | TPS: 497,683
+step 22600/55554 | loss 3.3969 | norm 0.34 | TPS: 502,206
+step 22620/55554 | loss 3.3831 | norm 0.32 | TPS: 500,692
+step 22640/55554 | loss 3.3883 | norm 0.29 | TPS: 493,504
+step 22660/55554 | loss 3.3770 | norm 0.29 | TPS: 501,166
+step 22680/55554 | loss 3.2969 | norm 0.27 | TPS: 500,167
+step 22700/55554 | loss 3.3945 | norm 0.25 | TPS: 507,415
+step 22720/55554 | loss 3.3959 | norm 0.32 | TPS: 496,026
+step 22740/55554 | loss 3.3879 | norm 0.34 | TPS: 500,868
+step 22760/55554 | loss 3.4342 | norm 0.28 | TPS: 503,849
+step 22780/55554 | loss 3.3867 | norm 0.27 | TPS: 500,258
+step 22800/55554 | loss 3.3913 | norm 0.33 | TPS: 503,367
+step 22820/55554 | loss 3.3485 | norm 0.29 | TPS: 497,727
+step 22840/55554 | loss 3.3284 | norm 0.33 | TPS: 495,834
+step 22860/55554 | loss 3.3851 | norm 0.31 | TPS: 503,001
+step 22880/55554 | loss 3.3357 | norm 0.35 | TPS: 510,208
+step 22900/55554 | loss 3.3609 | norm 0.27 | TPS: 498,810
+step 22920/55554 | loss 3.3856 | norm 0.28 | TPS: 506,808
+step 22940/55554 | loss 3.3474 | norm 0.28 | TPS: 507,940
+step 22960/55554 | loss 3.3996 | norm 0.36 | TPS: 501,381
+step 22980/55554 | loss 3.3773 | norm 0.31 | TPS: 488,583
+step 23000/55554 | loss 3.3958 | norm 0.33 | TPS: 477,345
+
+📊 Validando...
+--- Val Loss: 3.2928 | Divergência: -0.1030 ---
+
+💾 Checkpoint 23000
+step 23020/55554 | loss 3.3699 | norm 0.30 | TPS: 438,714
+step 23040/55554 | loss 3.3618 | norm 0.27 | TPS: 494,777
+step 23060/55554 | loss 3.3721 | norm 0.27 | TPS: 497,574
+step 23080/55554 | loss 3.4187 | norm 0.28 | TPS: 494,700
+step 23100/55554 | loss 3.3879 | norm 0.27 | TPS: 500,605
+step 23120/55554 | loss 3.3819 | norm 0.28 | TPS: 503,585
+step 23140/55554 | loss 3.3551 | norm 0.30 | TPS: 500,979
+step 23160/55554 | loss 3.3388 | norm 0.27 | TPS: 503,686
+step 23180/55554 | loss 3.3640 | norm 0.34 | TPS: 508,157
+step 23200/55554 | loss 3.3434 | norm 0.30 | TPS: 511,534
+step 23220/55554 | loss 3.3416 | norm 0.26 | TPS: 502,447
+step 23240/55554 | loss 3.4047 | norm 0.33 | TPS: 502,168
+step 23260/55554 | loss 3.3735 | norm 0.29 | TPS: 509,217
+step 23280/55554 | loss 3.3727 | norm 0.32 | TPS: 501,840
+🔄 Época concluída! Reiniciando dados...
+step 23300/55554 | loss 3.2982 | norm 0.49 | TPS: 812,499
+step 23320/55554 | loss 3.2952 | norm 0.39 | TPS: 630,835
+step 23340/55554 | loss 3.2553 | norm 0.38 | TPS: 630,833
+step 23360/55554 | loss 3.3099 | norm 0.31 | TPS: 631,563
+step 23380/55554 | loss 3.3129 | norm 0.31 | TPS: 630,922
+step 23400/55554 | loss 3.2923 | norm 0.26 | TPS: 627,536
+step 23420/55554 | loss 3.2042 | norm 0.33 | TPS: 629,593
+step 23440/55554 | loss 3.1842 | norm 0.28 | TPS: 575,766
+step 23460/55554 | loss 3.1786 | norm 0.34 | TPS: 486,656
+step 23480/55554 | loss 3.2087 | norm 0.31 | TPS: 481,539
+step 23500/55554 | loss 3.2928 | norm 0.45 | TPS: 505,109
+💾 Checkpoint 23500
+step 23520/55554 | loss 3.2525 | norm 0.42 | TPS: 473,403
+step 23540/55554 | loss 3.2871 | norm 0.35 | TPS: 486,646
+step 23560/55554 | loss 3.2069 | norm 0.32 | TPS: 497,154
+step 23580/55554 | loss 3.2047 | norm 0.28 | TPS: 488,121
+step 23600/55554 | loss 3.0967 | norm 0.39 | TPS: 480,239
+step 23620/55554 | loss 3.0863 | norm 0.44 | TPS: 494,404
+step 23640/55554 | loss 3.1691 | norm 0.28 | TPS: 502,806
+step 23660/55554 | loss 3.1520 | norm 0.32 | TPS: 513,242
+step 23680/55554 | loss 3.1834 | norm 0.41 | TPS: 496,157
+step 23700/55554 | loss 3.2481 | norm 0.28 | TPS: 498,280
+step 23720/55554 | loss 3.2276 | norm 0.43 | TPS: 489,516
+step 23740/55554 | loss 3.0988 | norm 0.35 | TPS: 485,447
+step 23760/55554 | loss 3.0835 | norm 0.44 | TPS: 491,083
+step 23780/55554 | loss 3.1089 | norm 0.28 | TPS: 495,957
+step 23800/55554 | loss 3.1930 | norm 0.33 | TPS: 514,287
+step 23820/55554 | loss 3.2000 | norm 0.28 | TPS: 496,637
+step 23840/55554 | loss 3.2250 | norm 0.33 | TPS: 493,601
+step 23860/55554 | loss 3.2583 | norm 0.30 | TPS: 492,953
+step 23880/55554 | loss 3.2811 | norm 0.30 | TPS: 494,683
+step 23900/55554 | loss 3.1512 | norm 0.27 | TPS: 481,615
+step 23920/55554 | loss 3.1246 | norm 0.27 | TPS: 479,587
+step 23940/55554 | loss 3.1097 | norm 0.27 | TPS: 484,452
+step 23960/55554 | loss 3.1794 | norm 0.32 | TPS: 477,566
+step 23980/55554 | loss 3.1144 | norm 0.34 | TPS: 498,508
+step 24000/55554 | loss 3.2827 | norm 0.31 | TPS: 512,695
+
+📊 Validando...
+--- Val Loss: 3.3727 | Divergência: 0.0900 ---
+
+💾 Checkpoint 24000
+step 24020/55554 | loss 3.1814 | norm 0.29 | TPS: 433,689
+step 24040/55554 | loss 3.2609 | norm 0.29 | TPS: 490,481
+step 24060/55554 | loss 3.2483 | norm 0.30 | TPS: 493,579
+step 24080/55554 | loss 3.1573 | norm 0.27 | TPS: 488,383
+step 24100/55554 | loss 3.0545 | norm 0.28 | TPS: 495,601
+step 24120/55554 | loss 3.0947 | norm 0.27 | TPS: 486,710
+step 24140/55554 | loss 3.0920 | norm 0.33 | TPS: 507,979
+step 24160/55554 | loss 3.2641 | norm 0.31 | TPS: 478,967
+step 24180/55554 | loss 3.2533 | norm 0.29 | TPS: 482,589
+step 24200/55554 | loss 3.2428 | norm 0.34 | TPS: 486,580
+step 24220/55554 | loss 3.1054 | norm 0.25 | TPS: 492,039
+step 24240/55554 | loss 3.0447 | norm 0.28 | TPS: 495,319
+step 24260/55554 | loss 3.1102 | norm 0.30 | TPS: 492,863
+step 24280/55554 | loss 3.2009 | norm 0.33 | TPS: 523,340
+step 24300/55554 | loss 3.2872 | norm 0.28 | TPS: 489,051
+step 24320/55554 | loss 3.2850 | norm 0.33 | TPS: 486,925
+step 24340/55554 | loss 3.2296 | norm 0.34 | TPS: 494,211
+step 24360/55554 | loss 3.2597 | norm 0.29 | TPS: 487,726
+step 24380/55554 | loss 3.2028 | norm 0.29 | TPS: 469,343
+step 24400/55554 | loss 3.0783 | norm 0.28 | TPS: 485,816
+step 24420/55554 | loss 3.0864 | norm 0.36 | TPS: 487,151
+step 24440/55554 | loss 3.1049 | norm 0.29 | TPS: 475,270
+step 24460/55554 | loss 3.2034 | norm 0.30 | TPS: 494,234
+step 24480/55554 | loss 3.1971 | norm 0.26 | TPS: 485,119
+step 24500/55554 | loss 3.2950 | norm 0.27 | TPS: 479,300
+💾 Checkpoint 24500
+step 24520/55554 | loss 3.1897 | norm 0.34 | TPS: 472,198
+step 24540/55554 | loss 3.1481 | norm 0.33 | TPS: 479,984
+step 24560/55554 | loss 3.0764 | norm 0.27 | TPS: 469,082
+step 24580/55554 | loss 3.1042 | norm 0.36 | TPS: 488,785
+step 24600/55554 | loss 3.2069 | norm 0.32 | TPS: 504,479
+step 24620/55554 | loss 3.1823 | norm 0.38 | TPS: 491,027
+step 24640/55554 | loss 3.2368 | norm 0.32 | TPS: 490,047
+step 24660/55554 | loss 3.1101 | norm 0.29 | TPS: 475,286
+step 24680/55554 | loss 3.0798 | norm 0.27 | TPS: 491,474
+step 24700/55554 | loss 3.0715 | norm 0.26 | TPS: 488,015
+step 24720/55554 | loss 3.1580 | norm 0.31 | TPS: 507,176
+step 24740/55554 | loss 3.1520 | norm 0.30 | TPS: 495,174
+step 24760/55554 | loss 3.1937 | norm 0.31 | TPS: 494,456
+step 24780/55554 | loss 3.2326 | norm 0.29 | TPS: 487,469
+step 24800/55554 | loss 3.2728 | norm 0.30 | TPS: 492,738
+step 24820/55554 | loss 3.0733 | norm 0.26 | TPS: 497,983
+step 24840/55554 | loss 3.0768 | norm 0.28 | TPS: 490,210
+step 24860/55554 | loss 3.1556 | norm 0.27 | TPS: 481,920
+step 24880/55554 | loss 3.0522 | norm 0.29 | TPS: 500,724
+step 24900/55554 | loss 3.2261 | norm 0.43 | TPS: 492,461
+step 24920/55554 | loss 3.2715 | norm 0.28 | TPS: 481,013
+step 24940/55554 | loss 3.2189 | norm 0.28 | TPS: 488,422
+step 24960/55554 | loss 3.0955 | norm 0.26 | TPS: 473,848
+step 24980/55554 | loss 3.0354 | norm 0.33 | TPS: 468,914
+step 25000/55554 | loss 3.1625 | norm 0.25 | TPS: 481,591
+
+📊 Validando...
+--- Val Loss: 3.4128 | Divergência: 0.2503 ---
+
+💾 Checkpoint 25000
+step 25020/55554 | loss 3.2059 | norm 0.29 | TPS: 467,780
+step 25040/55554 | loss 3.2430 | norm 0.27 | TPS: 488,605
+step 25060/55554 | loss 3.0463 | norm 0.31 | TPS: 491,692
+step 25080/55554 | loss 3.0354 | norm 0.31 | TPS: 494,669
+step 25100/55554 | loss 3.0373 | norm 0.30 | TPS: 485,490
+step 25120/55554 | loss 3.0308 | norm 0.32 | TPS: 493,283
+step 25140/55554 | loss 3.1876 | norm 0.27 | TPS: 490,293
+step 25160/55554 | loss 3.1418 | norm 0.27 | TPS: 491,036
+step 25180/55554 | loss 3.2158 | norm 0.35 | TPS: 477,498
+step 25200/55554 | loss 3.6026 | norm 0.30 | TPS: 502,102
+step 25220/55554 | loss 3.7660 | norm 0.29 | TPS: 519,035
+step 25240/55554 | loss 3.7857 | norm 0.37 | TPS: 513,658
+step 25260/55554 | loss 3.7479 | norm 0.27 | TPS: 520,944
+step 25280/55554 | loss 3.7688 | norm 0.33 | TPS: 520,626
+step 25300/55554 | loss 3.7484 | norm 0.26 | TPS: 517,130
+step 25320/55554 | loss 3.7311 | norm 0.26 | TPS: 520,767
+step 25340/55554 | loss 3.7429 | norm 0.28 | TPS: 523,739
+step 25360/55554 | loss 3.6982 | norm 0.30 | TPS: 515,335
+step 25380/55554 | loss 3.7345 | norm 0.39 | TPS: 523,588
+step 25400/55554 | loss 3.7168 | norm 0.29 | TPS: 525,846
+step 25420/55554 | loss 3.7265 | norm 0.32 | TPS: 521,026
+step 25440/55554 | loss 3.7035 | norm 0.29 | TPS: 513,199
+step 25460/55554 | loss 3.7092 | norm 0.28 | TPS: 517,136
+step 25480/55554 | loss 3.7207 | norm 0.29 | TPS: 519,004
+step 25500/55554 | loss 3.7199 | norm 0.30 | TPS: 515,462
+💾 Checkpoint 25500
+step 25520/55554 | loss 3.6818 | norm 0.34 | TPS: 490,857
+step 25540/55554 | loss 3.7233 | norm 0.27 | TPS: 510,299
+step 25560/55554 | loss 3.7210 | norm 0.28 | TPS: 516,350
+step 25580/55554 | loss 3.7626 | norm 0.28 | TPS: 511,463
+step 25600/55554 | loss 3.6792 | norm 0.37 | TPS: 515,751
+step 25620/55554 | loss 3.6788 | norm 0.25 | TPS: 514,101
+step 25640/55554 | loss 3.7455 | norm 0.28 | TPS: 517,099
+step 25660/55554 | loss 3.7343 | norm 0.27 | TPS: 517,545
+step 25680/55554 | loss 3.6666 | norm 0.32 | TPS: 522,121
+step 25700/55554 | loss 3.7486 | norm 0.33 | TPS: 521,213
+step 25720/55554 | loss 3.6717 | norm 0.30 | TPS: 521,887
+step 25740/55554 | loss 3.6880 | norm 0.25 | TPS: 513,828
+step 25760/55554 | loss 3.7152 | norm 0.33 | TPS: 514,559
+step 25780/55554 | loss 3.6712 | norm 0.28 | TPS: 516,194
+step 25800/55554 | loss 3.6529 | norm 0.28 | TPS: 514,876
+step 25820/55554 | loss 3.7123 | norm 0.26 | TPS: 523,580
+step 25840/55554 | loss 3.6812 | norm 0.31 | TPS: 519,373
+step 25860/55554 | loss 3.7128 | norm 0.32 | TPS: 520,837
+step 25880/55554 | loss 3.6530 | norm 0.32 | TPS: 520,113
+step 25900/55554 | loss 3.7114 | norm 0.28 | TPS: 518,809
+step 25920/55554 | loss 3.6877 | norm 0.26 | TPS: 519,757
+step 25940/55554 | loss 3.6814 | norm 0.29 | TPS: 517,258
+step 25960/55554 | loss 3.7457 | norm 0.30 | TPS: 510,681
+step 25980/55554 | loss 3.6426 | norm 0.27 | TPS: 513,213
+step 26000/55554 | loss 3.6645 | norm 0.26 | TPS: 518,155
+
+📊 Validando...
+--- Val Loss: 3.3674 | Divergência: -0.2971 ---
+
+ERROR:asyncio:Exception in callback Task.__step()
+handle: <Handle Task.__step()>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: cannot enter context: <_contextvars.Context object at 0x792e600c5f80> is already entered
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-26973' coro=<_async_in_context.<locals>.run_in_context() done, defined at /usr/local/lib/python3.12/site-packages/ipykernel/utils.py:57> wait_for=<Task pending name='Task-26974' coro=<Kernel.shell_main() running at /usr/local/lib/python3.12/site-packages/ipykernel/kernelbase.py:590> cb=[Task.__wakeup()]> cb=[ZMQStream._run_callback.<locals>._log_error() at /usr/local/lib/python3.12/site-packages/zmq/eventloop/zmqstream.py:563]>
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-26974' coro=<Kernel.shell_main() running at /usr/local/lib/python3.12/site-packages/ipykernel/kernelbase.py:590> cb=[Task.__wakeup()]>
+💾 Checkpoint 26000
+step 26020/55554 | loss 3.6358 | norm 0.30 | TPS: 451,593
+step 26040/55554 | loss 3.7037 | norm 0.26 | TPS: 516,961
+step 26060/55554 | loss 3.7046 | norm 0.28 | TPS: 518,458
+step 26080/55554 | loss 3.6952 | norm 0.28 | TPS: 517,388
+step 26100/55554 | loss 3.6832 | norm 0.28 | TPS: 514,621
+step 26120/55554 | loss 3.6974 | norm 0.27 | TPS: 512,003
+step 26140/55554 | loss 3.6583 | norm 0.25 | TPS: 521,135
+step 26160/55554 | loss 3.6639 | norm 0.35 | TPS: 522,115
+step 26180/55554 | loss 3.6899 | norm 0.30 | TPS: 521,045
+step 26200/55554 | loss 3.6389 | norm 0.28 | TPS: 523,322
+step 26220/55554 | loss 3.6859 | norm 0.29 | TPS: 525,062
+step 26240/55554 | loss 3.6495 | norm 0.28 | TPS: 520,876
+step 26260/55554 | loss 3.6656 | norm 0.26 | TPS: 523,190
+step 26280/55554 | loss 3.6448 | norm 0.25 | TPS: 520,747
+step 26300/55554 | loss 3.6750 | norm 0.25 | TPS: 523,751
+step 26320/55554 | loss 3.6097 | norm 0.29 | TPS: 521,575
+step 26340/55554 | loss 3.6327 | norm 0.24 | TPS: 525,981
+step 26360/55554 | loss 3.6744 | norm 0.27 | TPS: 523,047
+step 26380/55554 | loss 3.6652 | norm 0.26 | TPS: 525,343
+step 26400/55554 | loss 3.6885 | norm 0.26 | TPS: 524,300
+step 26420/55554 | loss 3.6341 | norm 0.42 | TPS: 503,821
+step 26440/55554 | loss 3.6299 | norm 0.31 | TPS: 513,934
+step 26460/55554 | loss 3.6463 | norm 0.30 | TPS: 514,696
+step 26480/55554 | loss 3.6817 | norm 0.27 | TPS: 510,563
+step 26500/55554 | loss 3.6705 | norm 0.30 | TPS: 520,006
+💾 Checkpoint 26500
+step 26520/55554 | loss 3.7024 | norm 0.35 | TPS: 497,774
+step 26540/55554 | loss 3.6845 | norm 0.27 | TPS: 517,991
+step 26560/55554 | loss 3.6888 | norm 0.28 | TPS: 512,155
+step 26580/55554 | loss 3.6407 | norm 0.32 | TPS: 509,914
+step 26600/55554 | loss 3.6482 | norm 0.31 | TPS: 520,132
+step 26620/55554 | loss 3.6708 | norm 0.32 | TPS: 516,543
+step 26640/55554 | loss 3.6064 | norm 0.28 | TPS: 512,214
+step 26660/55554 | loss 3.7042 | norm 0.27 | TPS: 523,121
+step 26680/55554 | loss 3.6744 | norm 0.30 | TPS: 521,056
+step 26700/55554 | loss 3.6534 | norm 0.35 | TPS: 511,173
+step 26720/55554 | loss 3.6615 | norm 0.32 | TPS: 515,891
+step 26740/55554 | loss 3.6536 | norm 0.28 | TPS: 521,898
+step 26760/55554 | loss 3.6600 | norm 0.28 | TPS: 513,751
+step 26780/55554 | loss 3.6700 | norm 0.28 | TPS: 519,280
+step 26800/55554 | loss 3.6673 | norm 0.32 | TPS: 516,759
+step 26820/55554 | loss 3.6382 | norm 0.35 | TPS: 518,064
+step 26840/55554 | loss 3.6117 | norm 0.28 | TPS: 515,495
+step 26860/55554 | loss 3.6224 | norm 0.32 | TPS: 520,685
+step 26880/55554 | loss 3.6640 | norm 0.28 | TPS: 523,443
+step 26900/55554 | loss 3.6259 | norm 0.32 | TPS: 521,814
+step 26920/55554 | loss 3.6183 | norm 0.30 | TPS: 526,134
+step 26940/55554 | loss 3.6919 | norm 0.32 | TPS: 523,173
+step 26960/55554 | loss 3.6607 | norm 0.31 | TPS: 514,499
+step 26980/55554 | loss 3.6727 | norm 0.31 | TPS: 521,336
+step 27000/55554 | loss 3.6291 | norm 0.27 | TPS: 521,144
+
+📊 Validando...
+--- Val Loss: 3.3432 | Divergência: -0.2858 ---
+
+💾 Checkpoint 27000
+step 27020/55554 | loss 3.6559 | norm 0.27 | TPS: 453,795
+step 27040/55554 | loss 3.6823 | norm 0.30 | TPS: 517,017
+step 27060/55554 | loss 3.6557 | norm 0.28 | TPS: 520,893
+step 27080/55554 | loss 3.6952 | norm 0.28 | TPS: 520,189
+step 27100/55554 | loss 3.6448 | norm 0.29 | TPS: 524,256
+step 27120/55554 | loss 3.6326 | norm 0.32 | TPS: 518,579
+step 27140/55554 | loss 3.6164 | norm 0.27 | TPS: 521,502
+step 27160/55554 | loss 3.6315 | norm 0.31 | TPS: 522,166
+step 27180/55554 | loss 3.6510 | norm 0.31 | TPS: 517,790
+step 27200/55554 | loss 3.6329 | norm 0.29 | TPS: 516,095
+step 27220/55554 | loss 3.5996 | norm 0.30 | TPS: 525,232
+step 27240/55554 | loss 3.5959 | norm 0.37 | TPS: 524,740
+step 27260/55554 | loss 3.6203 | norm 0.28 | TPS: 525,694
+step 27280/55554 | loss 3.6634 | norm 0.27 | TPS: 523,784
+step 27300/55554 | loss 3.6614 | norm 0.29 | TPS: 524,726
+step 27320/55554 | loss 3.6635 | norm 0.42 | TPS: 518,771
+step 27340/55554 | loss 3.6485 | norm 0.36 | TPS: 518,616
+step 27360/55554 | loss 3.6503 | norm 0.30 | TPS: 520,055
+step 27380/55554 | loss 3.6386 | norm 0.26 | TPS: 530,977
+step 27400/55554 | loss 3.6497 | norm 0.29 | TPS: 521,974
+step 27420/55554 | loss 3.6753 | norm 0.29 | TPS: 518,358
+step 27440/55554 | loss 3.6079 | norm 0.27 | TPS: 527,048
+step 27460/55554 | loss 3.6362 | norm 0.27 | TPS: 517,640
+step 27480/55554 | loss 3.6401 | norm 0.33 | TPS: 517,484
+step 27500/55554 | loss 3.6233 | norm 0.29 | TPS: 513,758
+💾 Checkpoint 27500
+step 27520/55554 | loss 3.6567 | norm 0.30 | TPS: 467,942
+step 27540/55554 | loss 3.6351 | norm 0.31 | TPS: 520,176
+step 27560/55554 | loss 3.6681 | norm 0.26 | TPS: 520,940
+step 27580/55554 | loss 3.6409 | norm 0.28 | TPS: 522,418
+step 27600/55554 | loss 3.6369 | norm 0.30 | TPS: 515,044
+step 27620/55554 | loss 3.6256 | norm 0.26 | TPS: 521,673
+step 27640/55554 | loss 3.6259 | norm 0.28 | TPS: 517,274
+step 27660/55554 | loss 3.6073 | norm 0.34 | TPS: 519,147
+step 27680/55554 | loss 3.6692 | norm 0.30 | TPS: 514,834
+step 27700/55554 | loss 3.6744 | norm 0.32 | TPS: 511,407
+step 27720/55554 | loss 3.6376 | norm 0.27 | TPS: 510,114
+step 27740/55554 | loss 3.6244 | norm 0.28 | TPS: 512,569
+step 27760/55554 | loss 3.5855 | norm 0.25 | TPS: 520,865
+step 27780/55554 | loss 3.6753 | norm 0.31 | TPS: 510,787
+step 27800/55554 | loss 3.6161 | norm 0.27 | TPS: 505,443
+step 27820/55554 | loss 3.6403 | norm 0.31 | TPS: 513,008
+step 27840/55554 | loss 3.6023 | norm 0.27 | TPS: 513,110
+step 27860/55554 | loss 3.6374 | norm 0.26 | TPS: 511,429
+step 27880/55554 | loss 3.6318 | norm 0.25 | TPS: 518,244
+step 27900/55554 | loss 3.6223 | norm 0.36 | TPS: 512,259
+step 27920/55554 | loss 3.6002 | norm 0.28 | TPS: 509,263
+step 27940/55554 | loss 3.6568 | norm 0.28 | TPS: 516,142
+step 27960/55554 | loss 3.5892 | norm 0.25 | TPS: 514,339
+step 27980/55554 | loss 3.6163 | norm 0.28 | TPS: 517,882
+step 28000/55554 | loss 3.6170 | norm 0.31 | TPS: 515,917
+
+📊 Validando...
+--- Val Loss: 3.3662 | Divergência: -0.2508 ---
+
+💾 Checkpoint 28000
+step 28020/55554 | loss 3.6666 | norm 0.29 | TPS: 452,201
+step 28040/55554 | loss 3.6128 | norm 0.29 | TPS: 515,837
+step 28060/55554 | loss 3.6139 | norm 0.29 | TPS: 516,967
+step 28080/55554 | loss 3.6143 | norm 0.31 | TPS: 516,368
+step 28100/55554 | loss 3.6243 | norm 0.29 | TPS: 514,657
+step 28120/55554 | loss 3.5900 | norm 0.28 | TPS: 519,251
+step 28140/55554 | loss 3.6094 | norm 0.27 | TPS: 515,286
+step 28160/55554 | loss 3.6762 | norm 0.25 | TPS: 516,135
+step 28180/55554 | loss 3.5888 | norm 0.28 | TPS: 514,225
+step 28200/55554 | loss 3.6307 | norm 0.31 | TPS: 512,576
+step 28220/55554 | loss 3.6079 | norm 0.32 | TPS: 512,380
+step 28240/55554 | loss 3.6720 | norm 0.28 | TPS: 516,427
+step 28260/55554 | loss 3.5834 | norm 0.27 | TPS: 513,842
+step 28280/55554 | loss 3.6099 | norm 0.25 | TPS: 515,119
+step 28300/55554 | loss 3.6079 | norm 0.26 | TPS: 519,476
+step 28320/55554 | loss 3.5982 | norm 0.30 | TPS: 522,377
+step 28340/55554 | loss 3.6051 | norm 0.26 | TPS: 523,631
+step 28360/55554 | loss 3.6569 | norm 0.30 | TPS: 519,563
+step 28380/55554 | loss 3.5962 | norm 0.32 | TPS: 511,854
+step 28400/55554 | loss 3.6277 | norm 0.29 | TPS: 516,188
+step 28420/55554 | loss 3.6314 | norm 0.27 | TPS: 515,777
+step 28440/55554 | loss 3.5936 | norm 0.29 | TPS: 517,620
+step 28460/55554 | loss 3.6096 | norm 0.29 | TPS: 518,640
+step 28480/55554 | loss 3.6071 | norm 0.30 | TPS: 526,484
+step 28500/55554 | loss 3.6432 | norm 0.29 | TPS: 524,370
+💾 Checkpoint 28500
+step 28520/55554 | loss 3.6439 | norm 0.30 | TPS: 500,948
+step 28540/55554 | loss 3.5921 | norm 0.28 | TPS: 520,976
+step 28560/55554 | loss 3.6086 | norm 0.27 | TPS: 520,223
+step 28580/55554 | loss 3.6021 | norm 0.30 | TPS: 492,497
+step 28600/55554 | loss 3.5979 | norm 0.26 | TPS: 525,501
+step 28620/55554 | loss 3.6304 | norm 0.29 | TPS: 519,067
+step 28640/55554 | loss 3.5883 | norm 0.28 | TPS: 517,838
+step 28660/55554 | loss 3.6310 | norm 0.30 | TPS: 522,160
+step 28680/55554 | loss 3.6329 | norm 0.28 | TPS: 525,960
+step 28700/55554 | loss 3.6298 | norm 0.30 | TPS: 524,987
+step 28720/55554 | loss 3.5804 | norm 0.30 | TPS: 515,338
+step 28740/55554 | loss 3.6279 | norm 0.28 | TPS: 515,864
+step 28760/55554 | loss 3.6336 | norm 0.29 | TPS: 518,882
+step 28780/55554 | loss 3.6261 | norm 0.26 | TPS: 516,555
+step 28800/55554 | loss 3.6019 | norm 0.32 | TPS: 520,311
+step 28820/55554 | loss 3.6614 | norm 0.27 | TPS: 520,993
+step 28840/55554 | loss 3.6214 | norm 0.30 | TPS: 520,150
+step 28860/55554 | loss 3.6216 | norm 0.31 | TPS: 516,791
+step 28880/55554 | loss 3.6206 | norm 0.34 | TPS: 519,414
+step 28900/55554 | loss 3.6681 | norm 0.30 | TPS: 516,048
+step 28920/55554 | loss 3.5989 | norm 0.33 | TPS: 514,310
+step 28940/55554 | loss 3.6123 | norm 0.29 | TPS: 517,434
+step 28960/55554 | loss 3.6012 | norm 0.25 | TPS: 517,657
+step 28980/55554 | loss 3.5832 | norm 0.28 | TPS: 517,392
+step 29000/55554 | loss 3.5678 | norm 0.29 | TPS: 515,599
+
+📊 Validando...
+--- Val Loss: 3.3677 | Divergência: -0.2000 ---
+
+💾 Checkpoint 29000
+step 29020/55554 | loss 3.5520 | norm 0.29 | TPS: 439,858
+step 29040/55554 | loss 3.4348 | norm 0.34 | TPS: 497,430
+step 29060/55554 | loss 3.4183 | norm 0.30 | TPS: 503,139
+step 29080/55554 | loss 3.4053 | norm 0.33 | TPS: 503,103
+step 29100/55554 | loss 3.4030 | norm 0.26 | TPS: 503,053
+step 29120/55554 | loss 3.4306 | norm 0.32 | TPS: 502,274
+step 29140/55554 | loss 3.4448 | norm 0.32 | TPS: 500,412
+step 29160/55554 | loss 3.4194 | norm 0.31 | TPS: 502,282
+step 29180/55554 | loss 3.3869 | norm 0.31 | TPS: 501,105
+step 29200/55554 | loss 3.3507 | norm 0.31 | TPS: 501,253
+step 29220/55554 | loss 3.3772 | norm 0.29 | TPS: 493,278
+step 29240/55554 | loss 3.4446 | norm 0.32 | TPS: 495,240
+step 29260/55554 | loss 3.3740 | norm 0.26 | TPS: 497,698
+step 29280/55554 | loss 3.3696 | norm 0.30 | TPS: 496,037
+step 29300/55554 | loss 3.3583 | norm 0.26 | TPS: 498,409
+step 29320/55554 | loss 3.3844 | norm 0.26 | TPS: 501,725
+step 29340/55554 | loss 3.3707 | norm 0.28 | TPS: 508,572
+step 29360/55554 | loss 3.3975 | norm 0.29 | TPS: 504,351
+step 29380/55554 | loss 3.3690 | norm 0.26 | TPS: 497,758
+step 29400/55554 | loss 3.3797 | norm 0.31 | TPS: 501,310
+step 29420/55554 | loss 3.4046 | norm 0.26 | TPS: 509,613
+step 29440/55554 | loss 3.3541 | norm 0.28 | TPS: 502,596
+step 29460/55554 | loss 3.3080 | norm 0.29 | TPS: 504,665
+step 29480/55554 | loss 3.3921 | norm 0.32 | TPS: 500,833
+step 29500/55554 | loss 3.3684 | norm 0.27 | TPS: 502,456
+💾 Checkpoint 29500
+step 29520/55554 | loss 3.4153 | norm 0.29 | TPS: 485,504
+step 29540/55554 | loss 3.3720 | norm 0.29 | TPS: 506,532
+step 29560/55554 | loss 3.3431 | norm 0.26 | TPS: 507,492
+step 29580/55554 | loss 3.3621 | norm 0.31 | TPS: 505,691
+step 29600/55554 | loss 3.3854 | norm 0.26 | TPS: 502,385
+step 29620/55554 | loss 3.3647 | norm 0.26 | TPS: 501,022
+step 29640/55554 | loss 3.3729 | norm 0.31 | TPS: 502,695
+step 29660/55554 | loss 3.3811 | norm 0.27 | TPS: 509,194
+step 29680/55554 | loss 3.4195 | norm 0.28 | TPS: 504,311
+step 29700/55554 | loss 3.3845 | norm 0.24 | TPS: 503,491
+step 29720/55554 | loss 3.3697 | norm 0.27 | TPS: 506,422
+step 29740/55554 | loss 3.3344 | norm 0.30 | TPS: 502,427
+step 29760/55554 | loss 3.4233 | norm 0.28 | TPS: 504,674
+step 29780/55554 | loss 3.3530 | norm 0.27 | TPS: 503,980
+step 29800/55554 | loss 3.3830 | norm 0.28 | TPS: 500,448
+step 29820/55554 | loss 3.3647 | norm 0.27 | TPS: 474,117
+step 29840/55554 | loss 3.3092 | norm 0.28 | TPS: 502,009
+step 29860/55554 | loss 3.3987 | norm 0.29 | TPS: 502,010
+step 29880/55554 | loss 3.3608 | norm 0.32 | TPS: 497,505
+step 29900/55554 | loss 3.3905 | norm 0.26 | TPS: 498,251
+step 29920/55554 | loss 3.4044 | norm 0.26 | TPS: 499,851
+step 29940/55554 | loss 3.3556 | norm 0.31 | TPS: 500,444
+step 29960/55554 | loss 3.3828 | norm 0.30 | TPS: 506,037
+step 29980/55554 | loss 3.3232 | norm 0.28 | TPS: 499,418
+step 30000/55554 | loss 3.3863 | norm 0.30 | TPS: 497,163
+
+📊 Validando...
+--- Val Loss: 3.2952 | Divergência: -0.0912 ---
+
+💾 Checkpoint 30000
+step 30020/55554 | loss 3.3434 | norm 0.26 | TPS: 441,654
+step 30040/55554 | loss 3.3223 | norm 0.30 | TPS: 494,551
+step 30060/55554 | loss 3.3411 | norm 0.29 | TPS: 497,284
+step 30080/55554 | loss 3.3629 | norm 0.26 | TPS: 497,262
+step 30100/55554 | loss 3.3723 | norm 0.25 | TPS: 506,209
+step 30120/55554 | loss 3.3726 | norm 0.30 | TPS: 501,510
+step 30140/55554 | loss 3.3739 | norm 0.29 | TPS: 503,746
+step 30160/55554 | loss 3.3927 | norm 0.26 | TPS: 497,710
+step 30180/55554 | loss 3.3366 | norm 0.28 | TPS: 501,909
+step 30200/55554 | loss 3.3899 | norm 0.28 | TPS: 494,647
+step 30220/55554 | loss 3.4316 | norm 0.27 | TPS: 497,617
+step 30240/55554 | loss 3.3610 | norm 0.30 | TPS: 504,181
+step 30260/55554 | loss 3.3762 | norm 0.33 | TPS: 504,261
+step 30280/55554 | loss 3.3703 | norm 0.31 | TPS: 501,223
+step 30300/55554 | loss 3.3695 | norm 0.29 | TPS: 498,271
+step 30320/55554 | loss 3.3026 | norm 0.30 | TPS: 504,462
+step 30340/55554 | loss 3.4042 | norm 0.24 | TPS: 501,131
+step 30360/55554 | loss 3.3731 | norm 0.30 | TPS: 507,075
+step 30380/55554 | loss 3.3452 | norm 0.33 | TPS: 506,722
+step 30400/55554 | loss 3.3404 | norm 0.30 | TPS: 504,933
+step 30420/55554 | loss 3.3133 | norm 0.28 | TPS: 508,832
+step 30440/55554 | loss 3.3845 | norm 0.31 | TPS: 498,030
+step 30460/55554 | loss 3.3518 | norm 0.29 | TPS: 499,435
+step 30480/55554 | loss 3.3669 | norm 0.31 | TPS: 499,906
+step 30500/55554 | loss 3.3388 | norm 0.26 | TPS: 494,681
+💾 Checkpoint 30500
+step 30520/55554 | loss 3.3742 | norm 0.27 | TPS: 483,829
+step 30540/55554 | loss 3.3589 | norm 0.28 | TPS: 504,491
+step 30560/55554 | loss 3.3556 | norm 0.27 | TPS: 498,888
+step 30580/55554 | loss 3.3220 | norm 0.30 | TPS: 500,515
+step 30600/55554 | loss 3.3743 | norm 0.25 | TPS: 504,880
+step 30620/55554 | loss 3.3955 | norm 0.33 | TPS: 509,374
+step 30640/55554 | loss 3.3299 | norm 0.27 | TPS: 505,549
+step 30660/55554 | loss 3.3504 | norm 0.31 | TPS: 506,274
+step 30680/55554 | loss 3.3734 | norm 0.30 | TPS: 507,968
+step 30700/55554 | loss 3.3991 | norm 0.28 | TPS: 509,168
+step 30720/55554 | loss 3.3881 | norm 0.25 | TPS: 499,849
+step 30740/55554 | loss 3.3812 | norm 0.33 | TPS: 499,747
+step 30760/55554 | loss 3.3427 | norm 0.28 | TPS: 504,746
+step 30780/55554 | loss 3.3488 | norm 0.32 | TPS: 500,358
+step 30800/55554 | loss 3.4102 | norm 0.27 | TPS: 496,115
+step 30820/55554 | loss 3.3338 | norm 0.28 | TPS: 495,899
+step 30840/55554 | loss 3.3874 | norm 0.26 | TPS: 505,745
+step 30860/55554 | loss 3.3264 | norm 0.25 | TPS: 503,460
+step 30880/55554 | loss 3.3651 | norm 0.26 | TPS: 509,525
+step 30900/55554 | loss 3.3700 | norm 0.29 | TPS: 508,460
+step 30920/55554 | loss 3.3614 | norm 0.34 | TPS: 504,888
+step 30940/55554 | loss 3.3645 | norm 0.30 | TPS: 507,157
+step 30960/55554 | loss 3.3446 | norm 0.32 | TPS: 501,572
+step 30980/55554 | loss 3.3935 | norm 0.27 | TPS: 474,948
+step 31000/55554 | loss 3.3393 | norm 0.26 | TPS: 502,607
+
+📊 Validando...
+--- Val Loss: 3.2705 | Divergência: -0.0688 ---
+
+💾 Checkpoint 31000
+step 31020/55554 | loss 3.3794 | norm 0.27 | TPS: 438,010
+step 31040/55554 | loss 3.3450 | norm 0.30 | TPS: 507,089
+step 31060/55554 | loss 3.3470 | norm 0.27 | TPS: 503,007
+step 31080/55554 | loss 3.3727 | norm 0.26 | TPS: 503,295
+step 31100/55554 | loss 3.3643 | norm 0.29 | TPS: 501,446
+step 31120/55554 | loss 3.3760 | norm 0.28 | TPS: 496,739
+step 31140/55554 | loss 3.3812 | norm 0.28 | TPS: 495,876
+step 31160/55554 | loss 3.3305 | norm 0.26 | TPS: 499,574
+step 31180/55554 | loss 3.3690 | norm 0.26 | TPS: 502,827
+step 31200/55554 | loss 3.3651 | norm 0.29 | TPS: 494,888
+step 31220/55554 | loss 3.3513 | norm 0.31 | TPS: 498,567
+step 31240/55554 | loss 3.3339 | norm 0.27 | TPS: 494,910
+step 31260/55554 | loss 3.4041 | norm 0.29 | TPS: 498,408
+step 31280/55554 | loss 3.3435 | norm 0.26 | TPS: 503,743
+step 31300/55554 | loss 3.3347 | norm 0.35 | TPS: 499,257
+step 31320/55554 | loss 3.3740 | norm 0.34 | TPS: 499,228
+step 31340/55554 | loss 3.3383 | norm 0.29 | TPS: 496,690
+step 31360/55554 | loss 3.3645 | norm 0.27 | TPS: 503,396
+step 31380/55554 | loss 3.3331 | norm 0.29 | TPS: 495,439
+step 31400/55554 | loss 3.3496 | norm 0.28 | TPS: 493,037
+step 31420/55554 | loss 3.3535 | norm 0.26 | TPS: 494,808
+step 31440/55554 | loss 3.3576 | norm 0.28 | TPS: 495,033
+step 31460/55554 | loss 3.3246 | norm 0.37 | TPS: 495,301
+step 31480/55554 | loss 3.3631 | norm 0.29 | TPS: 503,283
+step 31500/55554 | loss 3.3765 | norm 0.29 | TPS: 501,658
+💾 Checkpoint 31500
+step 31520/55554 | loss 3.3778 | norm 0.27 | TPS: 481,996
+step 31540/55554 | loss 3.3962 | norm 0.30 | TPS: 502,688
+step 31560/55554 | loss 3.3690 | norm 0.26 | TPS: 503,532
+step 31580/55554 | loss 3.3142 | norm 0.29 | TPS: 506,243
+step 31600/55554 | loss 3.4304 | norm 0.30 | TPS: 497,230
+step 31620/55554 | loss 3.3615 | norm 0.30 | TPS: 505,034
+step 31640/55554 | loss 3.3287 | norm 0.29 | TPS: 505,656
+step 31660/55554 | loss 3.3910 | norm 0.26 | TPS: 502,863
+step 31680/55554 | loss 3.3855 | norm 0.34 | TPS: 505,709
+step 31700/55554 | loss 3.3545 | norm 0.32 | TPS: 504,877
+step 31720/55554 | loss 3.3189 | norm 0.28 | TPS: 505,522
+step 31740/55554 | loss 3.3540 | norm 0.31 | TPS: 503,617
+step 31760/55554 | loss 3.3754 | norm 0.29 | TPS: 504,512
+step 31780/55554 | loss 3.3157 | norm 0.30 | TPS: 504,269
+step 31800/55554 | loss 3.3302 | norm 0.25 | TPS: 503,432
+step 31820/55554 | loss 3.3773 | norm 0.29 | TPS: 499,614
+step 31840/55554 | loss 3.3628 | norm 0.28 | TPS: 500,570
+step 31860/55554 | loss 3.3557 | norm 0.28 | TPS: 502,629
+step 31880/55554 | loss 3.3479 | norm 0.26 | TPS: 501,019
+step 31900/55554 | loss 3.3469 | norm 0.29 | TPS: 496,448
+step 31920/55554 | loss 3.3571 | norm 0.28 | TPS: 502,605
+step 31940/55554 | loss 3.4172 | norm 0.29 | TPS: 501,437
+step 31960/55554 | loss 3.3402 | norm 0.28 | TPS: 500,122
+step 31980/55554 | loss 3.3586 | norm 0.32 | TPS: 497,765
+step 32000/55554 | loss 3.3401 | norm 0.28 | TPS: 497,955
+
+📊 Validando...
+--- Val Loss: 3.2658 | Divergência: -0.0742 ---
+
+💾 Checkpoint 32000
+step 32020/55554 | loss 3.3710 | norm 0.29 | TPS: 415,480
+step 32040/55554 | loss 3.3700 | norm 0.28 | TPS: 497,525
+step 32060/55554 | loss 3.3648 | norm 0.31 | TPS: 493,782
+step 32080/55554 | loss 3.4023 | norm 0.27 | TPS: 498,497
+step 32100/55554 | loss 3.3540 | norm 0.30 | TPS: 499,667
+step 32120/55554 | loss 3.3133 | norm 0.31 | TPS: 504,833
+step 32140/55554 | loss 3.3631 | norm 0.29 | TPS: 498,423
+step 32160/55554 | loss 3.3623 | norm 0.35 | TPS: 495,939
+step 32180/55554 | loss 3.3504 | norm 0.27 | TPS: 497,279
+step 32200/55554 | loss 3.3482 | norm 0.33 | TPS: 501,494
+step 32220/55554 | loss 3.3954 | norm 0.28 | TPS: 501,862
+step 32240/55554 | loss 3.3563 | norm 0.31 | TPS: 495,993
+step 32260/55554 | loss 3.3215 | norm 0.35 | TPS: 494,447
+step 32280/55554 | loss 3.3545 | norm 0.27 | TPS: 500,664
+step 32300/55554 | loss 3.3283 | norm 0.31 | TPS: 496,094
+step 32320/55554 | loss 3.3703 | norm 0.27 | TPS: 495,951
+step 32340/55554 | loss 3.3438 | norm 0.27 | TPS: 494,869
+step 32360/55554 | loss 3.3291 | norm 0.31 | TPS: 498,879
+step 32380/55554 | loss 3.3917 | norm 0.28 | TPS: 495,319
+step 32400/55554 | loss 3.3665 | norm 0.27 | TPS: 499,829
+step 32420/55554 | loss 3.3744 | norm 0.28 | TPS: 499,091
+step 32440/55554 | loss 3.3353 | norm 0.29 | TPS: 497,112
+step 32460/55554 | loss 3.3385 | norm 0.27 | TPS: 494,480
+step 32480/55554 | loss 3.3588 | norm 0.27 | TPS: 495,052
+step 32500/55554 | loss 3.3374 | norm 0.27 | TPS: 497,199
+💾 Checkpoint 32500
+step 32520/55554 | loss 3.3280 | norm 0.26 | TPS: 476,680
+step 32540/55554 | loss 3.3219 | norm 0.28 | TPS: 501,782
+step 32560/55554 | loss 3.3874 | norm 0.28 | TPS: 495,436
+step 32580/55554 | loss 3.3971 | norm 0.25 | TPS: 498,382
+step 32600/55554 | loss 3.3659 | norm 0.28 | TPS: 501,185
+step 32620/55554 | loss 3.3304 | norm 0.26 | TPS: 498,369
+step 32640/55554 | loss 3.3274 | norm 0.26 | TPS: 497,871
+step 32660/55554 | loss 3.3624 | norm 0.28 | TPS: 498,966
+step 32680/55554 | loss 3.3995 | norm 0.29 | TPS: 503,289
+step 32700/55554 | loss 3.3003 | norm 0.26 | TPS: 501,289
+step 32720/55554 | loss 3.3876 | norm 0.29 | TPS: 499,090
+step 32740/55554 | loss 3.3393 | norm 0.29 | TPS: 504,073
+step 32760/55554 | loss 3.3324 | norm 0.28 | TPS: 501,452
+step 32780/55554 | loss 3.3860 | norm 0.29 | TPS: 499,891
+step 32800/55554 | loss 3.3144 | norm 0.26 | TPS: 504,389
+step 32820/55554 | loss 3.3392 | norm 0.27 | TPS: 497,124
+step 32840/55554 | loss 3.3670 | norm 0.35 | TPS: 493,756
+step 32860/55554 | loss 3.3552 | norm 0.26 | TPS: 491,452
+step 32880/55554 | loss 3.3354 | norm 0.31 | TPS: 493,067
+step 32900/55554 | loss 3.3858 | norm 0.27 | TPS: 493,388
+step 32920/55554 | loss 3.3416 | norm 0.27 | TPS: 491,728
+step 32940/55554 | loss 3.3360 | norm 0.33 | TPS: 493,783
+step 32960/55554 | loss 3.3253 | norm 0.27 | TPS: 504,169
+step 32980/55554 | loss 3.3585 | norm 0.27 | TPS: 497,019
+step 33000/55554 | loss 3.3320 | norm 0.25 | TPS: 500,769
+
+📊 Validando...
+--- Val Loss: 3.2516 | Divergência: -0.0804 ---
+
+💾 Checkpoint 33000
+step 33020/55554 | loss 3.3603 | norm 0.26 | TPS: 439,813
+step 33040/55554 | loss 3.3549 | norm 0.25 | TPS: 503,630
+step 33060/55554 | loss 3.3577 | norm 0.35 | TPS: 501,639
+step 33080/55554 | loss 3.3297 | norm 0.29 | TPS: 501,615
+step 33100/55554 | loss 3.3325 | norm 0.29 | TPS: 503,697
+step 33120/55554 | loss 3.3555 | norm 0.28 | TPS: 500,064
+step 33140/55554 | loss 3.3720 | norm 0.28 | TPS: 498,733
+step 33160/55554 | loss 3.3394 | norm 0.27 | TPS: 497,523
+step 33180/55554 | loss 3.3695 | norm 0.32 | TPS: 508,533
+step 33200/55554 | loss 3.4010 | norm 0.28 | TPS: 508,308
+step 33220/55554 | loss 3.3668 | norm 0.29 | TPS: 495,786
+step 33240/55554 | loss 3.3726 | norm 0.28 | TPS: 483,679
+step 33260/55554 | loss 3.3288 | norm 0.26 | TPS: 509,351
+step 33280/55554 | loss 3.3715 | norm 0.25 | TPS: 506,779
+step 33300/55554 | loss 3.3460 | norm 0.30 | TPS: 511,272
+step 33320/55554 | loss 3.3561 | norm 0.28 | TPS: 509,782
+step 33340/55554 | loss 3.3602 | norm 0.27 | TPS: 503,726
+step 33360/55554 | loss 3.3340 | norm 0.30 | TPS: 508,086
+step 33380/55554 | loss 3.3325 | norm 0.30 | TPS: 506,292
+step 33400/55554 | loss 3.3484 | norm 0.28 | TPS: 508,349
+step 33420/55554 | loss 3.3442 | norm 0.25 | TPS: 502,197
+step 33440/55554 | loss 3.3625 | norm 0.27 | TPS: 507,064
+step 33460/55554 | loss 3.3639 | norm 0.31 | TPS: 509,644
+step 33480/55554 | loss 3.3727 | norm 0.30 | TPS: 507,483
+step 33500/55554 | loss 3.3182 | norm 0.35 | TPS: 512,186
+💾 Checkpoint 33500
+step 33520/55554 | loss 3.3331 | norm 0.31 | TPS: 484,684
+step 33540/55554 | loss 3.4003 | norm 0.27 | TPS: 505,047
+step 33560/55554 | loss 3.3256 | norm 0.35 | TPS: 507,673
+step 33580/55554 | loss 3.3037 | norm 0.27 | TPS: 506,541
+step 33600/55554 | loss 3.3347 | norm 0.28 | TPS: 508,280
+step 33620/55554 | loss 3.3466 | norm 0.28 | TPS: 508,159
+step 33640/55554 | loss 3.3612 | norm 0.27 | TPS: 503,714
+step 33660/55554 | loss 3.3335 | norm 0.27 | TPS: 508,233
+step 33680/55554 | loss 3.3473 | norm 0.26 | TPS: 508,844
+step 33700/55554 | loss 3.3748 | norm 0.32 | TPS: 509,618
+step 33720/55554 | loss 3.3238 | norm 0.27 | TPS: 514,563
+step 33740/55554 | loss 3.3385 | norm 0.28 | TPS: 504,648
+step 33760/55554 | loss 3.3628 | norm 0.29 | TPS: 505,860
+step 33780/55554 | loss 3.3452 | norm 0.28 | TPS: 497,236
+step 33800/55554 | loss 3.3488 | norm 0.29 | TPS: 499,299
+step 33820/55554 | loss 3.3736 | norm 0.28 | TPS: 501,624
+step 33840/55554 | loss 3.3392 | norm 0.27 | TPS: 504,923
+step 33860/55554 | loss 3.3575 | norm 0.28 | TPS: 511,714
+step 33880/55554 | loss 3.3639 | norm 0.39 | TPS: 506,972
+step 33900/55554 | loss 3.3395 | norm 0.28 | TPS: 503,226
+step 33920/55554 | loss 3.3891 | norm 0.28 | TPS: 496,872
+step 33940/55554 | loss 3.3537 | norm 0.30 | TPS: 502,393
+step 33960/55554 | loss 3.3284 | norm 0.26 | TPS: 500,293
+step 33980/55554 | loss 3.4049 | norm 0.25 | TPS: 500,584
+step 34000/55554 | loss 3.3415 | norm 0.30 | TPS: 501,140
+
+📊 Validando...
+--- Val Loss: 3.2427 | Divergência: -0.0988 ---
+
+💾 Checkpoint 34000
+step 34020/55554 | loss 3.3437 | norm 0.27 | TPS: 441,735
+step 34040/55554 | loss 3.3715 | norm 0.31 | TPS: 493,483
+step 34060/55554 | loss 3.3266 | norm 0.33 | TPS: 496,408
+step 34080/55554 | loss 3.3393 | norm 0.33 | TPS: 499,199
+step 34100/55554 | loss 3.3252 | norm 0.29 | TPS: 495,480
+step 34120/55554 | loss 3.3678 | norm 0.27 | TPS: 493,586
+step 34140/55554 | loss 3.3185 | norm 0.28 | TPS: 497,470
+step 34160/55554 | loss 3.3583 | norm 0.26 | TPS: 498,815
+step 34180/55554 | loss 3.3659 | norm 0.29 | TPS: 497,744
+step 34200/55554 | loss 3.2963 | norm 0.26 | TPS: 498,403
+step 34220/55554 | loss 3.3339 | norm 0.28 | TPS: 499,296
+step 34240/55554 | loss 3.3468 | norm 0.32 | TPS: 497,677
+step 34260/55554 | loss 3.4146 | norm 0.29 | TPS: 495,695
+step 34280/55554 | loss 3.3624 | norm 0.31 | TPS: 501,249
+step 34300/55554 | loss 3.3243 | norm 0.29 | TPS: 499,841
+step 34320/55554 | loss 3.3053 | norm 0.26 | TPS: 496,170
+step 34340/55554 | loss 3.3460 | norm 0.26 | TPS: 497,083
+step 34360/55554 | loss 3.2969 | norm 0.33 | TPS: 503,886
+step 34380/55554 | loss 3.3085 | norm 0.26 | TPS: 504,550
+step 34400/55554 | loss 3.3177 | norm 0.27 | TPS: 500,384
+step 34420/55554 | loss 3.3165 | norm 0.29 | TPS: 479,531
+step 34440/55554 | loss 3.3687 | norm 0.31 | TPS: 501,451
+step 34460/55554 | loss 3.3060 | norm 0.27 | TPS: 500,295
+step 34480/55554 | loss 3.4089 | norm 0.27 | TPS: 503,754
+step 34500/55554 | loss 3.3830 | norm 0.31 | TPS: 500,589
+💾 Checkpoint 34500
+step 34520/55554 | loss 3.3339 | norm 0.26 | TPS: 479,502
+step 34540/55554 | loss 3.3431 | norm 0.26 | TPS: 509,241
+step 34560/55554 | loss 3.2889 | norm 0.31 | TPS: 511,768
+step 34580/55554 | loss 3.3579 | norm 0.35 | TPS: 508,515
+step 34600/55554 | loss 3.3964 | norm 0.27 | TPS: 507,014
+step 34620/55554 | loss 3.3461 | norm 0.26 | TPS: 516,779
+step 34640/55554 | loss 3.3118 | norm 0.27 | TPS: 506,466
+step 34660/55554 | loss 3.3587 | norm 0.27 | TPS: 504,007
+step 34680/55554 | loss 3.3562 | norm 0.35 | TPS: 506,373
+step 34700/55554 | loss 3.3203 | norm 0.28 | TPS: 504,514
+step 34720/55554 | loss 3.3818 | norm 0.28 | TPS: 498,574
+step 34740/55554 | loss 3.3277 | norm 0.37 | TPS: 501,998
+step 34760/55554 | loss 3.3299 | norm 0.29 | TPS: 502,464
+step 34780/55554 | loss 3.3389 | norm 0.27 | TPS: 500,122
+step 34800/55554 | loss 3.3364 | norm 0.27 | TPS: 505,047
+step 34820/55554 | loss 3.3397 | norm 0.28 | TPS: 505,714
+step 34840/55554 | loss 3.3180 | norm 0.26 | TPS: 499,701
+step 34860/55554 | loss 3.3427 | norm 0.28 | TPS: 504,683
+step 34880/55554 | loss 3.3561 | norm 0.25 | TPS: 501,511
+step 34900/55554 | loss 3.3646 | norm 0.28 | TPS: 502,205
+step 34920/55554 | loss 3.3192 | norm 0.26 | TPS: 501,345
+step 34940/55554 | loss 3.3399 | norm 0.27 | TPS: 498,722
+step 34960/55554 | loss 3.3652 | norm 0.29 | TPS: 503,691
+step 34980/55554 | loss 3.3650 | norm 0.34 | TPS: 498,046
+step 35000/55554 | loss 3.3644 | norm 0.25 | TPS: 501,079
+
+📊 Validando...
+--- Val Loss: 3.2399 | Divergência: -0.1245 ---
+
+💾 Checkpoint 35000
+step 35020/55554 | loss 3.3468 | norm 0.30 | TPS: 442,982
+step 35040/55554 | loss 3.3387 | norm 0.32 | TPS: 504,617
+step 35060/55554 | loss 3.3383 | norm 0.28 | TPS: 506,633
+step 35080/55554 | loss 3.3684 | norm 0.27 | TPS: 508,166
+step 35100/55554 | loss 3.3069 | norm 0.29 | TPS: 505,261
+step 35120/55554 | loss 3.3899 | norm 0.29 | TPS: 504,703
+step 35140/55554 | loss 3.3399 | norm 0.28 | TPS: 505,389
+step 35160/55554 | loss 3.3318 | norm 0.27 | TPS: 510,926
+step 35180/55554 | loss 3.3334 | norm 0.28 | TPS: 500,747
+step 35200/55554 | loss 3.3454 | norm 0.29 | TPS: 504,720
+step 35220/55554 | loss 3.3441 | norm 0.27 | TPS: 500,371
+step 35240/55554 | loss 3.3495 | norm 0.30 | TPS: 501,498
+step 35260/55554 | loss 3.3466 | norm 0.26 | TPS: 509,837
+step 35280/55554 | loss 3.3299 | norm 0.24 | TPS: 503,422
+step 35300/55554 | loss 3.3817 | norm 0.27 | TPS: 502,880
+step 35320/55554 | loss 3.3544 | norm 0.27 | TPS: 505,113
+step 35340/55554 | loss 3.2978 | norm 0.26 | TPS: 509,421
+step 35360/55554 | loss 3.3496 | norm 0.27 | TPS: 508,817
+step 35380/55554 | loss 3.3244 | norm 0.24 | TPS: 501,485
+step 35400/55554 | loss 3.3210 | norm 0.29 | TPS: 502,502
+step 35420/55554 | loss 3.3637 | norm 0.33 | TPS: 506,843
+step 35440/55554 | loss 3.3470 | norm 0.32 | TPS: 505,981
+step 35460/55554 | loss 3.3388 | norm 0.27 | TPS: 508,060
+step 35480/55554 | loss 3.3705 | norm 0.27 | TPS: 505,854
+step 35500/55554 | loss 3.3390 | norm 0.34 | TPS: 500,946
+💾 Checkpoint 35500
+step 35520/55554 | loss 3.3580 | norm 0.26 | TPS: 471,222
+step 35540/55554 | loss 3.3440 | norm 0.33 | TPS: 503,507
+step 35560/55554 | loss 3.3606 | norm 0.30 | TPS: 500,308
+step 35580/55554 | loss 3.3726 | norm 0.27 | TPS: 502,488
+step 35600/55554 | loss 3.3260 | norm 0.27 | TPS: 502,502
+step 35620/55554 | loss 3.3429 | norm 0.27 | TPS: 503,601
+step 35640/55554 | loss 3.3637 | norm 0.28 | TPS: 499,815
+step 35660/55554 | loss 3.3511 | norm 0.29 | TPS: 506,421
+step 35680/55554 | loss 3.3723 | norm 0.28 | TPS: 504,697
+step 35700/55554 | loss 3.3326 | norm 0.27 | TPS: 505,804
+step 35720/55554 | loss 3.3613 | norm 0.26 | TPS: 508,373
+step 35740/55554 | loss 3.3464 | norm 0.29 | TPS: 499,479
+step 35760/55554 | loss 3.3608 | norm 0.30 | TPS: 496,509
+step 35780/55554 | loss 3.3174 | norm 0.25 | TPS: 502,323
+step 35800/55554 | loss 3.3425 | norm 0.32 | TPS: 500,328
+step 35820/55554 | loss 3.3450 | norm 0.29 | TPS: 497,349
+step 35840/55554 | loss 3.3202 | norm 0.28 | TPS: 508,490
+step 35860/55554 | loss 3.2948 | norm 0.27 | TPS: 499,600
+step 35880/55554 | loss 3.3545 | norm 0.35 | TPS: 505,556
+step 35900/55554 | loss 3.3353 | norm 0.26 | TPS: 505,183
+step 35920/55554 | loss 3.3495 | norm 0.29 | TPS: 501,087
+step 35940/55554 | loss 3.3326 | norm 0.29 | TPS: 499,615
+step 35960/55554 | loss 3.3077 | norm 0.26 | TPS: 497,223
+step 35980/55554 | loss 3.3769 | norm 0.34 | TPS: 500,537
+step 36000/55554 | loss 3.3541 | norm 0.28 | TPS: 507,703
+
+📊 Validando...
+--- Val Loss: 3.2405 | Divergência: -0.1136 ---
+
+💾 Checkpoint 36000
+step 36020/55554 | loss 3.3720 | norm 0.28 | TPS: 442,919
+step 36040/55554 | loss 3.3660 | norm 0.28 | TPS: 501,520
+step 36060/55554 | loss 3.3888 | norm 0.29 | TPS: 498,434
+step 36080/55554 | loss 3.3582 | norm 0.34 | TPS: 501,669
+step 36100/55554 | loss 3.3603 | norm 0.27 | TPS: 504,125
+step 36120/55554 | loss 3.3477 | norm 0.27 | TPS: 493,689
+step 36140/55554 | loss 3.3340 | norm 0.26 | TPS: 500,427
+step 36160/55554 | loss 3.3405 | norm 0.28 | TPS: 503,752
+step 36180/55554 | loss 3.3749 | norm 0.27 | TPS: 501,107
+step 36200/55554 | loss 3.3443 | norm 0.29 | TPS: 498,038
+step 36220/55554 | loss 3.3705 | norm 0.33 | TPS: 500,132
+step 36240/55554 | loss 3.3333 | norm 0.30 | TPS: 503,068
+step 36260/55554 | loss 3.3985 | norm 0.30 | TPS: 495,023
+step 36280/55554 | loss 3.3307 | norm 0.28 | TPS: 499,085
+step 36300/55554 | loss 3.3073 | norm 0.29 | TPS: 508,792
+step 36320/55554 | loss 3.3295 | norm 0.28 | TPS: 498,701
+step 36340/55554 | loss 3.3218 | norm 0.25 | TPS: 498,726
+step 36360/55554 | loss 3.3412 | norm 0.27 | TPS: 506,114
+step 36380/55554 | loss 3.3608 | norm 0.25 | TPS: 502,079
+step 36400/55554 | loss 3.3108 | norm 0.27 | TPS: 498,522
+step 36420/55554 | loss 3.3444 | norm 0.25 | TPS: 494,824
+step 36440/55554 | loss 3.3256 | norm 0.26 | TPS: 499,690
+step 36460/55554 | loss 3.3183 | norm 0.27 | TPS: 499,558
+step 36480/55554 | loss 3.3126 | norm 0.28 | TPS: 494,110
+step 36500/55554 | loss 3.3594 | norm 0.32 | TPS: 498,347
+💾 Checkpoint 36500
+step 36520/55554 | loss 3.3824 | norm 0.33 | TPS: 480,225
+step 36540/55554 | loss 3.3273 | norm 0.28 | TPS: 501,352
+step 36560/55554 | loss 3.3276 | norm 0.25 | TPS: 496,300
+step 36580/55554 | loss 3.3595 | norm 0.28 | TPS: 504,299
+step 36600/55554 | loss 3.3633 | norm 0.26 | TPS: 487,606
+step 36620/55554 | loss 3.3679 | norm 0.25 | TPS: 500,617
+step 36640/55554 | loss 3.3629 | norm 0.34 | TPS: 502,084
+step 36660/55554 | loss 3.3105 | norm 0.29 | TPS: 500,647
+step 36680/55554 | loss 3.3206 | norm 0.27 | TPS: 500,806
+step 36700/55554 | loss 3.3256 | norm 0.27 | TPS: 505,640
+step 36720/55554 | loss 3.3572 | norm 0.26 | TPS: 503,084
+step 36740/55554 | loss 3.3916 | norm 0.27 | TPS: 507,275
+step 36760/55554 | loss 3.3828 | norm 0.29 | TPS: 506,459
+step 36780/55554 | loss 3.3308 | norm 0.27 | TPS: 513,043
+step 36800/55554 | loss 3.3118 | norm 0.29 | TPS: 508,740
+step 36820/55554 | loss 3.3435 | norm 0.27 | TPS: 506,939
+step 36840/55554 | loss 3.3138 | norm 0.28 | TPS: 498,650
+step 36860/55554 | loss 3.3393 | norm 0.27 | TPS: 495,602
+step 36880/55554 | loss 3.2933 | norm 0.29 | TPS: 503,570
+step 36900/55554 | loss 3.3379 | norm 0.28 | TPS: 497,651
+step 36920/55554 | loss 3.4176 | norm 0.27 | TPS: 501,536
+step 36940/55554 | loss 3.3478 | norm 0.32 | TPS: 500,302
+step 36960/55554 | loss 3.3226 | norm 0.26 | TPS: 504,518
+step 36980/55554 | loss 3.3220 | norm 0.26 | TPS: 502,529
+step 37000/55554 | loss 3.2791 | norm 0.28 | TPS: 504,309
+
+📊 Validando...
+--- Val Loss: 3.2433 | Divergência: -0.0358 ---
+
+💾 Checkpoint 37000
+step 37020/55554 | loss 3.3541 | norm 0.26 | TPS: 446,621
+step 37040/55554 | loss 3.3690 | norm 0.29 | TPS: 507,793
+step 37060/55554 | loss 3.3736 | norm 0.27 | TPS: 507,157
+step 37080/55554 | loss 3.3889 | norm 0.31 | TPS: 506,658
+step 37100/55554 | loss 3.3504 | norm 0.29 | TPS: 503,359
+step 37120/55554 | loss 3.3297 | norm 0.26 | TPS: 508,727
+step 37140/55554 | loss 3.3310 | norm 0.25 | TPS: 504,413
+step 37160/55554 | loss 3.3279 | norm 0.27 | TPS: 501,648
+step 37180/55554 | loss 3.3509 | norm 0.26 | TPS: 496,775
+step 37200/55554 | loss 3.3610 | norm 0.30 | TPS: 500,884
+step 37220/55554 | loss 3.3558 | norm 0.30 | TPS: 498,589
+step 37240/55554 | loss 3.2970 | norm 0.31 | TPS: 492,971
+step 37260/55554 | loss 3.3581 | norm 0.27 | TPS: 502,215
+step 37280/55554 | loss 3.2998 | norm 0.26 | TPS: 499,562
+step 37300/55554 | loss 3.3090 | norm 0.33 | TPS: 494,356
+step 37320/55554 | loss 3.3515 | norm 0.28 | TPS: 495,245
+step 37340/55554 | loss 3.3317 | norm 0.26 | TPS: 497,901
+step 37360/55554 | loss 3.3584 | norm 0.30 | TPS: 501,233
+step 37380/55554 | loss 3.3510 | norm 0.29 | TPS: 501,540
+step 37400/55554 | loss 3.3193 | norm 0.28 | TPS: 499,882
+step 37420/55554 | loss 3.3548 | norm 0.28 | TPS: 501,682
+step 37440/55554 | loss 3.3543 | norm 0.28 | TPS: 500,574
+step 37460/55554 | loss 3.3420 | norm 0.26 | TPS: 503,534
+step 37480/55554 | loss 3.3303 | norm 0.32 | TPS: 498,645
+step 37500/55554 | loss 3.3513 | norm 0.29 | TPS: 506,558
+💾 Checkpoint 37500
+step 37520/55554 | loss 3.3767 | norm 0.27 | TPS: 483,516
+step 37540/55554 | loss 3.3695 | norm 0.29 | TPS: 499,309
+step 37560/55554 | loss 3.3728 | norm 0.34 | TPS: 506,137
+step 37580/55554 | loss 3.3538 | norm 0.30 | TPS: 506,313
+step 37600/55554 | loss 3.3568 | norm 0.33 | TPS: 506,681
+step 37620/55554 | loss 3.3549 | norm 0.27 | TPS: 505,974
+step 37640/55554 | loss 3.3705 | norm 0.28 | TPS: 507,366
+step 37660/55554 | loss 3.3210 | norm 0.28 | TPS: 505,357
+step 37680/55554 | loss 3.3223 | norm 0.25 | TPS: 506,762
+step 37700/55554 | loss 3.3394 | norm 0.27 | TPS: 493,621
+step 37720/55554 | loss 3.3571 | norm 0.29 | TPS: 498,312
+step 37740/55554 | loss 3.3333 | norm 0.33 | TPS: 504,679
+step 37760/55554 | loss 3.3658 | norm 0.26 | TPS: 505,952
+step 37780/55554 | loss 3.3234 | norm 0.28 | TPS: 502,087
+step 37800/55554 | loss 3.3395 | norm 0.31 | TPS: 484,406
+step 37820/55554 | loss 3.3944 | norm 0.29 | TPS: 505,521
+step 37840/55554 | loss 3.3279 | norm 0.26 | TPS: 506,928
+step 37860/55554 | loss 3.3093 | norm 0.28 | TPS: 506,304
+step 37880/55554 | loss 3.3525 | norm 0.30 | TPS: 514,692
+step 37900/55554 | loss 3.3232 | norm 0.28 | TPS: 501,402
+step 37920/55554 | loss 3.3324 | norm 0.27 | TPS: 508,829
+step 37940/55554 | loss 3.3344 | norm 0.32 | TPS: 508,983
+step 37960/55554 | loss 3.3230 | norm 0.26 | TPS: 512,002
+step 37980/55554 | loss 3.3624 | norm 0.27 | TPS: 512,677
+step 38000/55554 | loss 3.3794 | norm 0.30 | TPS: 503,379
+
+📊 Validando...
+--- Val Loss: 3.2496 | Divergência: -0.1298 ---
+
+💾 Checkpoint 38000
+step 38020/55554 | loss 3.3472 | norm 0.29 | TPS: 456,783
+step 38040/55554 | loss 3.3804 | norm 0.26 | TPS: 503,413
+step 38060/55554 | loss 3.3218 | norm 0.29 | TPS: 513,694
+step 38080/55554 | loss 3.3245 | norm 0.28 | TPS: 512,515
+step 38100/55554 | loss 3.3294 | norm 0.31 | TPS: 511,812
+step 38120/55554 | loss 3.4041 | norm 0.28 | TPS: 513,207
+step 38140/55554 | loss 3.3654 | norm 0.29 | TPS: 508,605
+step 38160/55554 | loss 3.3536 | norm 0.31 | TPS: 511,664
+step 38180/55554 | loss 3.3465 | norm 0.27 | TPS: 504,790
+step 38200/55554 | loss 3.3113 | norm 0.28 | TPS: 511,137
+step 38220/55554 | loss 3.3268 | norm 0.28 | TPS: 511,809
+step 38240/55554 | loss 3.3329 | norm 0.29 | TPS: 514,211
+step 38260/55554 | loss 3.3169 | norm 0.26 | TPS: 512,605
+step 38280/55554 | loss 3.3240 | norm 0.27 | TPS: 507,262
+step 38300/55554 | loss 3.3627 | norm 0.26 | TPS: 510,587
+step 38320/55554 | loss 3.3320 | norm 0.29 | TPS: 510,819
+step 38340/55554 | loss 3.3529 | norm 0.29 | TPS: 509,734
+step 38360/55554 | loss 3.3456 | norm 0.27 | TPS: 503,919
+step 38380/55554 | loss 3.3364 | norm 0.26 | TPS: 505,810
+step 38400/55554 | loss 3.3403 | norm 0.25 | TPS: 506,683
+step 38420/55554 | loss 3.3151 | norm 0.26 | TPS: 509,668
+step 38440/55554 | loss 3.2700 | norm 0.26 | TPS: 508,167
+step 38460/55554 | loss 3.3244 | norm 0.33 | TPS: 509,988
+step 38480/55554 | loss 3.3367 | norm 0.29 | TPS: 511,613
+step 38500/55554 | loss 3.3312 | norm 0.27 | TPS: 509,459
+💾 Checkpoint 38500
+step 38520/55554 | loss 3.3150 | norm 0.27 | TPS: 495,739
+step 38540/55554 | loss 3.3521 | norm 0.27 | TPS: 510,391
+step 38560/55554 | loss 3.3269 | norm 0.31 | TPS: 507,520
+step 38580/55554 | loss 3.3517 | norm 0.27 | TPS: 508,056
+step 38600/55554 | loss 3.3552 | norm 0.25 | TPS: 507,012
+step 38620/55554 | loss 3.3718 | norm 0.31 | TPS: 504,305
+step 38640/55554 | loss 3.3597 | norm 0.30 | TPS: 504,761
+step 38660/55554 | loss 3.3635 | norm 0.31 | TPS: 506,069
+step 38680/55554 | loss 3.3161 | norm 0.26 | TPS: 495,019
+step 38700/55554 | loss 3.2935 | norm 0.27 | TPS: 504,075
+step 38720/55554 | loss 3.3365 | norm 0.29 | TPS: 504,885
+step 38740/55554 | loss 3.3323 | norm 0.26 | TPS: 500,122
+step 38760/55554 | loss 3.3559 | norm 0.29 | TPS: 495,868
+step 38780/55554 | loss 3.3508 | norm 0.25 | TPS: 493,360
+step 38800/55554 | loss 3.3614 | norm 0.28 | TPS: 501,241
+step 38820/55554 | loss 3.3345 | norm 0.27 | TPS: 499,311
+step 38840/55554 | loss 3.3685 | norm 0.29 | TPS: 498,185
+step 38860/55554 | loss 3.2714 | norm 0.24 | TPS: 498,903
+step 38880/55554 | loss 3.3720 | norm 0.26 | TPS: 498,458
+step 38900/55554 | loss 3.3899 | norm 0.26 | TPS: 500,633
+step 38920/55554 | loss 3.3252 | norm 0.28 | TPS: 501,114
+step 38940/55554 | loss 3.3730 | norm 0.28 | TPS: 502,707
+step 38960/55554 | loss 3.3495 | norm 0.29 | TPS: 482,871
+step 38980/55554 | loss 3.3584 | norm 0.27 | TPS: 504,140
+step 39000/55554 | loss 3.3301 | norm 0.35 | TPS: 504,030
+
+📊 Validando...
+--- Val Loss: 3.2441 | Divergência: -0.0860 ---
+
+💾 Checkpoint 39000
+step 39020/55554 | loss 3.3717 | norm 0.31 | TPS: 438,508
+step 39040/55554 | loss 3.3806 | norm 0.26 | TPS: 488,035
+step 39060/55554 | loss 3.3219 | norm 0.29 | TPS: 500,066
+step 39080/55554 | loss 3.3716 | norm 0.27 | TPS: 494,424
+step 39100/55554 | loss 3.3572 | norm 0.30 | TPS: 489,079
+step 39120/55554 | loss 3.3641 | norm 0.28 | TPS: 490,837
+step 39140/55554 | loss 3.3401 | norm 0.31 | TPS: 497,435
+step 39160/55554 | loss 3.3580 | norm 0.27 | TPS: 489,956
+step 39180/55554 | loss 3.3365 | norm 0.29 | TPS: 498,127
+step 39200/55554 | loss 3.3263 | norm 0.28 | TPS: 492,808
+step 39220/55554 | loss 3.3691 | norm 0.26 | TPS: 501,744
+step 39240/55554 | loss 3.3209 | norm 0.30 | TPS: 497,992
+step 39260/55554 | loss 3.3488 | norm 0.29 | TPS: 496,721
+step 39280/55554 | loss 3.3672 | norm 0.28 | TPS: 499,627
+step 39300/55554 | loss 3.3518 | norm 0.29 | TPS: 504,559
+step 39320/55554 | loss 3.3397 | norm 0.26 | TPS: 499,661
+step 39340/55554 | loss 3.3881 | norm 0.26 | TPS: 501,361
+step 39360/55554 | loss 3.2836 | norm 0.28 | TPS: 498,469
+step 39380/55554 | loss 3.3437 | norm 0.30 | TPS: 494,667
+step 39400/55554 | loss 3.3778 | norm 0.29 | TPS: 492,783
+step 39420/55554 | loss 3.3493 | norm 0.28 | TPS: 499,697
+step 39440/55554 | loss 3.3625 | norm 0.26 | TPS: 495,974
+step 39460/55554 | loss 3.3898 | norm 0.26 | TPS: 495,390
+step 39480/55554 | loss 3.3098 | norm 0.26 | TPS: 498,958
+step 39500/55554 | loss 3.3225 | norm 0.27 | TPS: 498,504
+💾 Checkpoint 39500
+step 39520/55554 | loss 3.3057 | norm 0.27 | TPS: 481,261
+step 39540/55554 | loss 3.3311 | norm 0.25 | TPS: 502,092
+step 39560/55554 | loss 3.3433 | norm 0.31 | TPS: 498,192
+step 39580/55554 | loss 3.3211 | norm 0.29 | TPS: 494,019
+step 39600/55554 | loss 3.3816 | norm 0.29 | TPS: 506,302
+step 39620/55554 | loss 3.3523 | norm 0.26 | TPS: 501,761
+step 39640/55554 | loss 3.3064 | norm 0.28 | TPS: 497,774
+step 39660/55554 | loss 3.3339 | norm 0.28 | TPS: 501,387
+step 39680/55554 | loss 3.2881 | norm 0.33 | TPS: 498,051
+step 39700/55554 | loss 3.3500 | norm 0.28 | TPS: 494,594
+step 39720/55554 | loss 3.3262 | norm 0.29 | TPS: 498,589
+step 39740/55554 | loss 3.3493 | norm 0.28 | TPS: 504,297
+step 39760/55554 | loss 3.3223 | norm 0.28 | TPS: 504,636
+step 39780/55554 | loss 3.3465 | norm 0.26 | TPS: 496,346
+step 39800/55554 | loss 3.3531 | norm 0.31 | TPS: 498,251
+step 39820/55554 | loss 3.3945 | norm 0.31 | TPS: 505,502
+step 39840/55554 | loss 3.3743 | norm 0.28 | TPS: 499,443
+step 39860/55554 | loss 3.3408 | norm 0.28 | TPS: 491,243
+step 39880/55554 | loss 3.3127 | norm 0.25 | TPS: 496,031
+step 39900/55554 | loss 3.3234 | norm 0.28 | TPS: 497,697
+step 39920/55554 | loss 3.3296 | norm 0.30 | TPS: 500,081
+step 39940/55554 | loss 3.3630 | norm 0.30 | TPS: 502,194
+step 39960/55554 | loss 3.3308 | norm 0.28 | TPS: 505,188
+step 39980/55554 | loss 3.3830 | norm 0.27 | TPS: 505,900
+step 40000/55554 | loss 3.3425 | norm 0.28 | TPS: 499,473
+
+📊 Validando...
+--- Val Loss: 3.2296 | Divergência: -0.1129 ---
+
+💾 Checkpoint 40000
+step 40020/55554 | loss 3.3387 | norm 0.30 | TPS: 445,585
+step 40040/55554 | loss 3.3722 | norm 0.26 | TPS: 502,570
+step 40060/55554 | loss 3.3721 | norm 0.26 | TPS: 504,514
+step 40080/55554 | loss 3.3457 | norm 0.29 | TPS: 505,216
+step 40100/55554 | loss 3.3202 | norm 0.31 | TPS: 503,885
+step 40120/55554 | loss 3.3517 | norm 0.26 | TPS: 513,497
+step 40140/55554 | loss 3.3296 | norm 0.27 | TPS: 511,352
+step 40160/55554 | loss 3.3599 | norm 0.25 | TPS: 506,380
+step 40180/55554 | loss 3.3184 | norm 0.28 | TPS: 510,270
+step 40200/55554 | loss 3.3593 | norm 0.30 | TPS: 506,681
+step 40220/55554 | loss 3.3573 | norm 0.25 | TPS: 506,868
+step 40240/55554 | loss 3.3417 | norm 0.25 | TPS: 510,807
+step 40260/55554 | loss 3.3419 | norm 0.26 | TPS: 501,361
+step 40280/55554 | loss 3.3289 | norm 0.25 | TPS: 496,906
+step 40300/55554 | loss 3.3092 | norm 0.28 | TPS: 502,784
+step 40320/55554 | loss 3.3431 | norm 0.28 | TPS: 501,974
+step 40340/55554 | loss 3.3298 | norm 0.25 | TPS: 502,698
+step 40360/55554 | loss 3.3130 | norm 0.32 | TPS: 508,915
+step 40380/55554 | loss 3.3619 | norm 0.27 | TPS: 510,860
+step 40400/55554 | loss 3.3524 | norm 0.27 | TPS: 505,065
+step 40420/55554 | loss 3.3540 | norm 0.30 | TPS: 508,961
+step 40440/55554 | loss 3.3356 | norm 0.30 | TPS: 510,592
+step 40460/55554 | loss 3.3352 | norm 0.28 | TPS: 503,844
+step 40480/55554 | loss 3.3345 | norm 0.28 | TPS: 508,286
+step 40500/55554 | loss 3.2942 | norm 0.26 | TPS: 506,451
+💾 Checkpoint 40500
+step 40520/55554 | loss 3.3562 | norm 0.35 | TPS: 486,384
+step 40540/55554 | loss 3.3005 | norm 0.26 | TPS: 509,382
+step 40560/55554 | loss 3.3273 | norm 0.26 | TPS: 509,984
+step 40580/55554 | loss 3.3534 | norm 0.28 | TPS: 511,727
+step 40600/55554 | loss 3.3246 | norm 0.31 | TPS: 508,448
+step 40620/55554 | loss 3.3568 | norm 0.30 | TPS: 505,950
+step 40640/55554 | loss 3.3296 | norm 0.26 | TPS: 508,297
+step 40660/55554 | loss 3.3110 | norm 0.25 | TPS: 509,955
+step 40680/55554 | loss 3.3586 | norm 0.34 | TPS: 510,048
+step 40700/55554 | loss 3.3487 | norm 0.25 | TPS: 510,759
+step 40720/55554 | loss 3.3257 | norm 0.29 | TPS: 515,713
+step 40740/55554 | loss 3.3514 | norm 0.27 | TPS: 513,234
+step 40760/55554 | loss 3.3291 | norm 0.34 | TPS: 512,300
+step 40780/55554 | loss 3.3138 | norm 0.30 | TPS: 510,915
+step 40800/55554 | loss 3.3627 | norm 0.27 | TPS: 509,610
+step 40820/55554 | loss 3.3031 | norm 0.29 | TPS: 505,622
+step 40840/55554 | loss 3.3588 | norm 0.30 | TPS: 509,566
+step 40860/55554 | loss 3.3542 | norm 0.26 | TPS: 508,491
+step 40880/55554 | loss 3.3462 | norm 0.31 | TPS: 505,215
+step 40900/55554 | loss 3.3244 | norm 0.28 | TPS: 504,734
+step 40920/55554 | loss 3.3208 | norm 0.26 | TPS: 505,942
+step 40940/55554 | loss 3.3762 | norm 0.26 | TPS: 506,864
+step 40960/55554 | loss 3.3541 | norm 0.30 | TPS: 506,188
+step 40980/55554 | loss 3.3321 | norm 0.29 | TPS: 505,567
+step 41000/55554 | loss 3.3252 | norm 0.28 | TPS: 503,269
+
+📊 Validando...
+--- Val Loss: 3.2260 | Divergência: -0.0993 ---
+
+💾 Checkpoint 41000
+step 41020/55554 | loss 3.3114 | norm 0.31 | TPS: 453,188
+step 41040/55554 | loss 3.3604 | norm 0.26 | TPS: 506,687
+step 41060/55554 | loss 3.3391 | norm 0.26 | TPS: 507,552
+step 41080/55554 | loss 3.3286 | norm 0.29 | TPS: 505,498
+step 41100/55554 | loss 3.3198 | norm 0.29 | TPS: 507,254
+step 41120/55554 | loss 3.3573 | norm 0.29 | TPS: 502,786
+step 41140/55554 | loss 3.3437 | norm 0.30 | TPS: 502,830
+step 41160/55554 | loss 3.3574 | norm 0.29 | TPS: 502,899
+step 41180/55554 | loss 3.3567 | norm 0.27 | TPS: 504,063
+step 41200/55554 | loss 3.3658 | norm 0.26 | TPS: 503,974
+step 41220/55554 | loss 3.3948 | norm 0.27 | TPS: 477,313
+step 41240/55554 | loss 3.3570 | norm 0.28 | TPS: 501,080
+step 41260/55554 | loss 3.3547 | norm 0.33 | TPS: 500,213
+step 41280/55554 | loss 3.3195 | norm 0.27 | TPS: 502,714
+step 41300/55554 | loss 3.3023 | norm 0.30 | TPS: 505,203
+step 41320/55554 | loss 3.3451 | norm 0.30 | TPS: 506,920
+step 41340/55554 | loss 3.3557 | norm 0.27 | TPS: 508,957
+step 41360/55554 | loss 3.3703 | norm 0.26 | TPS: 508,701
+step 41380/55554 | loss 3.3686 | norm 0.26 | TPS: 503,274
+step 41400/55554 | loss 3.3448 | norm 0.27 | TPS: 505,726
+step 41420/55554 | loss 3.2733 | norm 0.27 | TPS: 504,668
+step 41440/55554 | loss 3.3082 | norm 0.28 | TPS: 502,787
+step 41460/55554 | loss 3.3348 | norm 0.32 | TPS: 502,967
+step 41480/55554 | loss 3.3342 | norm 0.30 | TPS: 501,917
+step 41500/55554 | loss 3.3496 | norm 0.27 | TPS: 503,283
+💾 Checkpoint 41500
+step 41520/55554 | loss 3.3566 | norm 0.25 | TPS: 483,485
+step 41540/55554 | loss 3.3640 | norm 0.35 | TPS: 503,521
+step 41560/55554 | loss 3.3626 | norm 0.31 | TPS: 500,852
+step 41580/55554 | loss 3.3451 | norm 0.30 | TPS: 500,616
+step 41600/55554 | loss 3.3783 | norm 0.25 | TPS: 503,709
+step 41620/55554 | loss 3.3362 | norm 0.27 | TPS: 503,016
+step 41640/55554 | loss 3.3478 | norm 0.30 | TPS: 501,341
+step 41660/55554 | loss 3.3135 | norm 0.27 | TPS: 501,642
+step 41680/55554 | loss 3.3498 | norm 0.31 | TPS: 502,789
+step 41700/55554 | loss 3.3148 | norm 0.28 | TPS: 501,320
+step 41720/55554 | loss 3.3750 | norm 0.27 | TPS: 503,807
+step 41740/55554 | loss 3.2982 | norm 0.25 | TPS: 498,242
+step 41760/55554 | loss 3.3529 | norm 0.25 | TPS: 498,734
+step 41780/55554 | loss 3.3766 | norm 0.27 | TPS: 498,453
+step 41800/55554 | loss 3.3041 | norm 0.30 | TPS: 505,552
+step 41820/55554 | loss 3.4009 | norm 0.25 | TPS: 499,548
+step 41840/55554 | loss 3.3281 | norm 0.27 | TPS: 500,224
+step 41860/55554 | loss 3.3419 | norm 0.28 | TPS: 495,056
+step 41880/55554 | loss 3.3475 | norm 0.25 | TPS: 503,683
+step 41900/55554 | loss 3.3194 | norm 0.25 | TPS: 499,551
+step 41920/55554 | loss 3.3094 | norm 0.26 | TPS: 492,486
+step 41940/55554 | loss 3.3468 | norm 0.26 | TPS: 500,566
+step 41960/55554 | loss 3.3824 | norm 0.30 | TPS: 499,659
+step 41980/55554 | loss 3.3747 | norm 0.31 | TPS: 497,307
+step 42000/55554 | loss 3.3455 | norm 0.30 | TPS: 500,281
+
+📊 Validando...
+--- Val Loss: 3.2382 | Divergência: -0.1073 ---
+
+💾 Checkpoint 42000
+step 42020/55554 | loss 3.3460 | norm 0.33 | TPS: 444,344
+step 42040/55554 | loss 3.3394 | norm 0.27 | TPS: 499,924
+step 42060/55554 | loss 3.3184 | norm 0.26 | TPS: 496,950
+step 42080/55554 | loss 3.3965 | norm 0.27 | TPS: 499,133
+step 42100/55554 | loss 3.3245 | norm 0.27 | TPS: 504,426
+step 42120/55554 | loss 3.3028 | norm 0.27 | TPS: 498,281
+step 42140/55554 | loss 3.3569 | norm 0.27 | TPS: 506,419
+step 42160/55554 | loss 3.3459 | norm 0.28 | TPS: 499,940
+step 42180/55554 | loss 3.3201 | norm 0.28 | TPS: 507,035
+step 42200/55554 | loss 3.3161 | norm 0.28 | TPS: 504,237
+step 42220/55554 | loss 3.3262 | norm 0.28 | TPS: 502,462
+step 42240/55554 | loss 3.3224 | norm 0.26 | TPS: 501,521
+step 42260/55554 | loss 3.3437 | norm 0.26 | TPS: 496,271
+step 42280/55554 | loss 3.3902 | norm 0.28 | TPS: 501,667
+step 42300/55554 | loss 3.3495 | norm 0.28 | TPS: 496,583
+step 42320/55554 | loss 3.3329 | norm 0.35 | TPS: 498,516
+step 42340/55554 | loss 3.3593 | norm 0.29 | TPS: 498,989
+step 42360/55554 | loss 3.3748 | norm 0.27 | TPS: 499,638
+step 42380/55554 | loss 3.3496 | norm 0.26 | TPS: 493,575
+step 42400/55554 | loss 3.3529 | norm 0.28 | TPS: 471,299
+step 42420/55554 | loss 3.3436 | norm 0.30 | TPS: 499,914
+step 42440/55554 | loss 3.3344 | norm 0.30 | TPS: 504,958
+step 42460/55554 | loss 3.3367 | norm 0.26 | TPS: 498,993
+step 42480/55554 | loss 3.3384 | norm 0.25 | TPS: 502,521
+step 42500/55554 | loss 3.3535 | norm 0.28 | TPS: 505,998
+💾 Checkpoint 42500
+step 42520/55554 | loss 3.3448 | norm 0.27 | TPS: 483,334
+step 42540/55554 | loss 3.3131 | norm 0.25 | TPS: 512,172
+step 42560/55554 | loss 3.3092 | norm 0.27 | TPS: 504,183
+step 42580/55554 | loss 3.3683 | norm 0.28 | TPS: 510,460
+step 42600/55554 | loss 3.3591 | norm 0.29 | TPS: 505,575
+step 42620/55554 | loss 3.3448 | norm 0.29 | TPS: 505,537
+step 42640/55554 | loss 3.3768 | norm 0.30 | TPS: 496,163
+step 42660/55554 | loss 3.3129 | norm 0.27 | TPS: 491,919
+step 42680/55554 | loss 3.3479 | norm 0.31 | TPS: 498,028
+step 42700/55554 | loss 3.3497 | norm 0.27 | TPS: 506,126
+step 42720/55554 | loss 3.3528 | norm 0.27 | TPS: 502,961
+step 42740/55554 | loss 3.3563 | norm 0.28 | TPS: 499,634
+step 42760/55554 | loss 3.3228 | norm 0.29 | TPS: 507,382
+step 42780/55554 | loss 3.3433 | norm 0.32 | TPS: 507,679
+step 42800/55554 | loss 3.3566 | norm 0.27 | TPS: 509,256
+step 42820/55554 | loss 3.3630 | norm 0.26 | TPS: 508,741
+step 42840/55554 | loss 3.3356 | norm 0.27 | TPS: 506,899
+step 42860/55554 | loss 3.3652 | norm 0.27 | TPS: 510,623
+step 42880/55554 | loss 3.3443 | norm 0.25 | TPS: 506,378
+step 42900/55554 | loss 3.3581 | norm 0.31 | TPS: 493,953
+step 42920/55554 | loss 3.3454 | norm 0.29 | TPS: 505,642
+step 42940/55554 | loss 3.3569 | norm 0.25 | TPS: 501,244
+step 42960/55554 | loss 3.3610 | norm 0.26 | TPS: 509,884
+step 42980/55554 | loss 3.3821 | norm 0.27 | TPS: 502,864
+step 43000/55554 | loss 3.3300 | norm 0.31 | TPS: 499,918
+
+📊 Validando...
+--- Val Loss: 3.2267 | Divergência: -0.1033 ---
+
+💾 Checkpoint 43000
+step 43020/55554 | loss 3.3581 | norm 0.27 | TPS: 450,963
+step 43040/55554 | loss 3.3492 | norm 0.27 | TPS: 506,446
+step 43060/55554 | loss 3.3778 | norm 0.26 | TPS: 509,489
+step 43080/55554 | loss 3.3509 | norm 0.28 | TPS: 507,516
+step 43100/55554 | loss 3.3674 | norm 0.28 | TPS: 514,286
+step 43120/55554 | loss 3.3326 | norm 0.29 | TPS: 509,109
+step 43140/55554 | loss 3.3232 | norm 0.27 | TPS: 509,162
+step 43160/55554 | loss 3.3705 | norm 0.30 | TPS: 512,940
+step 43180/55554 | loss 3.3613 | norm 0.28 | TPS: 514,240
+step 43200/55554 | loss 3.3478 | norm 0.28 | TPS: 513,184
+step 43220/55554 | loss 3.2994 | norm 0.28 | TPS: 505,738
+step 43240/55554 | loss 3.3401 | norm 0.28 | TPS: 506,437
+step 43260/55554 | loss 3.3410 | norm 0.27 | TPS: 498,898
+step 43280/55554 | loss 3.3759 | norm 0.26 | TPS: 506,291
+step 43300/55554 | loss 3.3480 | norm 0.26 | TPS: 500,920
+step 43320/55554 | loss 3.3877 | norm 0.28 | TPS: 508,918
+step 43340/55554 | loss 3.3278 | norm 0.27 | TPS: 505,588
+step 43360/55554 | loss 3.3874 | norm 0.27 | TPS: 503,198
+step 43380/55554 | loss 3.3174 | norm 0.27 | TPS: 505,493
+step 43400/55554 | loss 3.3582 | norm 0.29 | TPS: 509,640
+step 43420/55554 | loss 3.3226 | norm 0.26 | TPS: 507,794
+step 43440/55554 | loss 3.3599 | norm 0.35 | TPS: 506,519
+step 43460/55554 | loss 3.3489 | norm 0.32 | TPS: 502,588
+step 43480/55554 | loss 3.3537 | norm 0.27 | TPS: 505,244
+step 43500/55554 | loss 3.3720 | norm 0.30 | TPS: 507,995
+💾 Checkpoint 43500
+step 43520/55554 | loss 3.3606 | norm 0.30 | TPS: 463,529
+step 43540/55554 | loss 3.3356 | norm 0.28 | TPS: 508,071
+step 43560/55554 | loss 3.3588 | norm 0.32 | TPS: 498,035
+step 43580/55554 | loss 3.3256 | norm 0.26 | TPS: 505,490
+step 43600/55554 | loss 3.3581 | norm 0.26 | TPS: 499,164
+step 43620/55554 | loss 3.3643 | norm 0.28 | TPS: 499,102
+step 43640/55554 | loss 3.3648 | norm 0.29 | TPS: 501,674
+step 43660/55554 | loss 3.3080 | norm 0.31 | TPS: 497,963
+step 43680/55554 | loss 3.2451 | norm 0.26 | TPS: 502,094
+step 43700/55554 | loss 3.3181 | norm 0.27 | TPS: 505,237
+step 43720/55554 | loss 3.2454 | norm 0.29 | TPS: 497,445
+step 43740/55554 | loss 3.2564 | norm 0.27 | TPS: 497,680
+step 43760/55554 | loss 3.2454 | norm 0.28 | TPS: 503,858
+step 43780/55554 | loss 3.2567 | norm 0.27 | TPS: 497,240
+step 43800/55554 | loss 3.2908 | norm 0.26 | TPS: 502,406
+step 43820/55554 | loss 3.2862 | norm 0.27 | TPS: 496,097
+step 43840/55554 | loss 3.2889 | norm 0.25 | TPS: 495,415
+step 43860/55554 | loss 3.2664 | norm 0.25 | TPS: 504,507
+step 43880/55554 | loss 3.2589 | norm 0.28 | TPS: 508,868
+step 43900/55554 | loss 3.2879 | norm 0.31 | TPS: 504,266
+step 43920/55554 | loss 3.3111 | norm 0.29 | TPS: 502,853
+step 43940/55554 | loss 3.2828 | norm 0.26 | TPS: 498,635
+step 43960/55554 | loss 3.2539 | norm 0.27 | TPS: 499,257
+step 43980/55554 | loss 3.2796 | norm 0.25 | TPS: 508,170
+step 44000/55554 | loss 3.3080 | norm 0.26 | TPS: 505,594
+
+📊 Validando...
+--- Val Loss: 3.2209 | Divergência: -0.0872 ---
+
+💾 Checkpoint 44000
+step 44020/55554 | loss 3.2788 | norm 0.28 | TPS: 446,353
+step 44040/55554 | loss 3.2669 | norm 0.28 | TPS: 502,528
+step 44060/55554 | loss 3.2731 | norm 0.30 | TPS: 504,553
+step 44080/55554 | loss 3.3063 | norm 0.27 | TPS: 502,076
+step 44100/55554 | loss 3.3000 | norm 0.28 | TPS: 506,529
+step 44120/55554 | loss 3.3102 | norm 0.27 | TPS: 505,363
+step 44140/55554 | loss 3.2786 | norm 0.26 | TPS: 509,635
+step 44160/55554 | loss 3.2824 | norm 0.26 | TPS: 509,916
+step 44180/55554 | loss 3.2509 | norm 0.26 | TPS: 504,838
+step 44200/55554 | loss 3.2699 | norm 0.28 | TPS: 502,652
+step 44220/55554 | loss 3.2793 | norm 0.29 | TPS: 496,582
+step 44240/55554 | loss 3.2815 | norm 0.26 | TPS: 498,055
+step 44260/55554 | loss 3.3164 | norm 0.26 | TPS: 500,642
+step 44280/55554 | loss 3.3107 | norm 0.29 | TPS: 506,429
+step 44300/55554 | loss 3.3292 | norm 0.28 | TPS: 503,811
+step 44320/55554 | loss 3.2475 | norm 0.29 | TPS: 510,487
+step 44340/55554 | loss 3.2968 | norm 0.30 | TPS: 512,091
+step 44360/55554 | loss 3.2586 | norm 0.27 | TPS: 505,587
+step 44380/55554 | loss 3.2655 | norm 0.28 | TPS: 501,338
+step 44400/55554 | loss 3.3216 | norm 0.29 | TPS: 502,664
+step 44420/55554 | loss 3.2731 | norm 0.28 | TPS: 496,890
+step 44440/55554 | loss 3.3031 | norm 0.28 | TPS: 496,559
+step 44460/55554 | loss 3.2647 | norm 0.27 | TPS: 499,563
+step 44480/55554 | loss 3.2937 | norm 0.27 | TPS: 497,787
+step 44500/55554 | loss 3.2606 | norm 0.27 | TPS: 500,959
+💾 Checkpoint 44500
+step 44520/55554 | loss 3.3158 | norm 0.28 | TPS: 477,942
+step 44540/55554 | loss 3.3159 | norm 0.27 | TPS: 505,767
+step 44560/55554 | loss 3.2613 | norm 0.31 | TPS: 476,823
+step 44580/55554 | loss 3.3089 | norm 0.26 | TPS: 500,420
+step 44600/55554 | loss 3.3055 | norm 0.25 | TPS: 499,081
+step 44620/55554 | loss 3.3279 | norm 0.28 | TPS: 504,236
+step 44640/55554 | loss 3.3080 | norm 0.26 | TPS: 503,736
+step 44660/55554 | loss 3.3208 | norm 0.27 | TPS: 503,903
+step 44680/55554 | loss 3.3031 | norm 0.28 | TPS: 500,946
+step 44700/55554 | loss 3.3076 | norm 0.27 | TPS: 500,059
+step 44720/55554 | loss 3.3153 | norm 0.26 | TPS: 501,475
+step 44740/55554 | loss 3.2519 | norm 0.29 | TPS: 502,756
+step 44760/55554 | loss 3.3037 | norm 0.29 | TPS: 504,423
+step 44780/55554 | loss 3.2943 | norm 0.26 | TPS: 501,298
+step 44800/55554 | loss 3.3299 | norm 0.27 | TPS: 502,071
+step 44820/55554 | loss 3.2885 | norm 0.27 | TPS: 505,794
+step 44840/55554 | loss 3.2922 | norm 0.31 | TPS: 502,511
+step 44860/55554 | loss 3.2885 | norm 0.28 | TPS: 502,561
+step 44880/55554 | loss 3.2845 | norm 0.28 | TPS: 501,071
+step 44900/55554 | loss 3.3298 | norm 0.28 | TPS: 502,047
+step 44920/55554 | loss 3.2724 | norm 0.26 | TPS: 498,774
+step 44940/55554 | loss 3.2839 | norm 0.27 | TPS: 504,150
+step 44960/55554 | loss 3.2641 | norm 0.31 | TPS: 503,327
+step 44980/55554 | loss 3.2753 | norm 0.25 | TPS: 505,140
+step 45000/55554 | loss 3.3307 | norm 0.26 | TPS: 502,330
+
+📊 Validando...
+--- Val Loss: 3.2267 | Divergência: -0.1040 ---
+
+💾 Checkpoint 45000
+step 45020/55554 | loss 3.2858 | norm 0.28 | TPS: 438,877
+step 45040/55554 | loss 3.3358 | norm 0.26 | TPS: 492,401
+step 45060/55554 | loss 3.3091 | norm 0.26 | TPS: 499,395
+step 45080/55554 | loss 3.2824 | norm 0.27 | TPS: 505,933
+step 45100/55554 | loss 3.2734 | norm 0.31 | TPS: 509,947
+step 45120/55554 | loss 3.2524 | norm 0.26 | TPS: 504,776
+step 45140/55554 | loss 3.2976 | norm 0.27 | TPS: 502,544
+step 45160/55554 | loss 3.3001 | norm 0.28 | TPS: 496,188
+step 45180/55554 | loss 3.2706 | norm 0.29 | TPS: 503,739
+step 45200/55554 | loss 3.2930 | norm 0.29 | TPS: 505,836
+step 45220/55554 | loss 3.2942 | norm 0.27 | TPS: 502,212
+step 45240/55554 | loss 3.2246 | norm 0.26 | TPS: 508,891
+step 45260/55554 | loss 3.2855 | norm 0.30 | TPS: 505,744
+step 45280/55554 | loss 3.2862 | norm 0.26 | TPS: 495,672
+step 45300/55554 | loss 3.2688 | norm 0.32 | TPS: 497,026
+step 45320/55554 | loss 3.3197 | norm 0.26 | TPS: 501,656
+step 45340/55554 | loss 3.3529 | norm 0.25 | TPS: 500,908
+step 45360/55554 | loss 3.3119 | norm 0.29 | TPS: 499,068
+step 45380/55554 | loss 3.3267 | norm 0.26 | TPS: 504,503
+step 45400/55554 | loss 3.2804 | norm 0.25 | TPS: 501,287
+step 45420/55554 | loss 3.3046 | norm 0.27 | TPS: 503,314
+step 45440/55554 | loss 3.3079 | norm 0.26 | TPS: 497,667
+step 45460/55554 | loss 3.2903 | norm 0.27 | TPS: 503,975
+step 45480/55554 | loss 3.3159 | norm 0.31 | TPS: 502,018
+step 45500/55554 | loss 3.2458 | norm 0.26 | TPS: 501,567
+💾 Checkpoint 45500
+step 45520/55554 | loss 3.2242 | norm 0.26 | TPS: 487,211
+step 45540/55554 | loss 3.2944 | norm 0.26 | TPS: 505,953
+step 45560/55554 | loss 3.2594 | norm 0.25 | TPS: 491,239
+step 45580/55554 | loss 3.3254 | norm 0.27 | TPS: 502,555
+step 45600/55554 | loss 3.2418 | norm 0.29 | TPS: 502,898
+step 45620/55554 | loss 3.2870 | norm 0.24 | TPS: 495,392
+step 45640/55554 | loss 3.3014 | norm 0.28 | TPS: 492,403
+step 45660/55554 | loss 3.3167 | norm 0.25 | TPS: 498,968
+step 45680/55554 | loss 3.2897 | norm 0.25 | TPS: 503,093
+step 45700/55554 | loss 3.3232 | norm 0.26 | TPS: 501,735
+step 45720/55554 | loss 3.3004 | norm 0.27 | TPS: 502,545
+step 45740/55554 | loss 3.2644 | norm 0.28 | TPS: 499,465
+step 45760/55554 | loss 3.2971 | norm 0.25 | TPS: 496,716
+step 45780/55554 | loss 3.2599 | norm 0.27 | TPS: 500,200
+step 45800/55554 | loss 3.2849 | norm 0.25 | TPS: 479,913
+step 45820/55554 | loss 3.2898 | norm 0.28 | TPS: 507,303
+step 45840/55554 | loss 3.2846 | norm 0.35 | TPS: 501,650
+step 45860/55554 | loss 3.2979 | norm 0.30 | TPS: 504,378
+step 45880/55554 | loss 3.2835 | norm 0.27 | TPS: 510,913
+step 45900/55554 | loss 3.2750 | norm 0.26 | TPS: 506,185
+step 45920/55554 | loss 3.2724 | norm 0.26 | TPS: 506,539
+step 45940/55554 | loss 3.3173 | norm 0.28 | TPS: 502,312
+step 45960/55554 | loss 3.2692 | norm 0.29 | TPS: 502,747
+step 45980/55554 | loss 3.2930 | norm 0.28 | TPS: 504,293
+step 46000/55554 | loss 3.3064 | norm 0.28 | TPS: 506,333
+
+📊 Validando...
+--- Val Loss: 3.2250 | Divergência: -0.0814 ---
+
+ERROR:asyncio:Exception in callback Task.__step()
+handle: <Handle Task.__step()>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/asyncio/events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+RuntimeError: cannot enter context: <_contextvars.Context object at 0x792e600c5f80> is already entered
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-48136' coro=<_async_in_context.<locals>.run_in_context() done, defined at /usr/local/lib/python3.12/site-packages/ipykernel/utils.py:57> wait_for=<Task pending name='Task-48137' coro=<Kernel.shell_main() running at /usr/local/lib/python3.12/site-packages/ipykernel/kernelbase.py:590> cb=[Task.__wakeup()]> cb=[ZMQStream._run_callback.<locals>._log_error() at /usr/local/lib/python3.12/site-packages/zmq/eventloop/zmqstream.py:563]>
+/usr/local/lib/python3.12/site-packages/tensorflow/python/framework/tensor_shape.py:830: RuntimeWarning: coroutine 'Kernel.shell_main' was never awaited
+  self._dims = tuple(as_dimension(d).value for d in dims)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-48137' coro=<Kernel.shell_main() running at /usr/local/lib/python3.12/site-packages/ipykernel/kernelbase.py:590> cb=[Task.__wakeup()]>
+💾 Checkpoint 46000
+step 46020/55554 | loss 3.2670 | norm 0.26 | TPS: 446,754
+step 46040/55554 | loss 3.2982 | norm 0.29 | TPS: 507,367
+step 46060/55554 | loss 3.2785 | norm 0.29 | TPS: 501,967
+step 46080/55554 | loss 3.3178 | norm 0.27 | TPS: 504,001
+step 46100/55554 | loss 3.2899 | norm 0.27 | TPS: 506,569
+step 46120/55554 | loss 3.3239 | norm 0.27 | TPS: 501,433
+step 46140/55554 | loss 3.2650 | norm 0.29 | TPS: 500,303
+step 46160/55554 | loss 3.2610 | norm 0.29 | TPS: 507,228
+step 46180/55554 | loss 3.2928 | norm 0.28 | TPS: 502,789
+step 46200/55554 | loss 3.3199 | norm 0.30 | TPS: 497,878
+step 46220/55554 | loss 3.3213 | norm 0.25 | TPS: 491,242
+step 46240/55554 | loss 3.2789 | norm 0.27 | TPS: 505,673
+step 46260/55554 | loss 3.2647 | norm 0.27 | TPS: 503,369
+step 46280/55554 | loss 3.2575 | norm 0.27 | TPS: 506,327
+step 46300/55554 | loss 3.2945 | norm 0.27 | TPS: 506,469
+step 46320/55554 | loss 3.2767 | norm 0.31 | TPS: 503,277
+step 46340/55554 | loss 3.3051 | norm 0.25 | TPS: 505,017
+step 46360/55554 | loss 3.3105 | norm 0.27 | TPS: 501,799
+step 46380/55554 | loss 3.3040 | norm 0.29 | TPS: 504,172
+step 46400/55554 | loss 3.3053 | norm 0.27 | TPS: 505,437
+step 46420/55554 | loss 3.3361 | norm 0.32 | TPS: 504,370
+step 46440/55554 | loss 3.3278 | norm 0.26 | TPS: 507,602
+step 46460/55554 | loss 3.2449 | norm 0.30 | TPS: 505,317
+step 46480/55554 | loss 3.2862 | norm 0.25 | TPS: 503,369
+step 46500/55554 | loss 3.2891 | norm 0.27 | TPS: 509,172
+💾 Checkpoint 46500
+step 46520/55554 | loss 3.3230 | norm 0.27 | TPS: 485,189
+step 46540/55554 | loss 3.3151 | norm 0.27 | TPS: 510,985
+step 46560/55554 | loss 3.2887 | norm 0.26 | TPS: 506,625
+step 46580/55554 | loss 3.2710 | norm 0.26 | TPS: 700,995
+🔄 Época concluída! Reiniciando dados...
+step 46600/55554 | loss 3.2565 | norm 0.37 | TPS: 518,927
+step 46620/55554 | loss 3.2931 | norm 0.31 | TPS: 628,130
+step 46640/55554 | loss 3.2241 | norm 0.29 | TPS: 630,018
+step 46660/55554 | loss 3.2134 | norm 0.29 | TPS: 630,490
+step 46680/55554 | loss 3.2611 | norm 0.31 | TPS: 630,103
+step 46700/55554 | loss 3.2002 | norm 0.29 | TPS: 630,645
+step 46720/55554 | loss 3.1793 | norm 0.31 | TPS: 590,500
+step 46740/55554 | loss 3.0300 | norm 0.36 | TPS: 483,006
+step 46760/55554 | loss 3.0151 | norm 0.42 | TPS: 483,937
+step 46780/55554 | loss 3.1255 | norm 0.30 | TPS: 496,495
+step 46800/55554 | loss 3.2182 | norm 0.30 | TPS: 485,668
+step 46820/55554 | loss 3.1995 | norm 0.27 | TPS: 488,631
+step 46840/55554 | loss 3.2232 | norm 0.27 | TPS: 494,751
+step 46860/55554 | loss 3.0610 | norm 0.36 | TPS: 479,456
+step 46880/55554 | loss 3.0909 | norm 0.28 | TPS: 477,249
+step 46900/55554 | loss 2.9435 | norm 0.29 | TPS: 480,794
+step 46920/55554 | loss 3.0564 | norm 0.27 | TPS: 492,293
+step 46940/55554 | loss 3.0124 | norm 0.30 | TPS: 488,846
+step 46960/55554 | loss 3.1745 | norm 0.29 | TPS: 487,189
+step 46980/55554 | loss 3.1583 | norm 0.28 | TPS: 499,141
+step 47000/55554 | loss 3.1666 | norm 0.28 | TPS: 489,678
+
+📊 Validando...
+--- Val Loss: 3.2504 | Divergência: 0.0838 ---
+
+💾 Checkpoint 47000
+step 47020/55554 | loss 3.1495 | norm 0.35 | TPS: 443,487
+step 47040/55554 | loss 3.1161 | norm 0.28 | TPS: 488,900
+step 47060/55554 | loss 3.0894 | norm 0.30 | TPS: 486,205
+step 47080/55554 | loss 2.9518 | norm 0.30 | TPS: 489,711
+step 47100/55554 | loss 3.1740 | norm 0.31 | TPS: 504,476
+step 47120/55554 | loss 3.1543 | norm 0.27 | TPS: 481,136
+step 47140/55554 | loss 3.2457 | norm 0.28 | TPS: 488,171
+step 47160/55554 | loss 3.2055 | norm 0.30 | TPS: 497,308
+step 47180/55554 | loss 3.1359 | norm 0.28 | TPS: 489,733
+step 47200/55554 | loss 3.1742 | norm 0.27 | TPS: 477,785
+step 47220/55554 | loss 2.9929 | norm 0.29 | TPS: 487,670
+step 47240/55554 | loss 3.0449 | norm 0.30 | TPS: 483,604
+step 47260/55554 | loss 2.9703 | norm 0.43 | TPS: 485,258
+step 47280/55554 | loss 3.0784 | norm 0.33 | TPS: 517,975
+step 47300/55554 | loss 3.2060 | norm 0.33 | TPS: 484,106
+step 47320/55554 | loss 3.2000 | norm 0.27 | TPS: 492,260
+step 47340/55554 | loss 3.2511 | norm 0.28 | TPS: 494,130
+step 47360/55554 | loss 3.0750 | norm 0.29 | TPS: 478,845
+step 47380/55554 | loss 3.1964 | norm 0.26 | TPS: 489,009
+step 47400/55554 | loss 3.0698 | norm 0.26 | TPS: 484,766
+step 47420/55554 | loss 3.1166 | norm 0.33 | TPS: 478,627
+step 47440/55554 | loss 3.1535 | norm 0.28 | TPS: 496,343
+step 47460/55554 | loss 3.2027 | norm 0.26 | TPS: 497,643
+step 47480/55554 | loss 3.1799 | norm 0.25 | TPS: 489,576
+step 47500/55554 | loss 2.9887 | norm 0.29 | TPS: 479,392
+💾 Checkpoint 47500
+step 47520/55554 | loss 3.0129 | norm 0.27 | TPS: 468,725
+step 47540/55554 | loss 3.0183 | norm 0.32 | TPS: 496,212
+step 47560/55554 | loss 3.0503 | norm 0.32 | TPS: 507,807
+step 47580/55554 | loss 3.1605 | norm 0.29 | TPS: 492,901
+step 47600/55554 | loss 3.1935 | norm 0.27 | TPS: 489,301
+step 47620/55554 | loss 3.1150 | norm 0.27 | TPS: 497,089
+step 47640/55554 | loss 3.1775 | norm 0.25 | TPS: 488,117
+step 47660/55554 | loss 3.1424 | norm 0.26 | TPS: 479,019
+step 47680/55554 | loss 2.9734 | norm 0.36 | TPS: 486,314
+step 47700/55554 | loss 3.0245 | norm 0.29 | TPS: 488,253
+step 47720/55554 | loss 3.0299 | norm 0.28 | TPS: 497,581
+step 47740/55554 | loss 3.0188 | norm 0.32 | TPS: 496,005
+step 47760/55554 | loss 3.1706 | norm 0.28 | TPS: 488,480
+step 47780/55554 | loss 3.1943 | norm 0.27 | TPS: 490,162
+step 47800/55554 | loss 3.1971 | norm 0.28 | TPS: 481,962
+step 47820/55554 | loss 3.1672 | norm 0.28 | TPS: 483,200
+step 47840/55554 | loss 3.1076 | norm 0.27 | TPS: 475,843
+step 47860/55554 | loss 2.9684 | norm 0.33 | TPS: 489,735
+step 47880/55554 | loss 2.9583 | norm 0.28 | TPS: 494,977
+step 47900/55554 | loss 3.2007 | norm 0.31 | TPS: 490,563
+step 47920/55554 | loss 3.2302 | norm 0.30 | TPS: 486,662
+step 47940/55554 | loss 3.1729 | norm 0.30 | TPS: 484,607
+step 47960/55554 | loss 3.1256 | norm 0.30 | TPS: 479,825
+step 47980/55554 | loss 3.0275 | norm 0.32 | TPS: 487,197
+step 48000/55554 | loss 3.0631 | norm 0.25 | TPS: 488,319
+
+📊 Validando...
+--- Val Loss: 3.2722 | Divergência: 0.2091 ---
+
+💾 Checkpoint 48000
+step 48020/55554 | loss 3.1835 | norm 0.29 | TPS: 448,532
+step 48040/55554 | loss 3.0620 | norm 0.27 | TPS: 498,434
+step 48060/55554 | loss 3.1295 | norm 0.27 | TPS: 494,576
+step 48080/55554 | loss 3.1656 | norm 0.31 | TPS: 501,623
+step 48100/55554 | loss 3.0593 | norm 0.27 | TPS: 486,285
+step 48120/55554 | loss 2.9790 | norm 0.31 | TPS: 492,750
+step 48140/55554 | loss 3.0399 | norm 0.30 | TPS: 494,284
+step 48160/55554 | loss 3.0903 | norm 0.27 | TPS: 484,700
+step 48180/55554 | loss 3.1084 | norm 0.29 | TPS: 505,311
+step 48200/55554 | loss 3.1573 | norm 0.26 | TPS: 499,921
+step 48220/55554 | loss 3.1832 | norm 0.25 | TPS: 502,241
+step 48240/55554 | loss 3.1580 | norm 0.29 | TPS: 496,055
+step 48260/55554 | loss 3.0258 | norm 0.29 | TPS: 485,629
+step 48280/55554 | loss 3.0533 | norm 0.28 | TPS: 498,905
+step 48300/55554 | loss 3.1283 | norm 0.30 | TPS: 509,454
+step 48320/55554 | loss 3.2442 | norm 0.26 | TPS: 490,055
+step 48340/55554 | loss 3.1596 | norm 0.31 | TPS: 494,307
+step 48360/55554 | loss 3.0910 | norm 0.27 | TPS: 492,252
+step 48380/55554 | loss 2.9884 | norm 0.26 | TPS: 498,833
+step 48400/55554 | loss 3.0025 | norm 0.32 | TPS: 498,892
+step 48420/55554 | loss 3.1315 | norm 0.28 | TPS: 517,999
+step 48440/55554 | loss 3.2077 | norm 0.27 | TPS: 491,129
+step 48460/55554 | loss 3.1325 | norm 0.27 | TPS: 499,112
+step 48480/55554 | loss 3.1806 | norm 0.29 | TPS: 498,746
+step 48500/55554 | loss 3.6893 | norm 0.28 | TPS: 530,560
+💾 Checkpoint 48500
+step 48520/55554 | loss 3.7274 | norm 0.26 | TPS: 504,788
+step 48540/55554 | loss 3.6829 | norm 0.28 | TPS: 522,801
+step 48560/55554 | loss 3.6422 | norm 0.25 | TPS: 518,086
+step 48580/55554 | loss 3.6792 | norm 0.27 | TPS: 513,677
+step 48600/55554 | loss 3.6831 | norm 0.26 | TPS: 518,016
+step 48620/55554 | loss 3.6842 | norm 0.28 | TPS: 525,392
+step 48640/55554 | loss 3.6145 | norm 0.26 | TPS: 528,727
+step 48660/55554 | loss 3.6701 | norm 0.26 | TPS: 524,672
+step 48680/55554 | loss 3.6794 | norm 0.26 | TPS: 523,606
+step 48700/55554 | loss 3.6608 | norm 0.29 | TPS: 515,462
+step 48720/55554 | loss 3.6576 | norm 0.26 | TPS: 514,797
+step 48740/55554 | loss 3.6546 | norm 0.29 | TPS: 516,381
+step 48760/55554 | loss 3.6829 | norm 0.27 | TPS: 514,094
+step 48780/55554 | loss 3.6517 | norm 0.26 | TPS: 508,028
+step 48800/55554 | loss 3.6603 | norm 0.25 | TPS: 521,303
+step 48820/55554 | loss 3.6373 | norm 0.32 | TPS: 513,743
+step 48840/55554 | loss 3.6514 | norm 0.29 | TPS: 515,057
+step 48860/55554 | loss 3.6695 | norm 0.27 | TPS: 516,068
+step 48880/55554 | loss 3.6657 | norm 0.26 | TPS: 515,891
+step 48900/55554 | loss 3.6013 | norm 0.28 | TPS: 517,132
+step 48920/55554 | loss 3.6357 | norm 0.28 | TPS: 521,955
+step 48940/55554 | loss 3.6823 | norm 0.30 | TPS: 522,020
+step 48960/55554 | loss 3.6543 | norm 0.25 | TPS: 523,759
+step 48980/55554 | loss 3.6488 | norm 0.32 | TPS: 520,809
+step 49000/55554 | loss 3.6266 | norm 0.26 | TPS: 523,823
+
+📊 Validando...
+--- Val Loss: 3.2461 | Divergência: -0.3805 ---
+
+💾 Checkpoint 49000
+step 49020/55554 | loss 3.6570 | norm 0.28 | TPS: 463,361
+step 49040/55554 | loss 3.6471 | norm 0.27 | TPS: 516,046
+step 49060/55554 | loss 3.6444 | norm 0.25 | TPS: 520,535
+step 49080/55554 | loss 3.6283 | norm 0.25 | TPS: 518,891
+step 49100/55554 | loss 3.6870 | norm 0.28 | TPS: 513,359
+step 49120/55554 | loss 3.6235 | norm 0.29 | TPS: 516,179
+step 49140/55554 | loss 3.6288 | norm 0.27 | TPS: 516,956
+step 49160/55554 | loss 3.6630 | norm 0.27 | TPS: 520,549
+step 49180/55554 | loss 3.6426 | norm 0.28 | TPS: 513,358
+step 49200/55554 | loss 3.6774 | norm 0.23 | TPS: 484,895
+step 49220/55554 | loss 3.6343 | norm 0.24 | TPS: 524,716
+step 49240/55554 | loss 3.6318 | norm 0.30 | TPS: 519,171
+step 49260/55554 | loss 3.6007 | norm 0.26 | TPS: 513,966
+step 49280/55554 | loss 3.6553 | norm 0.28 | TPS: 519,733
+step 49300/55554 | loss 3.6389 | norm 0.25 | TPS: 517,279
+step 49320/55554 | loss 3.6090 | norm 0.27 | TPS: 519,310
+step 49340/55554 | loss 3.5659 | norm 0.26 | TPS: 515,907
+step 49360/55554 | loss 3.6355 | norm 0.24 | TPS: 521,369
+step 49380/55554 | loss 3.6713 | norm 0.24 | TPS: 515,351
+step 49400/55554 | loss 3.6353 | norm 0.25 | TPS: 512,305
+step 49420/55554 | loss 3.6241 | norm 0.29 | TPS: 515,008
+step 49440/55554 | loss 3.6284 | norm 0.27 | TPS: 512,900
+step 49460/55554 | loss 3.6694 | norm 0.26 | TPS: 519,558
+step 49480/55554 | loss 3.6069 | norm 0.26 | TPS: 519,046
+step 49500/55554 | loss 3.6412 | norm 0.25 | TPS: 509,164
+💾 Checkpoint 49500
+step 49520/55554 | loss 3.6536 | norm 0.29 | TPS: 495,700
+step 49540/55554 | loss 3.6504 | norm 0.26 | TPS: 516,595
+step 49560/55554 | loss 3.6366 | norm 0.27 | TPS: 514,497
+step 49580/55554 | loss 3.6407 | norm 0.27 | TPS: 512,390
+step 49600/55554 | loss 3.6070 | norm 0.27 | TPS: 520,841
+step 49620/55554 | loss 3.6167 | norm 0.25 | TPS: 517,411
+step 49640/55554 | loss 3.6177 | norm 0.26 | TPS: 517,218
+step 49660/55554 | loss 3.6419 | norm 0.30 | TPS: 521,543
+step 49680/55554 | loss 3.6202 | norm 0.26 | TPS: 516,946
+step 49700/55554 | loss 3.6326 | norm 0.28 | TPS: 519,928
+step 49720/55554 | loss 3.6379 | norm 0.35 | TPS: 516,126
+step 49740/55554 | loss 3.6537 | norm 0.26 | TPS: 524,990
+step 49760/55554 | loss 3.6578 | norm 0.26 | TPS: 520,821
+step 49780/55554 | loss 3.5971 | norm 0.25 | TPS: 519,875
+step 49800/55554 | loss 3.6385 | norm 0.31 | TPS: 520,070
+step 49820/55554 | loss 3.6400 | norm 0.25 | TPS: 520,774
+step 49840/55554 | loss 3.5330 | norm 0.28 | TPS: 531,212
+step 49860/55554 | loss 3.6267 | norm 0.27 | TPS: 527,111
+step 49880/55554 | loss 3.5988 | norm 0.25 | TPS: 533,145
+step 49900/55554 | loss 3.6120 | norm 0.26 | TPS: 526,498
+step 49920/55554 | loss 3.6223 | norm 0.27 | TPS: 528,123
+step 49940/55554 | loss 3.5826 | norm 0.28 | TPS: 528,599
+step 49960/55554 | loss 3.6806 | norm 0.26 | TPS: 529,179
+step 49980/55554 | loss 3.6120 | norm 0.29 | TPS: 527,669
+step 50000/55554 | loss 3.5981 | norm 0.27 | TPS: 524,348
+
+📊 Validando...
+--- Val Loss: 3.2628 | Divergência: -0.3353 ---
+
+💾 Checkpoint 50000
+step 50020/55554 | loss 3.6318 | norm 0.26 | TPS: 464,606
+step 50040/55554 | loss 3.5701 | norm 0.30 | TPS: 523,502
+step 50060/55554 | loss 3.6331 | norm 0.26 | TPS: 528,898
+step 50080/55554 | loss 3.6643 | norm 0.27 | TPS: 514,299
+step 50100/55554 | loss 3.6316 | norm 0.26 | TPS: 519,896
+step 50120/55554 | loss 3.6439 | norm 0.29 | TPS: 520,248
+step 50140/55554 | loss 3.6305 | norm 0.27 | TPS: 527,474
+step 50160/55554 | loss 3.5862 | norm 0.25 | TPS: 527,303
+step 50180/55554 | loss 3.6190 | norm 0.25 | TPS: 518,250
+step 50200/55554 | loss 3.6488 | norm 0.26 | TPS: 525,321
+step 50220/55554 | loss 3.6568 | norm 0.28 | TPS: 523,543
+step 50240/55554 | loss 3.5662 | norm 0.26 | TPS: 517,069
+step 50260/55554 | loss 3.6261 | norm 0.25 | TPS: 524,429
+step 50280/55554 | loss 3.5894 | norm 0.27 | TPS: 520,869
+step 50300/55554 | loss 3.6091 | norm 0.25 | TPS: 523,367
+step 50320/55554 | loss 3.6185 | norm 0.27 | TPS: 516,428
+step 50340/55554 | loss 3.6007 | norm 0.28 | TPS: 522,177
+step 50360/55554 | loss 3.6353 | norm 0.25 | TPS: 515,586
+step 50380/55554 | loss 3.5998 | norm 0.28 | TPS: 493,559
+step 50400/55554 | loss 3.6292 | norm 0.27 | TPS: 524,863
+step 50420/55554 | loss 3.6307 | norm 0.29 | TPS: 514,000
+step 50440/55554 | loss 3.5784 | norm 0.30 | TPS: 513,671
+step 50460/55554 | loss 3.6071 | norm 0.25 | TPS: 514,546
+step 50480/55554 | loss 3.5491 | norm 0.29 | TPS: 525,735
+step 50500/55554 | loss 3.5774 | norm 0.31 | TPS: 520,557
+💾 Checkpoint 50500
+step 50520/55554 | loss 3.6053 | norm 0.26 | TPS: 500,415
+step 50540/55554 | loss 3.5960 | norm 0.25 | TPS: 523,534
+step 50560/55554 | loss 3.5765 | norm 0.30 | TPS: 520,534
+step 50580/55554 | loss 3.6331 | norm 0.28 | TPS: 517,054
+step 50600/55554 | loss 3.5998 | norm 0.27 | TPS: 520,182
+step 50620/55554 | loss 3.6392 | norm 0.27 | TPS: 515,907
+step 50640/55554 | loss 3.6064 | norm 0.28 | TPS: 513,069
+step 50660/55554 | loss 3.6196 | norm 0.31 | TPS: 518,283
+step 50680/55554 | loss 3.5629 | norm 0.25 | TPS: 516,906
+step 50700/55554 | loss 3.6299 | norm 0.26 | TPS: 513,210
+step 50720/55554 | loss 3.6535 | norm 0.27 | TPS: 513,342
+step 50740/55554 | loss 3.5846 | norm 0.27 | TPS: 516,136
+step 50760/55554 | loss 3.6023 | norm 0.30 | TPS: 515,989
+step 50780/55554 | loss 3.6458 | norm 0.26 | TPS: 512,158
+step 50800/55554 | loss 3.6075 | norm 0.35 | TPS: 510,602
+step 50820/55554 | loss 3.5946 | norm 0.26 | TPS: 514,564
+step 50840/55554 | loss 3.6570 | norm 0.26 | TPS: 514,325
+step 50860/55554 | loss 3.5611 | norm 0.26 | TPS: 508,635
+step 50880/55554 | loss 3.6141 | norm 0.27 | TPS: 512,196
+step 50900/55554 | loss 3.5900 | norm 0.32 | TPS: 513,454
+step 50920/55554 | loss 3.5720 | norm 0.29 | TPS: 515,375
+step 50940/55554 | loss 3.6202 | norm 0.28 | TPS: 515,696
+step 50960/55554 | loss 3.6207 | norm 0.28 | TPS: 514,877
+step 50980/55554 | loss 3.6790 | norm 0.26 | TPS: 517,371
+step 51000/55554 | loss 3.6499 | norm 0.27 | TPS: 516,661
+
+📊 Validando...
+--- Val Loss: 3.2565 | Divergência: -0.3934 ---
+
+💾 Checkpoint 51000
+step 51020/55554 | loss 3.5747 | norm 0.26 | TPS: 451,165
+step 51040/55554 | loss 3.6194 | norm 0.25 | TPS: 517,930
+step 51060/55554 | loss 3.6243 | norm 0.27 | TPS: 520,462
+---------------------------------------------------------------------------
+KeyboardInterrupt                         Traceback (most recent call last)
+Cell In[1], line 284
+    281         avg_val = np.mean(val_losses)
+    282         print(f"--- Val Loss: {avg_val:.4f} | Divergência: {avg_val - loss:.4f} ---\n")
+--> 284 if (step + 1) % CFG["save_every"] == 0 or (step + 1) == CFG["total_train_steps"]:
+    285     mngr.save(step + 1, args=ocp.args.StandardSave(jax.device_get(state)))
+    286     print(f"💾 Checkpoint {step+1}")
+
+KeyboardInterrupt: 
+add Codeadd Markdown
