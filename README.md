@@ -90,3 +90,84 @@ print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
 
 https://huggingface.co/Madras1/MTLM1-200M
+
+
+---
+language:
+- en
+license: mit
+library_name: transformers
+tags:
+- pytorch
+- jax
+- custom_code
+- tiny-model
+- experimental
+- research
+pipeline_tag: text-generation
+inference: false
+safetensors:
+  parameters:
+    F32: 40M
+---
+
+# MTLM2-40M (TinyGPT) 
+
+**MTLM2-40M** is a highly experimental, tiny language model (~40 Million parameters) designed as a research artifact to explore the lower bounds of language modeling capabilities.
+
+The primary research question driving this model was:
+> *Can a microscopic model (40M params), when saturated with a large amount of data (14B tokens), generate minimally coherent narrative text?*
+
+The answer is **yes**. Validated by a Perplexity of **54.21** on WikiText-2, the model demonstrates surprising structural and narrative cohesion for its size.
+
+## 📊 Model Details
+
+- **Architecture:** TinyGPT (Custom `Llama`-style architecture with tweaks for small-scale efficiency).
+- **Parameters:** ~41.5 Million.
+- **Training Data:** 14 Billion Tokens (English).
+- **Training Framework:** JAX / Flax (XLA).
+- **Hardware:** Google Cloud TPU v5e-8.
+- **Training Time:** ~6 Hours.
+- **Precision:** FP32 (Exported to Safetensors).
+
+## 📉 Benchmarks
+
+| Benchmark | Metric | Result |
+| :--- | :--- | :--- |
+| **WikiText-2** | Perplexity (PPL) | **54.21** |
+
+*Note: Evaluation performed using sliding window approach. The low PPL confirms strong grammatical alignment despite the small parameter count.*
+
+## 🧪 Capabilities & Limitations
+
+### What it CAN do:
+* **Narrative Cohesion:** It can generate grammatically correct English sentences that flow logically.
+* **High Saturation:** Trained on ~350 tokens per parameter (far exceeding Chinchilla scaling laws), making it extremely "dense".
+
+### What it CANNOT do:
+* **Reasoning/Logic:** It cannot solve math problems, code, or answer complex logical queries.
+* **Instruction Following:** It has **NOT** undergone Supervised Fine-Tuning (SFT). It is a base completion model.
+
+## Usage
+
+This model requires `trust_remote_code=True`.
+
+```python
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+model_id = "Madras1/MTLM2-40M"
+
+model = AutoModelForCausalLM.from_pretrained(model_id, trust_remote_code=True)
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-v0.1")
+
+prompt = "The future of AI is"
+inputs = tokenizer(prompt, return_tensors="pt")
+
+output = model.generate(**inputs, max_new_tokens=50, do_sample=True, temperature=0.7)
+print(tokenizer.decode(output[0]))
+```
+
+
+ Author
+Developed by Madras1 (Gabriel).
