@@ -94,9 +94,10 @@ print(tokenizer.decode(outputs[0]))
 ```
 
 
-# JAX vs. PyTorch: The TPU Efficiency Study
+### JAX vs. PyTorch: The TPU Efficiency Study
 
 One of the core experiments of the MTLM Series was migrating the training pipeline from a traditional PyTorch flow on GPUs to a JAX/Flax (JIT Compiled) flow on Google Cloud TPUs (v5e-8).
+
 
 # The Efficiency Leap: 600k TPS
 
@@ -104,13 +105,13 @@ The raw throughput performance difference was staggering. Training the MTLM2-40M
 
 Why so fast?
 
-XLA (Accelerated Linear Algebra): Unlike PyTorch's eager execution, which dispatches kernels one by one (creating CPU overhead), JAX traces the entire computation graph and compiles it via XLA. This allows for massive kernel fusion (combining multiple operations into a single GPU/TPU kernel), drastically reducing memory bandwidth bottlenecks.
+-XLA (Accelerated Linear Algebra): Unlike PyTorch's eager execution, which dispatches kernels one by one (creating CPU overhead), JAX traces the entire computation graph and compiles it via XLA. This allows for massive kernel fusion (combining multiple operations into a single GPU/TPU kernel), drastically reducing memory bandwidth bottlenecks.
 
-TPU Architecture: The Matrix Multiply Units (MXU) on TPUs are purpose-built for the exact systolic array operations required by Transformers, without the general-purpose overhead of GPUs.
+-TPU Architecture: The Matrix Multiply Units (MXU) on TPUs are purpose-built for the exact systolic array operations required by Transformers, without the general-purpose overhead of GPUs.
 
-Low-Level Sharding: By manually defining the PartitionSpec and Mesh, we avoided the communication overhead often introduced by automatic data-parallel wrappers.
+-Low-Level Sharding: By manually defining the PartitionSpec and Mesh, we avoided the communication overhead often introduced by automatic data-parallel wrappers.
 
- The "Control" Trade-off
+# The "Control" Trade-off
 
 However, achieving this speed required a complete paradigm shift that introduced significant engineering friction:
 
@@ -128,7 +129,7 @@ Because the graph is compiled for maximum throughput, interrupting, inspecting, 
 
 # Conclusion
 
-For Prototyping: PyTorch remains king. The ability to inspect tensors dynamically is invaluable.
+For Prototyping: PyTorch remains the best. The ability to inspect tensors dynamically is invaluable.
 
 For Scale: JAX/TPU is unmatched. The 10x-50x speedup observed in small-scale matrix operations justifies the engineering complexity, but only once the architecture is frozen and stable.
 
